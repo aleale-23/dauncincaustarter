@@ -163,6 +163,7 @@ header {
   padding: 15px 20px;
 
   font-size: 15px;
+  padding-left: 10px;
 }
 
 .hero-image {
@@ -466,3 +467,35 @@ footer p {
     gap: 30px;
   }
 }
+
+/* NAVIGASI HEADER */
+header nav a,
+header nav a:visited,
+nav ul li a,
+nav ul li a:visited {
+    color: #243e2b;
+    text-decoration: none;
+    font: inherit;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+/* Ketika kursor diarahkan ke menu */
+header nav a:hover,
+nav ul li a:hover {
+    color: #438e42;
+    text-decoration: none;
+}
+
+/* Menjaga jarak dan bentuk navigasi */
+header nav ul,
+nav ul {
+    list-style: none;
+}
+
+/* Tombol aktif */
+header nav a:active,
+nav ul li a:active {
+    color: #438e42;
+}
+

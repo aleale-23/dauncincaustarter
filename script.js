@@ -138,3 +138,15 @@ window.addEventListener("mousemove", (e) => {
 translate(${x}px,${y}px)
 `;
 });
+
+function renderProducts() {
+  const visible = products.filter(product =>
+    (activeFilter === "semua" ||
+      product.category === activeFilter) &&
+    product.name
+      .toLocaleLowerCase("id")
+      .includes(keyword)
+  );
+
+  // Menampilkan hasil pencarian produk
+}
