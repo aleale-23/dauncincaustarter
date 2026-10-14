@@ -1,0 +1,468 @@
+/* =====================
+   GLOBAL
+===================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #f8f5ed;
+  color: #243b2a;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Playfair Display", serif;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  background: #3d8b3d;
+  color: white;
+  padding: 14px 30px;
+  border-radius: 30px;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #286628;
+  transform: translateY(-3px);
+}
+
+/* =====================
+ NAVBAR
+===================== */
+
+header {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar {
+  width: 90%;
+  margin: auto;
+  padding: 30px 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  width: 150px;
+  height: auto;
+  object-fit: contain;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+.menu li {
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.menu li:hover {
+  color: #3d8b3d;
+}
+
+.login {
+  background: #ffffff;
+  color: #3d8b3d;
+  border: 1px solid #3d8b3d;
+}
+
+/* =====================
+ HERO
+===================== */
+
+.hero {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 120px 8% 60px;
+
+  background: linear-gradient(180deg, #dff3ff, #f8f5ed);
+}
+
+.hero-text {
+  width: 45%;
+}
+
+.tag {
+  display: inline-block;
+
+  background: #d8efd2;
+
+  color: #357033;
+
+  padding: 8px 20px;
+
+  border-radius: 20px;
+
+  font-size: 14px;
+
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: 75px;
+
+  line-height: 1.1;
+
+  margin-bottom: 25px;
+}
+
+.hero p {
+  color: #666;
+
+  width: 80%;
+
+  line-height: 1.8;
+
+  margin-bottom: 35px;
+}
+
+.search-box {
+  background: white;
+
+  width: 430px;
+
+  padding: 8px;
+
+  border-radius: 50px;
+
+  display: flex;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.search-box input {
+  flex: 1;
+
+  border: none;
+
+  outline: none;
+
+  padding: 15px 20px;
+
+  font-size: 15px;
+}
+
+.hero-image {
+  width: 50%;
+  height: 550px;
+  position: relative;
+}
+
+/* style umum semua produk */
+.product {
+  position: absolute;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 20px rgba(0, 0, 0, 0.15));
+  animation: float 4s infinite ease-in-out;
+}
+
+/* FRAMBOZEN - utama/tengah */
+.product2 {
+  width: 240px;
+  left: 5px;
+  top: 60px;
+  z-index: 2;
+  animation-delay: 0.5s;
+}
+
+/* LEMON / KUNING */
+.product3 {
+  width: 300px;
+  left: 170px;
+  top: 100px;
+  z-index: 4;
+  animation-delay: 1s;
+}
+
+/* COKELAT - kecil depan bawah */
+.product4 {
+  width: 240px;
+  left: 390px;
+  top: 60px;
+  z-index: 2;
+  animation-delay: 1.5s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* =====================
+ DASHBOARD
+===================== */
+
+.dashboard {
+  padding: 100px 8%;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 80px;
+}
+
+.dash-image {
+  width: 50%;
+}
+
+.dash-image img {
+  width: 100%;
+
+  border-radius: 30px;
+
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.dash-text {
+  width: 40%;
+}
+
+.dash-text h2,
+.mobile h2 {
+  font-size: 45px;
+
+  margin-bottom: 20px;
+}
+
+.dash-text p,
+.mobile p {
+  color: #666;
+
+  line-height: 1.8;
+
+  margin-bottom: 30px;
+}
+
+/* =====================
+ MOBILE APP
+===================== */
+
+.mobile {
+  padding: 100px 10%;
+
+  background: #eaf5df;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-around;
+}
+
+.mobile img {
+  width: 280px;
+
+  animation: phone 3s infinite;
+}
+
+@keyframes phone {
+  50% {
+    transform: rotate(3deg) translateY(-15px);
+  }
+}
+
+/* =====================
+ FARM CARD
+===================== */
+
+.farms {
+  padding: 100px 8%;
+
+  text-align: center;
+}
+
+.farms h2 {
+  font-size: 45px;
+
+  margin-bottom: 50px;
+}
+
+.cards {
+  display: flex;
+
+  gap: 30px;
+
+  justify-content: center;
+}
+
+.card {
+  background: white;
+
+  width: 320px;
+
+  padding: 20px;
+
+  border-radius: 25px;
+
+  text-align: left;
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-15px);
+}
+
+.card img {
+  width: 100%;
+
+  height: 200px;
+
+  object-fit: cover;
+
+  border-radius: 20px;
+}
+
+.card h3 {
+  margin-top: 20px;
+
+  font-size: 25px;
+}
+
+.card p {
+  color: #777;
+
+  margin: 10px 0 20px;
+}
+
+/* =====================
+ STATS
+===================== */
+
+.stats {
+  background: #234b27;
+
+  color: white;
+
+  padding: 80px 10%;
+
+  text-align: center;
+}
+
+.stats h2 {
+  font-size: 45px;
+
+  margin-bottom: 50px;
+}
+
+.numbers {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 100px;
+}
+
+.numbers h1 {
+  font-size: 50px;
+}
+
+.numbers p {
+  opacity: 0.8;
+}
+
+/* =====================
+ FOOTER
+===================== */
+
+footer {
+  background: #172c19;
+
+  color: white;
+
+  padding: 60px 10%;
+
+  display: flex;
+
+  justify-content: space-between;
+}
+
+footer p {
+  opacity: 0.7;
+
+  margin-top: 10px;
+}
+
+/* =====================
+ RESPONSIVE
+===================== */
+
+@media (max-width: 900px) {
+  .menu {
+    display: none;
+  }
+
+  .hero,
+  .dashboard,
+  .mobile {
+    flex-direction: column;
+
+    text-align: center;
+  }
+
+  .hero-text,
+  .hero-image,
+  .dash-text,
+  .dash-image {
+    width: 100%;
+  }
+
+  .hero h1 {
+    font-size: 50px;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+
+  .cards {
+    flex-direction: column;
+
+    align-items: center;
+  }
+
+  .numbers {
+    flex-direction: column;
+
+    gap: 40px;
+  }
+
+  footer {
+    flex-direction: column;
+
+    gap: 30px;
+  }
+}
