@@ -499,3 +499,53 @@ nav ul li a:active {
     color: #438e42;
 }
 
+
+/* Memperpendek jarak setelah hero dan pencarian */
+.hero {
+  min-height: auto;
+  height: auto;
+  padding-bottom: 40px;
+}
+
+/* Merapikan jarak section produk */
+.farms {
+  margin-top: 0;
+  padding-top: 45px;
+  padding-bottom: 70px;
+}
+
+/* Jarak judul dengan deskripsi */
+.product-heading {
+  margin-top: 0;
+  margin-bottom: 35px;
+}
+
+.product-heading .tag {
+  margin-bottom: 12px;
+}
+
+.product-heading h2 {
+  margin-top: 0;
+  margin-bottom: 18px;
+}
+
+.product-heading p {
+  margin-top: 0;
+  line-height: 1.7;
+}
+
+/* Tampilan HP */
+@media (max-width: 560px) {
+  .hero {
+    padding-bottom: 25px;
+  }
+
+  .farms {
+    padding-top: 30px;
+    padding-bottom: 45px;
+  }
+
+  .product-heading {
+    margin-bottom: 25px;
+  }
+}
