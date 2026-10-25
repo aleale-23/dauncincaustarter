@@ -29,14 +29,21 @@
           <li><a href="#kontak">Kontak</a></li>
         </ul>
 
-        <button class="login">Masuk</button>
+        <a
+          href="https://instagram.com/dauncincauid/"
+          class="header-instagram"
+          target="_blank"
+          rel="noopener noreferrrer"
+          aria-label="Instagram Daun Cincau ID">
+        >
+          <img src="picture/instagram.jpeg" alt="Instagram" />
+        </a>
+    
       </nav>
     </header>
 
     <section class="hero">
       <div class="hero-text">
-        <span class="tag"> Segar dari Alam </span>
-
         <h1>
           Good Leaf <br />
           Good Life.
@@ -48,9 +55,25 @@
         </p>
 
         <div class="search-box">
-          <input type="text" placeholder="Cari cincau favoritmu..." />
+            <input type="text" placeholder="Cari cincau favoritmu..." />
 
-          <button>Cari</button>
+            <button type="button" aria-label="Cari">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="11" cy="11" r="7"></circle>
+                <path d="m20 20-4-4"></path>
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
 
@@ -61,109 +84,94 @@
       </div>
     </section>
 
-    <!-- =========================
-     PRODUK UNGGULAN
+    
+<!-- =========================
+     SECTION DAUN CINCAU
 ========================= -->
-    <section class="farms" id="produk">
-      <div class="product-heading">
-        <span class="tag">GOOD LEAF GOOD LIFE</span>
+<section class="kebun-cincau" id="kebun">
+  <div class="kebun-container">
 
-        <h2>Produk Unggulan Kami</h2>
+    <!-- BAGIAN TEKS -->
+    <div class="kebun-text">
 
-        <p>
-          Nikmati kesegaran cincau hijau dari Daun Cincau ID. Tersedia dalam
-          pilihan cincau murni dan cincau siap minum yang praktis untuk menemani
-          aktivitasmu.
-        </p>
+      <h2>
+        Berawal dari Daun Cincau Pilihan
+      </h2>
+
+      <p>
+        Kesegaran Daun Cincau ID berawal dari daun cincau yang
+        dipetik langsung dari kebun sendiri. Kami memilih daun
+        yang segar sebagai bahan utama untuk menghadirkan cincau
+        yang nikmat dan menyegarkan. Dengan memperhatikan
+        pemilihan bahan hingga proses pengolahan, kami ingin
+        menghadirkan kebaikan alam dalam setiap sajian cincau
+        yang menemani keseharianmu.
+      </p>
+
+      <a href="#produksi" class="kebun-button">
+        Lihat Proses Produksi
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+
+    <!-- BAGIAN FOTO -->
+    <div class="kebun-image">
+      <img
+        src="picture/lahandauncincau.png"
+        alt="Daun cincau segar dari kebun"
+      />
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- =========================
+     CAROUSEL GALERI PRODUK
+========================= -->
+<section class="product-gallery" id="galeri">
+  <div class="gallery-wrapper">
+    <div class="gallery-track" id="galleryTrack">
+
+      <!-- FOTO 1 -->
+      <div class="gallery-card">
+        <img src="picture/SiapMinumOriginal.png" alt="Produk Daun Cincau 1">
       </div>
 
-      <div class="cards">
-        <!-- PRODUK 1 -->
-        <div class="card">
-          <div class="card-image">
-            <img
-              src="picture/produkcincau1.png"
-              alt="Cincau Murni 1 Liter Daun Cincau ID"
-            />
-          </div>
-
-          <div class="card-content">
-            <span class="product-label">PRODUK UNGGULAN</span>
-
-            <h3>Cincau Murni 1 Liter</h3>
-
-            <p>
-              Cincau hijau murni dalam kemasan 1 liter. Cocok untuk persediaan
-              di rumah dan dinikmati bersama keluarga.
-            </p>
-          </div>
-        </div>
-
-        <!-- PRODUK 2 -->
-        <div class="card">
-          <div class="card-image">
-            <img
-              src="picture/produkcincau2.png"
-              alt="Cincau Murni 500 ml Daun Cincau ID"
-            />
-          </div>
-
-          <div class="card-content">
-            <span class="product-label">CINCAU MURNI</span>
-
-            <h3>Cincau Murni 500 ml</h3>
-
-            <p>
-              Pilihan cincau hijau murni dalam kemasan 500 ml yang dapat
-              dinikmati langsung atau dipadukan dengan bahan pelengkap
-              favoritmu.
-            </p>
-          </div>
-        </div>
-
-        <!-- PRODUK 3 -->
-        <div class="card">
-          <div class="card-image">
-            <img
-              src="picture/produkcincau3.png"
-              alt="Cincau Murni 420 ml Daun Cincau ID"
-            />
-          </div>
-
-          <div class="card-content">
-            <span class="product-label">PRAKTIS</span>
-
-            <h3>Cincau Murni 420 ml</h3>
-
-            <p>
-              Cincau hijau murni dalam kemasan 420 ml. Pilihan praktis untuk
-              membuat minuman cincau sesuai selera.
-            </p>
-          </div>
-        </div>
-
-        <!-- PRODUK 4 -->
-        <div class="card">
-          <div class="card-image">
-            <img
-              src="picture/produkcincau4.png"
-              alt="Cincau Siap Minum Original Daun Cincau ID"
-            />
-          </div>
-
-          <div class="card-content">
-            <span class="product-label">SIAP MINUM</span>
-
-            <h3>Cincau Siap Minum Original</h3>
-
-            <p>
-              Cincau siap minum varian original untuk kamu yang ingin menikmati
-              cincau dengan lebih praktis.
-            </p>
-          </div>
-        </div>
+      <!-- FOTO 2 -->
+      <div class="gallery-card">
+        <img src="picture/SiapMinumFrambozen.png" alt="Produk Daun Cincau 2">
       </div>
-    </section>
+
+      <!-- FOTO 3 -->
+      <div class="gallery-card">
+        <img src="picture/SiapMinumCoklat.png" alt="Produk Daun Cincau 3">
+      </div>
+
+      <!-- FOTO 4 -->
+      <div class="gallery-card">
+        <img src="picture/galeri4.jpg" alt="Produk Daun Cincau 4">
+      </div>
+
+      <!-- FOTO 5 -->
+      <div class="gallery-card">
+        <img src="picture/galeri5.jpg" alt="Produk Daun Cincau 5">
+      </div>
+
+      <!-- FOTO 6 -->
+      <div class="gallery-card">
+        <img src="picture/galeri6.jpg" alt="Produk Daun Cincau 6">
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TITIK NAVIGASI -->
+  <div class="gallery-dots" id="galleryDots"></div>
+</section>
+
+
 
     <section class="dashboard">
       <div class="dash-image">

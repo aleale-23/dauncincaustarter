@@ -45,25 +45,26 @@ button:hover {
  NAVBAR
 ===================== */
 
+/* BACKGROUND NAVBAR PUTIH */
 header {
   position: absolute;
   width: 100%;
   top: 0;
   z-index: 10;
+  background: #ffffff;
 }
 
 .navbar {
   width: 90%;
   margin: auto;
-  padding: 30px 0;
-
+  padding: 15px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .logo img {
-  width: 150px;
+  width: 110px;
   height: auto;
   object-fit: contain;
 }
@@ -71,22 +72,34 @@ header {
 .menu {
   list-style: none;
   display: flex;
-  gap: 40px;
+  align-items: center;
+  gap: 30px;
 }
 
 .menu li {
-  cursor: pointer;
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .menu li:hover {
   color: #3d8b3d;
 }
 
-.login {
-  background: #ffffff;
-  color: #3d8b3d;
-  border: 1px solid #3d8b3d;
+.header-instagram {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+}
+
+.header-instagram img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.header-instagram:hover img {
+  transform: scale(1.1);
 }
 
 /* =====================
@@ -146,29 +159,43 @@ header {
 
 .search-box {
   background: white;
-
-  width: 430px;
-
-  padding: 8px;
-
+  width: 380px;
+  max-width: 100%;
+  padding: 6px;
   border-radius: 50px;
-
   display: flex;
-
+  align-items: center;
+  overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
 .search-box input {
   flex: 1;
-
+  min-width: 0;
   border: none;
-
   outline: none;
+  padding: 12px 15px;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+}
 
-  padding: 15px 20px;
+.search-box button {
+  flex-shrink: 0;
+  width: 65px;
+  height: 48px;
+  padding: 0;
+  border: none;
+  border-radius: 30px;
+  background: #388b3e;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  font-size: 15px;
-  padding-left: 10px;
+.search-box button svg {
+  width: 20px;
+  height: 20px;
 }
 
 .hero-image {
@@ -302,13 +329,13 @@ header {
  FARM CARD
 ===================== */
 
-.farms {
+.cincau {
   padding: 100px 8%;
 
   text-align: center;
 }
 
-.farms h2 {
+.cincau h2 {
   font-size: 45px;
 
   margin-bottom: 50px;
@@ -512,7 +539,7 @@ nav ul li a:active {
 }
 
 /* Merapikan jarak section produk */
-.farms {
+.cincau {
   margin-top: 0;
   padding-top: 45px;
   padding-bottom: 70px;
@@ -544,7 +571,7 @@ nav ul li a:active {
     padding-bottom: 25px;
   }
 
-  .farms {
+  .cincau {
     padding-top: 30px;
     padding-bottom: 45px;
   }
@@ -739,5 +766,444 @@ nav ul li a:active {
     flex-direction: column;
     align-items: flex-start;
     padding: 18px 7%;
+  }
+}
+
+/* CAROUSEL GALERI PRODUK */
+.product-gallery {
+  padding: 25px 8% 35px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.gallery-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.gallery-track {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.45s ease;
+}
+
+.gallery-card {
+  flex: 0 0 calc((100% - 40px) / 3);
+  height: 450px;
+  overflow: hidden;
+  border-radius: 22px;
+  background: #fafafa;
+}
+
+.gallery-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* TITIK NAVIGASI */
+.gallery-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.gallery-dot {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: #cecece;
+  cursor: pointer;
+}
+
+.gallery-dot.active {
+  background: #328cff;
+}
+
+/* TABLET */
+@media (max-width: 992px) {
+  .gallery-card {
+    flex-basis: calc((100% - 20px) / 2);
+    height: 380px;
+  }
+}
+
+/* HP */
+@media (max-width: 600px) {
+  .product-gallery {
+    padding: 20px 6% 30px;
+  }
+
+  .gallery-card {
+    flex-basis: 100%;
+    height: 350px;
+    border-radius: 18px;
+  }
+}
+
+/* =========================
+   DAUN CINCAU DARI KEBUN
+========================= */
+
+.cincau-origin {
+  padding: 55px 7% 0;
+  background: #ffffff;
+  text-align: center;
+  overflow: hidden;
+}
+
+.origin-heading h2 {
+  margin: 0 0 12px;
+  color: #087443;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(32px, 4vw, 54px);
+  font-weight: 400;
+}
+
+.origin-heading p {
+  margin: 0;
+  color: #087443;
+  font-family: "Poppins", sans-serif;
+  font-size: 17px;
+}
+
+/* IKON BULAT */
+.origin-features {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 28px;
+  flex-wrap: wrap;
+  margin: 35px auto 45px;
+}
+
+.origin-feature {
+  width: 115px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.origin-icon {
+  width: 86px;
+  height: 86px;
+  border: 2px solid #29965c;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #087443;
+  font-size: 32px;
+  background: #ffffff;
+}
+
+.origin-feature h3 {
+  margin: 0;
+  color: #087443;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* FOTO KEBUN */
+.origin-image {
+  width: 100%;
+  max-width: 1150px;
+  height: 320px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.origin-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .cincau-origin {
+    padding: 40px 5% 0;
+  }
+
+  .origin-heading p {
+    font-size: 14px;
+  }
+
+  .origin-features {
+    gap: 24px 12px;
+    margin: 30px auto;
+  }
+
+  .origin-feature {
+    width: calc((100% - 24px) / 3);
+  }
+
+  .origin-icon {
+    width: 65px;
+    height: 65px;
+    font-size: 25px;
+  }
+
+  .origin-feature h3 {
+    font-size: 11px;
+  }
+
+  .origin-image {
+    height: 220px;
+  }
+}
+
+/* =========================
+   SECTION DAUN CINCAU
+========================= */
+
+.kebun-cincau {
+  width: 100%;
+  padding: 75px 8%;
+  box-sizing: border-box;
+
+  background: linear-gradient(180deg, #edf6ef 0%, #f4f6ee 100%);
+}
+
+.kebun-container {
+  max-width: 1400px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  align-items: center;
+  gap: 65px;
+}
+
+/* BAGIAN TEKS */
+
+.kebun-text {
+  max-width: 570px;
+}
+
+.kebun-label {
+  display: inline-block;
+  margin-bottom: 16px;
+  padding: 8px 16px;
+
+  background: #dcefd9;
+  color: #398047;
+
+  border-radius: 30px;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.kebun-text h2 {
+  margin: 0 0 22px;
+
+  color: #24432d;
+
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(30px, 3vw, 42px);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.kebun-text p {
+  margin: 0;
+
+  color: #647066;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.95;
+}
+
+/* TOMBOL */
+
+.kebun-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-top: 26px;
+  padding: 13px 23px;
+
+  background: #398747;
+  color: #ffffff;
+
+  border-radius: 30px;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.kebun-button:hover {
+  background: #2e703b;
+  transform: translateY(-2px);
+}
+
+/* FOTO BERBENTUK KOTAK */
+
+.kebun-image {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  aspect-ratio: 1 / 1;
+
+  justify-self: end;
+
+  border-radius: 22px;
+  overflow: hidden;
+
+  background: #dce9d8;
+
+  box-shadow: 0 18px 45px rgba(42, 76, 48, 0.12);
+}
+
+.kebun-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  transition: transform 0.5s ease;
+}
+
+.kebun-image:hover img {
+  transform: scale(1.04);
+}
+
+/* KETERANGAN DI ATAS FOTO */
+
+.kebun-image-caption {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 14px 17px;
+
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 15px;
+
+  box-sizing: border-box;
+  backdrop-filter: blur(8px);
+}
+
+.caption-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+
+  border-radius: 50%;
+  background: #e3f1df;
+  color: #398747;
+
+  font-size: 22px;
+}
+
+.kebun-image-caption p {
+  margin: 0;
+
+  color: #6b766b;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+/* RESPONSIVE TABLET */
+
+@media (max-width: 900px) {
+  .kebun-cincau {
+    padding: 60px 6%;
+  }
+
+  .kebun-container {
+    gap: 35px;
+    grid-template-columns: 1fr 0.85fr;
+  }
+
+  .kebun-text h2 {
+    font-size: 30px;
+  }
+
+  .kebun-text p {
+    font-size: 14px;
+  }
+
+  .kebun-image-caption {
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    padding: 10px;
+    gap: 8px;
+  }
+}
+
+/* RESPONSIVE HP */
+
+@media (max-width: 600px) {
+  .kebun-cincau {
+    padding: 48px 6%;
+  }
+
+  .kebun-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .kebun-text {
+    max-width: 100%;
+  }
+
+  .kebun-text h2 {
+    font-size: 29px;
+  }
+
+  .kebun-text p {
+    font-size: 14px;
+    line-height: 1.85;
+  }
+
+  .kebun-button {
+    margin-top: 20px;
+  }
+
+  .kebun-image {
+    justify-self: center;
+    max-width: 100%;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 18px;
   }
 }
