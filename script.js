@@ -1,21 +1,39 @@
-// ==========================
-// SCROLL ANIMATION
-// ==========================
+/* ==========================
+   SCROLL ANIMATION
+========================== */
 
-const sections = document.querySelectorAll(
-  ".hero, .dashboard, .mobile, .farms, .stats, footer",
-);
+document.addEventListener("DOMContentLoaded", () => {
+  const sections = document.querySelectorAll(
+    ".hero, .dashboard, .mobile, .farms, .cincau, .stats, .kebun-cincau, .product-gallery, .reference-banner, .site-footer, .footer-bottom",
+  );
 
-window.addEventListener("scroll", () => {
+  // Siapkan animasi awal
   sections.forEach((section) => {
-    let position = section.getBoundingClientRect().top;
+    section.style.opacity = "0";
+    section.style.transform = "translateY(35px)";
+    section.style.transition = "opacity 0.8s ease, transform 0.8s ease";
+  });
 
-    let screen = window.innerHeight - 100;
+  // Munculkan section saat masuk ke layar
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = "1";
+          entry.target.style.transform = "translateY(0)";
 
-    if (position < screen) {
-      section.style.opacity = "1";
-      section.style.transform = "translateY(0)";
-    }
+          // Animasi cukup sekali
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.12,
+    },
+  );
+
+  sections.forEach((section) => {
+    observer.observe(section);
   });
 });
 
@@ -140,13 +158,70 @@ translate(${x}px,${y}px)
 });
 
 function renderProducts() {
-  const visible = products.filter(product =>
-    (activeFilter === "semua" ||
-      product.category === activeFilter) &&
-    product.name
-      .toLocaleLowerCase("id")
-      .includes(keyword)
+  const visible = products.filter(
+    (product) =>
+      (activeFilter === "semua" || product.category === activeFilter) &&
+      product.name.toLocaleLowerCase("id").includes(keyword),
   );
 
   // Menampilkan hasil pencarian produk
+}
+
+const galleryTrack = document.getElementById("galleryTrack");
+const galleryDots = document.getElementById("galleryDots");
+
+if (galleryTrack && galleryDots) {
+  const galleryCards = Array.from(galleryTrack.children);
+  let galleryIndex = 0;
+
+  function galleryVisibleCount() {
+    if (window.innerWidth <= 600) return 1;
+    if (window.innerWidth <= 992) return 2;
+    return 3;
+  }
+
+  function galleryMaxIndex() {
+    return Math.max(0, galleryCards.length - galleryVisibleCount());
+  }
+
+  function buildGalleryDots() {
+    galleryDots.innerHTML = "";
+
+    for (let i = 0; i <= galleryMaxIndex(); i++) {
+      const dot = document.createElement("button");
+
+      dot.type = "button";
+      dot.className = "gallery-dot";
+      dot.setAttribute("aria-label", `Tampilkan foto ${i + 1}`);
+
+      dot.addEventListener("click", () => {
+        galleryIndex = i;
+        updateGallery();
+      });
+
+      galleryDots.appendChild(dot);
+    }
+  }
+
+  function updateGallery() {
+    galleryIndex = Math.min(galleryIndex, galleryMaxIndex());
+
+    const cardWidth = galleryCards[0].getBoundingClientRect().width;
+
+    const gap = parseFloat(getComputedStyle(galleryTrack).gap) || 0;
+
+    galleryTrack.style.transform = `translateX(-${galleryIndex * (cardWidth + gap)}px)`;
+
+    Array.from(galleryDots.children).forEach((dot, i) => {
+      dot.classList.toggle("active", i === galleryIndex);
+    });
+  }
+
+  buildGalleryDots();
+  updateGallery();
+
+  window.addEventListener("resize", () => {
+    buildGalleryDots();
+    updateGallery();
+  });
 }
