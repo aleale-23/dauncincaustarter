@@ -46,12 +46,20 @@ button:hover {
 ===================== */
 
 /* BACKGROUND NAVBAR PUTIH */
+
 header {
-  position: absolute;
-  width: 100%;
+  position: fixed;
   top: 0;
-  z-index: 10;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
   background: #ffffff;
+  transition: transform 0.35s ease;
+}
+
+/* Header disembunyikan saat scroll ke bawah */
+header.header-hidden {
+  transform: translateY(-100%);
 }
 
 .navbar {
@@ -1206,4 +1214,22 @@ nav ul li a:active {
     aspect-ratio: 1 / 1;
     border-radius: 18px;
   }
+}
+
+/* HEADER HIDE & SHOW */
+header {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 9999;
+  background: #ffffff;
+  transform: translateY(0);
+  transition: transform 0.3s ease-in-out;
+  will-change: transform;
+}
+
+header.header-hidden {
+  transform: translateY(-110%) !important;
 }

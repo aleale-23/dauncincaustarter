@@ -225,3 +225,45 @@ if (galleryTrack && galleryDots) {
     updateGallery();
   });
 }
+
+/* ==========================
+   HEADER HIDE & SHOW ON SCROLL
+========================== */
+
+(() => {
+  const header = document.querySelector("header");
+
+  if (!header) return;
+
+  let lastScrollY = window.scrollY;
+  let ticking = false;
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (ticking) return;
+
+      ticking = true;
+
+      requestAnimationFrame(() => {
+        const currentScrollY = window.scrollY;
+        const difference = currentScrollY - lastScrollY;
+
+        if (currentScrollY <= 50) {
+          // Di paling atas, header selalu muncul
+          header.classList.remove("header-hidden");
+        } else if (difference > 3) {
+          // Scroll turun
+          header.classList.add("header-hidden");
+        } else if (difference < -3) {
+          // Scroll naik
+          header.classList.remove("header-hidden");
+        }
+
+        lastScrollY = currentScrollY;
+        ticking = false;
+      });
+    },
+    { passive: true },
+  );
+})();
