@@ -199,67 +199,98 @@ function renderProducts() {
   );
 })();
 
-/* =========================
-   PRODUCT CAROUSEL
-========================= */
+/* ==========================
+   INFINITE PRODUCT CAROUSEL
+========================== */
 
-const galleryTrack = document.getElementById("galleryTrack");
-const galleryDots = document.getElementById("galleryDots");
+document.addEventListener("DOMContentLoaded", () => {
+  const track = document.getElementById("galleryTrack");
+  const dotsContainer = document.getElementById("galleryDots");
 
-if (galleryTrack && galleryDots) {
-  const cards = Array.from(galleryTrack.children);
+  if (!track || !dotsContainer) return;
+
+  const originalCards = Array.from(track.children);
+  const totalCards = originalCards.length;
+
+  if (totalCards === 0) return;
+
   let currentIndex = 0;
+  let autoSlide;
 
-  function visibleCount() {
-    if (window.innerWidth <= 600) return 1;
-    if (window.innerWidth <= 992) return 2;
-    return 3;
-  }
+  // Clone foto pertama untuk efek infinite
+  originalCards.slice(0, 3).forEach((card) => {
+    track.appendChild(card.cloneNode(true));
+  });
 
-  function maxIndex() {
-    return Math.max(0, cards.length - visibleCount());
-  }
+  // Buat titik navigasi
+  dotsContainer.innerHTML = "";
 
-  function createDots() {
-    galleryDots.innerHTML = "";
+  originalCards.forEach((_, index) => {
+    const dot = document.createElement("button");
 
-    for (let i = 0; i <= maxIndex(); i++) {
-      const dot = document.createElement("button");
+    dot.className = "gallery-dot";
+    dot.type = "button";
+    dot.setAttribute("aria-label", `Foto ${index + 1}`);
 
-      dot.type = "button";
-      dot.className = "gallery-dot";
-      dot.setAttribute("aria-label", "Halaman " + (i + 1));
+    dot.addEventListener("click", () => {
+      currentIndex = index;
+      updateCarousel();
+      restartAutoSlide();
+    });
 
-      dot.addEventListener("click", () => {
-        currentIndex = i;
-        updateCarousel();
-      });
-
-      galleryDots.appendChild(dot);
-    }
-  }
+    dotsContainer.appendChild(dot);
+  });
 
   function updateCarousel() {
-    currentIndex = Math.min(currentIndex, maxIndex());
+    const card = originalCards[0];
+    const gap = parseFloat(getComputedStyle(track).gap) || 0;
+    const cardWidth = card.getBoundingClientRect().width;
 
-    const cardWidth = cards[0].getBoundingClientRect().width;
-    const gap = parseFloat(getComputedStyle(galleryTrack).gap) || 0;
+    track.style.transition = "transform 0.7s ease";
+    track.style.transform = `translateX(-${currentIndex * (cardWidth + gap)}px)`;
 
-    galleryTrack.style.transform = `translateX(-${currentIndex * (cardWidth + gap)}px)`;
+    // Update dots
+    const activeIndex = currentIndex % totalCards;
 
-    Array.from(galleryDots.children).forEach((dot, index) => {
-      dot.classList.toggle("active", index === currentIndex);
+    Array.from(dotsContainer.children).forEach((dot, index) => {
+      dot.classList.toggle("active", index === activeIndex);
     });
   }
 
-  createDots();
-  updateCarousel();
+  // Setelah mencapai foto clone, reset tanpa animasi
+  track.addEventListener("transitionend", () => {
+    if (currentIndex >= totalCards) {
+      track.style.transition = "none";
+      currentIndex = 0;
 
-  window.addEventListener("resize", () => {
-    createDots();
-    updateCarousel();
+      track.style.transform = "translateX(0)";
+
+      // Paksa browser menerapkan posisi baru
+      track.offsetHeight;
+    }
   });
-}
+
+  function nextSlide() {
+    currentIndex++;
+    updateCarousel();
+  }
+
+  function startAutoSlide() {
+    autoSlide = setInterval(nextSlide, 3000);
+  }
+
+  function restartAutoSlide() {
+    clearInterval(autoSlide);
+    startAutoSlide();
+  }
+
+  // Jalankan otomatis
+  updateCarousel();
+  startAutoSlide();
+
+  // Sesuaikan ketika ukuran layar berubah
+  window.addEventListener("resize", updateCarousel);
+});
 
 /* ==========================
    PRODUCT CAROUSEL
