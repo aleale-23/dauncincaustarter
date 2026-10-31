@@ -666,8 +666,8 @@ nav ul li a:active {
   grid-template-columns: 1.2fr 1.2fr 1fr 1fr;
   gap: 40px;
   padding: 45px 5%;
-  background: linear-gradient(180deg, #e7f4ec 0%, #edf6ef 55%, #f8f5ed 100%);
-  color: #294b38;
+  background: #ffffff;
+  color: #353451;
   font-family: "Poppins", sans-serif;
 }
 
@@ -1998,4 +1998,9 @@ header {
     margin-top: 22px;
     gap: 9px;
   }
+}
+
+.site-footer,
+.footer-bottom {
+  background-color: #ffffff !important;
 }

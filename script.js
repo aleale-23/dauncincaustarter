@@ -261,133 +261,102 @@ if (galleryTrack && galleryDots) {
   });
 }
 
-/* =====================================
-   PRODUCT CAROUSEL - FINAL
-===================================== */
+/* ==========================
+   PRODUCT CAROUSEL
+   GESER SATU FOTO
+========================== */
 
-(() => {
+document.addEventListener("DOMContentLoaded", () => {
   const track = document.getElementById("galleryTrack");
   const dotsContainer = document.getElementById("galleryDots");
+  const container = document.querySelector(".gallery-container");
 
-  if (!track || !dotsContainer) return;
+  if (!track || !dotsContainer || !container) return;
 
-  const cards = Array.from(track.querySelectorAll(".gallery-card"));
-
-  if (cards.length === 0) return;
+  const cards = Array.from(track.children);
 
   let currentIndex = 0;
+  let autoplay;
 
-  // Jumlah foto yang terlihat
-  function getVisibleCount() {
+  function visibleCount() {
     if (window.innerWidth <= 600) return 1;
     if (window.innerWidth <= 992) return 2;
     return 3;
   }
 
-  // Batas pergeseran carousel
-  function getMaxIndex() {
-    return Math.max(0, cards.length - getVisibleCount());
+  // Maksimal posisi geser
+  function maxIndex() {
+    return Math.max(0, cards.length - visibleCount());
   }
 
-  // Membuat titik navigasi otomatis
+  // Membuat titik navigasi
   function createDots() {
     dotsContainer.innerHTML = "";
 
-    const totalDots = getMaxIndex() + 1;
-
-    dotsContainer.hidden = totalDots <= 1;
-
-    for (let i = 0; i < totalDots; i++) {
+    for (let i = 0; i <= maxIndex(); i++) {
       const dot = document.createElement("button");
 
-      dot.type = "button";
       dot.className = "gallery-dot";
-
-      dot.setAttribute("aria-label", `Lihat slide ${i + 1}`);
+      dot.type = "button";
+      dot.setAttribute("aria-label", `Foto posisi ${i + 1}`);
 
       dot.addEventListener("click", () => {
         currentIndex = i;
         updateCarousel();
+        restartAutoplay();
       });
 
       dotsContainer.appendChild(dot);
     }
   }
 
-  // Menggerakkan foto dan memperbarui titik
+  // Menggeser satu foto
   function updateCarousel() {
-    currentIndex = Math.max(0, Math.min(currentIndex, getMaxIndex()));
+    currentIndex = Math.min(currentIndex, maxIndex());
 
     const cardWidth = cards[0].getBoundingClientRect().width;
-
     const gap = parseFloat(getComputedStyle(track).gap) || 0;
 
-    const movement = currentIndex * (cardWidth + gap);
+    track.style.transform = `translateX(-${currentIndex * (cardWidth + gap)}px)`;
 
-    track.style.transform = `translateX(-${movement}px)`;
-
-    const dots = dotsContainer.querySelectorAll(".gallery-dot");
-
-    dots.forEach((dot, index) => {
-      dot.classList.toggle("active", index === currentIndex);
-
-      if (index === currentIndex) {
-        dot.setAttribute("aria-current", "true");
-      } else {
-        dot.removeAttribute("aria-current");
-      }
+    Array.from(dotsContainer.children).forEach((dot, i) => {
+      dot.classList.toggle("active", i === currentIndex);
     });
   }
 
-  // Inisialisasi
-  function initCarousel() {
-    createDots();
-    updateCarousel();
-  }
-
-  initCarousel();
-
-  // =====================================
-  // AUTOPLAY CAROUSEL
-  // =====================================
-
-  let autoplayInterval;
-
+  // Autoplay satu foto setiap 3 detik
   function startAutoplay() {
-    clearInterval(autoplayInterval);
+    clearInterval(autoplay);
 
-    autoplayInterval = setInterval(() => {
-      if (currentIndex >= getMaxIndex()) {
+    autoplay = setInterval(() => {
+      currentIndex++;
+
+      if (currentIndex > maxIndex()) {
         currentIndex = 0;
-      } else {
-        currentIndex++;
       }
 
       updateCarousel();
-    }, 3000); // Bergeser setiap 3 detik
+    }, 3000);
   }
 
-  function stopAutoplay() {
-    clearInterval(autoplayInterval);
+  function restartAutoplay() {
+    startAutoplay();
   }
 
-  // Jalankan otomatis
+  // Berhenti saat mouse diarahkan ke carousel
+  container.addEventListener("mouseenter", () => {
+    clearInterval(autoplay);
+  });
+
+  container.addEventListener("mouseleave", startAutoplay);
+
+  // Jalankan
+  createDots();
+  updateCarousel();
   startAutoplay();
 
-  // Berhenti saat kursor berada di carousel
-  const carouselContainer = document.querySelector(".gallery-container");
-
-  carouselContainer.addEventListener("mouseenter", stopAutoplay);
-
-  carouselContainer.addEventListener("mouseleave", startAutoplay);
-
-  // Berhenti saat pengguna sedang fokus menggunakan keyboard
-  carouselContainer.addEventListener("focusin", stopAutoplay);
-
-  carouselContainer.addEventListener("focusout", startAutoplay);
-
-  // Menyesuaikan tampilan saat ukuran layar berubah
   window.addEventListener("resize", () => {
-    initCarousel();
+    createDots();
+    updateCarousel();
   });
-})();
+});
