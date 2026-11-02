@@ -1,0 +1,451 @@
+/* =========================
+   TENTANG KAMI
+========================= */
+
+:root {
+  --sage: #eaf2e8;
+  --sage-dark: #dceadd;
+  --cream: #f7f5ed;
+  --green: #254b35;
+  --green-light: #39894c;
+  --text: #53675a;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.about-label {
+  color: #39894c;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
+/* HERO */
+
+.about-hero {
+  min-height: 620px;
+  padding: 70px 9%;
+  background: var(--sage);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 50px;
+}
+
+.about-hero-content h1 {
+  color: var(--green);
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(48px, 6vw, 78px);
+  line-height: 1.15;
+  margin: 20px 0;
+}
+
+.about-hero-content p {
+  color: var(--text);
+  font-size: 17px;
+  line-height: 1.9;
+  max-width: 490px;
+}
+
+.about-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 25px;
+  background: #39894c;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.about-hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-hero-image img {
+  width: 100%;
+  max-width: 430px;
+  max-height: 480px;
+  object-fit: contain;
+}
+
+/* CERITA KAMI */
+
+.about-story {
+  background: var(--cream);
+  padding: 100px 9%;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+  gap: 75px;
+}
+
+.story-image img {
+  width: 100%;
+  max-height: 530px;
+  object-fit: cover;
+  border-radius: 25px;
+}
+
+.story-content h2 {
+  color: var(--green);
+  font-size: clamp(30px, 4vw, 43px);
+  margin: 15px 0 25px;
+}
+
+.story-content p {
+  color: var(--text);
+  font-size: 14px;
+  line-height: 2;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+/* PERJALANAN */
+
+.about-journey {
+  background: var(--sage);
+  padding: 90px 9%;
+}
+
+.section-heading {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 55px;
+}
+
+.section-heading h2,
+.commitment-heading h2 {
+  color: var(--green);
+  font-size: clamp(30px, 4vw, 44px);
+  margin: 15px 0;
+}
+
+.section-heading p,
+.commitment-heading p {
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.journey-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.journey-card {
+  background: white;
+  padding: 30px 23px;
+  border-radius: 18px;
+  border: 1px solid #e1e9df;
+  transition: 0.3s ease;
+}
+
+.journey-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 12px 30px rgba(37, 75, 53, 0.1);
+}
+
+.journey-card span {
+  color: #39894c;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.journey-card h3 {
+  color: var(--green);
+  font-size: 16px;
+  margin: 20px 0 12px;
+}
+
+.journey-card p {
+  color: var(--text);
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+/* KOMITMEN */
+
+.about-commitment {
+  background: var(--cream);
+  padding: 90px 9%;
+}
+
+.commitment-heading {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 45px;
+}
+
+.commitment-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.commitment-card {
+  text-align: center;
+  background: white;
+  padding: 35px 22px;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.commitment-card:hover {
+  transform: translateY(-6px);
+}
+
+.commitment-icon {
+  font-size: 38px;
+  margin-bottom: 15px;
+}
+
+.commitment-card h3 {
+  color: var(--green);
+  font-size: 16px;
+}
+
+.commitment-card p {
+  color: var(--text);
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+/* VISI MISI */
+
+.about-vision {
+  background: var(--sage);
+  padding: 100px 9%;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  gap: 60px;
+}
+
+.vision-content h2 {
+  color: var(--green);
+  font-size: clamp(30px, 4vw, 43px);
+  line-height: 1.3;
+  margin: 20px 0 35px;
+}
+
+.vision-box {
+  margin-bottom: 25px;
+}
+
+.vision-box h3 {
+  color: #39894c;
+  font-size: 19px;
+  margin-bottom: 10px;
+}
+
+.vision-box p,
+.vision-box li {
+  color: var(--text);
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.vision-box ul {
+  padding-left: 20px;
+}
+
+.vision-box li {
+  margin-bottom: 7px;
+}
+
+.vision-image img {
+  width: 100%;
+  max-height: 480px;
+  object-fit: contain;
+}
+
+/* CLOSING */
+
+.about-closing {
+  text-align: center;
+  padding: 85px 20px;
+  background: var(--cream);
+}
+
+.about-closing span {
+  color: #39894c;
+  letter-spacing: 4px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.about-closing h2 {
+  color: var(--green);
+  font-size: clamp(32px, 5vw, 55px);
+  margin: 15px 0;
+}
+
+.about-closing p {
+  color: var(--text);
+  font-size: 14px;
+}
+
+.about-closing a {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 13px 25px;
+  background: #39894c;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .about-hero,
+  .about-story,
+  .about-vision {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .journey-grid,
+  .commitment-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-hero {
+    text-align: center;
+  }
+
+  .about-hero-content p {
+    margin: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-hero,
+  .about-story,
+  .about-journey,
+  .about-commitment,
+  .about-vision {
+    padding: 55px 6%;
+  }
+
+  .journey-grid,
+  .commitment-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-hero-content h1 {
+    font-size: 45px;
+  }
+
+  .story-image img {
+    max-height: 350px;
+  }
+}
+
+/* HEADER TENTANG KAMI - SAMA DENGAN BERANDA */
+
+header {
+  width: 100%;
+  z-index: 1000;
+}
+
+/* Ukuran navbar mengikuti Beranda */
+.navbar {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Logo */
+.navbar .logo img {
+  width: 150px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Menu */
+.navbar .menu {
+  display: flex;
+  align-items: center;
+}
+
+/* Instagram */
+.header-instagram img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+/* HEADER SAMA DENGAN BERANDA */
+
+header {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  background: #e8f0e7 !important;
+  transition: transform 0.3s ease-in-out;
+}
+
+header.header-hidden {
+  transform: translateY(-110%) !important;
+}
+
+.navbar {
+  width: 90% !important;
+  margin: auto !important;
+  padding: 15px 0 !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+.logo img {
+  width: 110px !important;
+  height: auto !important;
+  object-fit: contain;
+}
+
+.menu {
+  list-style: none !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 30px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.menu li {
+  font-size: 14px !important;
+}
+
+.menu a {
+  color: #243e2b !important;
+  text-decoration: none !important;
+  font-family: "Poppins", sans-serif !important;
+  transition: color 0.3s ease;
+}
+
+.menu a:hover {
+  color: #438e42 !important;
+}
+
+.header-instagram {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+}
+
+.header-instagram img {
+  width: 24px !important;
+  height: 24px !important;
+  object-fit: contain;
+}
