@@ -1,0 +1,793 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Produk - Daun Cincau ID</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="produk.css">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header>
+    <nav class="navbar">
+
+      <div class="logo">
+        <img src="picture/logodauncincauid.png" alt="Daun Cincau ID">
+      </div>
+
+      <ul class="menu">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="produk.html" class="active">Produk</a></li>
+        <li><a href="tentang.html">Tentang Kami</a></li>
+        <li><a href="produksi.html">Proses Produksi</a></li>
+        <li><a href="edukasi.html">Edukasi</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+      </ul>
+
+      <button class="product-cart-trigger" id="openCart" aria-label="Buka keranjang">
+        <span class="cart-icon">🛒</span>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+
+    </nav>
+  </header>
+
+
+  <!-- HERO PRODUK -->
+  <section class="product-hero">
+
+    <div class="product-hero-content">
+
+      <span class="product-eyebrow">PRODUK KAMI</span>
+
+      <h1>
+        Temukan Kesegaran<br>
+        Alami Daun Cincau ID
+      </h1>
+
+      <p>
+        Dari cincau alami hingga minuman siap nikmat.
+        Pilih produk favoritmu dan nikmati kebaikan
+        daun cincau dalam setiap sajian.
+      </p>
+
+      <a href="#katalog" class="product-hero-button">
+        Jelajahi Produk
+        <span>→</span>
+      </a>
+
+    </div>
+
+    <div class="product-hero-image">
+      <img src="picture/produkcincau1.png" alt="Produk Cincau Daun Cincau ID">
+      <div class="hero-decoration"></div>
+    </div>
+
+    <div class="product-hero-leaf leaf-one">✦</div>
+    <div class="product-hero-leaf leaf-two">✦</div>
+
+  </section>
+
+
+  <!-- KATALOG PRODUK -->
+  <section class="product-catalog" id="katalog">
+
+    <div class="product-section-heading">
+
+      <div>
+        <span class="section-eyebrow">PILIHAN PRODUK</span>
+        <h2>Katalog Produk</h2>
+        <p>
+          Kenali berbagai pilihan produk Daun Cincau ID
+          untuk kebutuhan sehari-hari maupun usaha.
+        </p>
+      </div>
+
+      <div class="catalog-search">
+        <span>⌕</span>
+        <input
+          type="text"
+          id="productSearch"
+          placeholder="Cari produk..."
+        >
+      </div>
+
+    </div>
+
+
+    <!-- FILTER KATEGORI -->
+    <div class="product-filter">
+
+      <button class="filter-btn active" data-filter="semua">
+        Semua Produk
+      </button>
+
+      <button class="filter-btn" data-filter="murni">
+        Cincau Murni
+      </button>
+
+      <button class="filter-btn" data-filter="minuman">
+        Siap Minum
+      </button>
+
+      <button class="filter-btn" data-filter="pelengkap">
+        Produk Pelengkap
+      </button>
+
+    </div>
+
+
+    <!-- PRODUK -->
+    <div class="product-grid" id="productGrid">
+
+      <!-- CINCAU MURNI -->
+      <article class="catalog-card" data-category="murni">
+
+        <div class="catalog-image">
+          <img src="picture/produkcincau1.png" alt="Cincau Murni">
+          <span class="catalog-tag">Produk Alami</span>
+        </div>
+
+        <div class="catalog-content">
+
+          <span class="catalog-category">CINCAU MURNI</span>
+
+          <h3>Cincau Murni</h3>
+
+          <p>
+            Cincau hijau dengan tekstur lembut dan
+            rasa alami yang menyegarkan.
+          </p>
+
+          <div class="catalog-footer">
+            <span>Berbagai ukuran tersedia</span>
+
+            <button class="detail-btn"
+              data-name="Cincau Murni"
+              data-description="Cincau hijau alami dengan tekstur lembut dan rasa khas yang menyegarkan. Tersedia dalam beberapa pilihan ukuran.">
+              Lihat Detail →
+            </button>
+          </div>
+
+        </div>
+      </article>
+
+
+      <!-- CINCAU ORIGINAL -->
+      <article class="catalog-card" data-category="minuman">
+
+        <div class="catalog-image">
+          <img src="picture/SiapMinumOriginal.png" alt="Cincau Original">
+          <span class="catalog-tag">Siap Minum</span>
+        </div>
+
+        <div class="catalog-content">
+
+          <span class="catalog-category">MINUMAN CINCAU</span>
+
+          <h3>Cincau Original</h3>
+
+          <p>
+            Perpaduan cincau dan minuman creamy
+            dengan cita rasa original.
+          </p>
+
+          <div class="catalog-footer">
+            <span>Minuman siap dinikmati</span>
+
+            <button class="detail-btn"
+              data-name="Cincau Original"
+              data-description="Minuman cincau siap minum dengan cita rasa original yang lembut dan menyegarkan.">
+              Lihat Detail →
+            </button>
+          </div>
+
+        </div>
+      </article>
+
+
+      <!-- CINCAU COKELAT -->
+      <article class="catalog-card" data-category="minuman">
+
+        <div class="catalog-image">
+          <img src="picture/SiapMinumCoklat.png" alt="Cincau Cokelat">
+          <span class="catalog-tag">Siap Minum</span>
+        </div>
+
+        <div class="catalog-content">
+
+          <span class="catalog-category">MINUMAN CINCAU</span>
+
+          <h3>Cincau Cokelat</h3>
+
+          <p>
+            Sensasi cincau dengan perpaduan
+            rasa cokelat yang nikmat.
+          </p>
+
+          <div class="catalog-footer">
+            <span>Minuman siap dinikmati</span>
+
+            <button class="detail-btn"
+              data-name="Cincau Cokelat"
+              data-description="Minuman cincau dengan perpaduan rasa cokelat yang nikmat untuk menemani aktivitasmu.">
+              Lihat Detail →
+            </button>
+          </div>
+
+        </div>
+      </article>
+
+
+      <!-- CINCAU FRAMBOZEN -->
+      <article class="catalog-card" data-category="minuman">
+
+        <div class="catalog-image">
+          <img src="picture/SiapMinumFrambozen.png" alt="Cincau Frambozen">
+          <span class="catalog-tag">Siap Minum</span>
+        </div>
+
+        <div class="catalog-content">
+
+          <span class="catalog-category">MINUMAN CINCAU</span>
+
+          <h3>Cincau Frambozen</h3>
+
+          <p>
+            Minuman cincau dengan sentuhan
+            rasa frambozen yang menyegarkan.
+          </p>
+
+          <div class="catalog-footer">
+            <span>Minuman siap dinikmati</span>
+
+            <button class="detail-btn"
+              data-name="Cincau Frambozen"
+              data-description="Minuman cincau dengan perpaduan rasa frambozen yang memberikan sensasi segar.">
+              Lihat Detail →
+            </button>
+          </div>
+
+        </div>
+      </article>
+
+
+      <!-- KRIMER -->
+      <article class="catalog-card" data-category="pelengkap">
+
+        <div class="catalog-image">
+          <img src="picture/Krimer.png" alt="Krimer">
+          <span class="catalog-tag">Pelengkap</span>
+        </div>
+
+        <div class="catalog-content">
+
+          <span class="catalog-category">PRODUK PELENGKAP</span>
+
+          <h3>Krimer</h3>
+
+          <p>
+            Pelengkap sajian untuk memberikan
+            sensasi creamy pada minuman cincau.
+          </p>
+
+          <div class="catalog-footer">
+            <span>Pelengkap sajian</span>
+
+            <button class="detail-btn"
+              data-name="Krimer"
+              data-description="Krimer sebagai pelengkap sajian cincau dan minuman favoritmu.">
+              Lihat Detail →
+            </button>
+          </div>
+
+        </div>
+      </article>
+
+
+      <!-- GULA JAWA -->
+      <article class="catalog-card" data-category="pelengkap">
+
+        <div class="catalog-image">
+          <img src="picture/GulaJawaCair.png" alt="Gula Jawa Cair">
+          <span class="catalog-tag">Pelengkap</span>
+        </div>
+
+        <div class="catalog-content">
+
+          <span class="catalog-category">PRODUK PELENGKAP</span>
+
+          <h3>Gula Jawa Cair</h3>
+
+          <p>
+            Tambahan pemanis dengan cita rasa
+            khas gula jawa.
+          </p>
+
+          <div class="catalog-footer">
+            <span>Pelengkap sajian</span>
+
+            <button class="detail-btn"
+              data-name="Gula Jawa Cair"
+              data-description="Gula jawa cair sebagai pelengkap sajian cincau dengan cita rasa manis khas gula jawa.">
+              Lihat Detail →
+            </button>
+          </div>
+
+        </div>
+      </article>
+
+
+      <!-- KUAH ORIGINAL -->
+      <article class="catalog-card" data-category="pelengkap">
+
+        <div class="catalog-image">
+          <img src="picture/KuahOriginal.png" alt="Kuah Original">
+          <span class="catalog-tag">Pelengkap</span>
+        </div>
+
+        <div class="catalog-content">
+
+          <span class="catalog-category">PRODUK PELENGKAP</span>
+
+          <h3>Kuah Original</h3>
+
+          <p>
+            Pilihan kuah untuk melengkapi
+            sajian cincau favoritmu.
+          </p>
+
+          <div class="catalog-footer">
+            <span>Pelengkap sajian</span>
+
+            <button class="detail-btn"
+              data-name="Kuah Original"
+              data-description="Kuah original untuk melengkapi sajian cincau.">
+              Lihat Detail →
+            </button>
+          </div>
+
+        </div>
+      </article>
+
+
+      <!-- KUAH COKELAT -->
+      <article class="catalog-card" data-category="pelengkap">
+
+        <div class="catalog-image">
+          <img src="picture/KuahCoklat.png" alt="Kuah Cokelat">
+          <span class="catalog-tag">Pelengkap</span>
+        </div>
+
+        <div class="catalog-content">
+
+          <span class="catalog-category">PRODUK PELENGKAP</span>
+
+          <h3>Kuah Cokelat</h3>
+
+          <p>
+            Kuah bercita rasa cokelat sebagai
+            pelengkap sajian cincau.
+          </p>
+
+          <div class="catalog-footer">
+            <span>Pelengkap sajian</span>
+
+            <button class="detail-btn"
+              data-name="Kuah Cokelat"
+              data-description="Kuah cokelat sebagai variasi pelengkap sajian cincau.">
+              Lihat Detail →
+            </button>
+          </div>
+
+        </div>
+      </article>
+
+
+      <!-- KUAH FRAMBOZEN -->
+      <article class="catalog-card" data-category="pelengkap">
+
+        <div class="catalog-image">
+          <img src="picture/KuahFrambozen.png" alt="Kuah Frambozen">
+          <span class="catalog-tag">Pelengkap</span>
+        </div>
+
+        <div class="catalog-content">
+
+          <span class="catalog-category">PRODUK PELENGKAP</span>
+
+          <h3>Kuah Frambozen</h3>
+
+          <p>
+            Kuah dengan sentuhan rasa frambozen
+            untuk variasi sajian cincau.
+          </p>
+
+          <div class="catalog-footer">
+            <span>Pelengkap sajian</span>
+
+            <button class="detail-btn"
+              data-name="Kuah Frambozen"
+              data-description="Kuah frambozen sebagai pilihan pelengkap sajian cincau.">
+              Lihat Detail →
+            </button>
+          </div>
+
+        </div>
+      </article>
+
+    </div>
+
+    <p class="no-product" id="noProduct">
+      Produk tidak ditemukan.
+    </p>
+
+  </section>
+
+
+  <!-- PAKET BUNDLING -->
+  <section class="bundling-section" id="bundling">
+
+    <div class="bundling-heading">
+
+      <div>
+        <span class="section-eyebrow">PAKET PILIHAN</span>
+        <h2>Paket Pemesanan</h2>
+        <p>
+          Nikmati pilihan paket praktis untuk menemani
+          momen bersama keluarga dan orang terdekat.
+        </p>
+      </div>
+
+      <div class="bundling-leaf">✦</div>
+
+    </div>
+
+
+    <div class="bundling-layout">
+
+      <div class="bundling-products">
+
+        <!-- PAKET HEMAT -->
+        <article class="bundle-card">
+
+          <div class="bundle-image">
+
+            <span class="bundle-badge">★ BEST SELLER</span>
+
+            <img src="picture/produkcincau1.png" alt="Paket Hemat">
+
+          </div>
+
+          <div class="bundle-content">
+
+            <span class="bundle-category">PAKET BUNDLING</span>
+
+            <h3>Paket Hemat</h3>
+
+            <p>
+              Pilihan praktis untuk menikmati
+              berbagai produk favorit Daun Cincau ID.
+            </p>
+
+            <div class="bundle-includes">
+
+              <strong>Isi Paket:</strong>
+
+              <ul>
+                <li>1 Cincau Murni</li>
+                <li>2 Cincau Siap Minum (varian bebas)</li>
+                <li>1 Gula Jawa Cair kecil</li>
+              </ul>
+
+            </div>
+
+            <div class="bundle-purchase">
+
+              <div>
+                <span>Harga Paket</span>
+                <h4>Rp75.000</h4>
+              </div>
+
+              <button class="add-cart-btn"
+                data-id="hemat"
+                data-name="Paket Hemat"
+                data-price="75000">
+                🛒 Tambah
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- PAKET KELUARGA -->
+        <article class="bundle-card">
+
+          <div class="bundle-image family-image">
+
+            <span class="bundle-badge family-badge">PAKET FAVORIT</span>
+
+            <img src="picture/SiapMinumOriginal.png" alt="Paket Keluarga">
+
+            <img src="picture/SiapMinumCoklat.png" alt="Paket Keluarga">
+
+            <img src="picture/SiapMinumFrambozen.png" alt="Paket Keluarga">
+
+          </div>
+
+          <div class="bundle-content">
+
+            <span class="bundle-category">PAKET BUNDLING</span>
+
+            <h3>Paket Keluarga</h3>
+
+            <p>
+              Paket lengkap untuk dinikmati bersama
+              keluarga dengan pilihan produk lebih beragam.
+            </p>
+
+            <div class="bundle-includes">
+
+              <strong>Isi Paket:</strong>
+
+              <ul>
+                <li>1 Cincau Murni 1 L</li>
+                <li>3 Cincau Siap Minum (varian bebas)</li>
+                <li>1 Krimer</li>
+                <li>1 Gula Jawa Cair besar</li>
+              </ul>
+
+            </div>
+
+            <div class="bundle-purchase">
+
+              <div>
+                <span>Harga Paket</span>
+                <h4>Rp135.000</h4>
+              </div>
+
+              <button class="add-cart-btn"
+                data-id="keluarga"
+                data-name="Paket Keluarga"
+                data-price="135000">
+                🛒 Tambah
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+      </div>
+
+
+      <!-- ALUR PEMBELIAN -->
+      <aside class="purchase-flow">
+
+        <div class="flow-title">
+          <span>🛒</span>
+
+          <div>
+            <h3>Alur Pembelian</h3>
+            <p>Mudah, aman, dan praktis.</p>
+          </div>
+        </div>
+
+        <div class="flow-step">
+
+          <div class="step-number">01</div>
+
+          <div class="step-icon">▣</div>
+
+          <div>
+            <h4>Pilih Paket</h4>
+            <p>Pilih paket sesuai kebutuhanmu.</p>
+          </div>
+
+        </div>
+
+        <div class="flow-step">
+
+          <div class="step-number">02</div>
+
+          <div class="step-icon">🛒</div>
+
+          <div>
+            <h4>Masuk Keranjang</h4>
+            <p>Tambahkan paket ke keranjang belanja.</p>
+          </div>
+
+        </div>
+
+        <div class="flow-step">
+
+          <div class="step-number">03</div>
+
+          <div class="step-icon">▤</div>
+
+          <div>
+            <h4>Checkout</h4>
+            <p>Periksa pesanan sebelum melanjutkan.</p>
+          </div>
+
+        </div>
+
+      </aside>
+
+    </div>
+
+  </section>
+
+
+  <!-- MODAL DETAIL PRODUK -->
+  <div class="product-modal" id="productModal">
+
+    <div class="modal-content">
+
+      <button class="modal-close" id="closeModal">×</button>
+
+      <span class="section-eyebrow">DAUN CINCAU ID</span>
+
+      <h2 id="modalProductName">Nama Produk</h2>
+
+      <p id="modalProductDescription"></p>
+
+      <button class="modal-ok" id="modalOk">
+        Mengerti
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- KERANJANG BELANJA -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+
+  <aside class="cart-drawer" id="cartDrawer">
+
+    <div class="cart-header">
+
+      <div>
+        <span class="section-eyebrow">DAUN CINCAU ID</span>
+        <h2>Keranjang Belanja</h2>
+      </div>
+
+      <button id="closeCart" class="close-cart">×</button>
+
+    </div>
+
+    <div class="cart-items" id="cartItems">
+
+      <div class="empty-cart">
+        <span>🛒</span>
+        <h3>Keranjang masih kosong</h3>
+        <p>Yuk, pilih paket favoritmu!</p>
+      </div>
+
+    </div>
+
+    <div class="cart-summary">
+
+      <div class="cart-total">
+        <span>Subtotal</span>
+        <strong id="cartSubtotal">Rp0</strong>
+      </div>
+
+      <p class="cart-note">
+        Biaya pengiriman dan konfirmasi pesanan
+        akan diinformasikan pada tahap berikutnya.
+      </p>
+
+      <button class="checkout-btn" id="checkoutBtn" disabled>
+        Lanjutkan Checkout →
+      </button>
+
+    </div>
+
+  </aside>
+
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+
+    <div class="footer-brand">
+
+      <img
+        src="picture/logodauncincauid.png"
+        alt="Logo Daun Cincau ID"
+        class="footer-logo"
+      >
+
+      <p class="footer-description">
+        Daun Cincau ID menghadirkan kesegaran cincau
+        hijau untuk menemani keseharianmu sejak tahun 2021.
+      </p>
+
+    </div>
+
+    <div class="footer-column">
+
+      <h3>Daun Cincau ID</h3>
+
+      <p><strong>Lokasi Usaha</strong></p>
+
+      <p>
+        Jalan Babarsari No. 18,<br>
+        Caturtunggal, Depok,<br>
+        Sleman, Yogyakarta.
+      </p>
+
+      <br>
+
+      <p><strong>Jam Operasional</strong></p>
+      <p>Senin–Minggu: 07.30–21.00 WIB</p>
+
+    </div>
+
+    <div class="footer-column">
+
+      <h3>Menu Utama</h3>
+
+      <a href="index.html">Beranda</a>
+      <a href="tentang.html">Tentang Kami</a>
+      <a href="produk.html">Produk</a>
+      <a href="produksi.html">Proses Produksi</a>
+      <a href="edukasi.html">Edukasi</a>
+      <a href="kontak.html">Kontak</a>
+
+    </div>
+
+    <div class="footer-column">
+
+      <h3>Pemesanan Online</h3>
+
+      <a href="https://take.app/id/dauncincauid" target="_blank">
+        Official Webstore
+      </a>
+
+      <a href="https://shopee.co.id/" target="_blank">
+        Shopee
+      </a>
+
+      <a href="https://www.tokopedia.com/" target="_blank">
+        Tokopedia
+      </a>
+
+      <a href="https://www.instagram.com/dauncincauid/" target="_blank">
+        Instagram
+      </a>
+
+    </div>
+
+  </footer>
+
+  <div class="footer-bottom">
+    <p>Daun Cincau ID © 2026. All Rights Reserved.</p>
+
+    <div class="footer-socials">
+      <a href="https://www.instagram.com/dauncincauid/" target="_blank">Instagram</a>
+      <a href="https://wa.me/6281336544622" target="_blank">WhatsApp</a>
+    </div>
+  </div>
+
+
+  <script src="produk.js"></script>
+
+</body>
+</html>
