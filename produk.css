@@ -358,687 +358,356 @@ body {
 }
 
 
-/* =========================================
-   PAKET BUNDLING
-========================================= */
+
+/* ==========================================
+   REVISI PAKET BUNDLING - 3 PAKET
+========================================== */
+
+/* SECTION BUNDLING */
 
 .bundling-section {
   padding: 75px 7%;
-  background: linear-gradient(120deg, #f6f5ec, #edf2e7);
+  background: linear-gradient(
+    120deg,
+    #f6f5ec,
+    #edf2e7
+  );
 }
+
+/* JUDUL SECTION */
 
 .bundling-heading {
   margin-bottom: 35px;
 }
 
-.bundling-leaf {
-  font-size: 45px;
-  color: #a4b88e;
+/* HILANGKAN ALUR PEMBELIAN */
+
+.purchase-flow {
+  display: none;
 }
 
+/* LAYOUT UTAMA */
+
 .bundling-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 2.5fr) minmax(250px, .9fr);
-  gap: 25px;
-  align-items: stretch;
+  display: block;
+  width: 100%;
 }
+
+/* GRID TIGA PAKET */
 
 .bundling-products {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  align-items: stretch;
+  width: 100%;
 }
 
-.bundle-card {
-  overflow: hidden;
-  background: white;
-  border: 1px solid #e7e9df;
-  border-radius: 15px;
-  box-shadow: 0 6px 20px rgba(40, 65, 43, .06);
+/* CARD PAKET */
+
+.bundling-section .bundle-card {
+  min-width: 0;
   height: 100%;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+
+  background: #ffffff;
+  border: 1px solid #e7e9df;
+  border-radius: 18px;
+
+  box-shadow: 0 6px 22px rgba(40, 65, 43, 0.07);
+  transition: transform 0.3s ease,
+              box-shadow 0.3s ease;
 }
 
-.bundle-image {
-  height: 230px;
-  background: #edf1e9;
-  position: relative;
+.bundling-section .bundle-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(40, 65, 43, 0.12);
+}
+
+/* AREA GAMBAR */
+
+.bundling-section .bundle-image {
+  width: 100%;
+  height: 220px;
+  flex-shrink: 0;
+
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 5px;
+
+  padding: 18px 12px;
+  box-sizing: border-box;
+
+  background: #edf1e9;
+  position: relative;
   overflow: hidden;
 }
 
-.bundle-image > img {
-  width: 100%;
+/* GAMBAR PAKET */
+
+.bundling-section .bundle-image > img {
   height: 100%;
+  min-width: 0;
   object-fit: contain;
-  padding: 10px;
-}
-
-.bundle-badge {
-  position: absolute;
-  z-index: 3;
-  top: 14px;
-  left: 14px;
-  background: #567f3f;
-  color: white;
-  border-radius: 20px;
-  padding: 7px 13px;
-  font-size: 10px;
-  font-weight: 600;
-}
-
-.family-badge {
-  background: #879d6a;
-}
-
-.family-image {
-  gap: 0;
-}
-
-.family-image > img {
-  width: 33.33%;
-  padding: 5px;
-}
-
-.bundle-content {
-  padding: 22px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.bundle-content h3 {
-  font-family: "Poppins", sans-serif;
-  font-size: 21px;
-  font-weight: 600;
-  color: var(--dark-green);
-  margin: 6px 0;
-}
-
-.bundle-content > p {
-  color: #81877d;
-  font-size: 11px;
-  line-height: 1.8;
-  min-height: 55px;
-}
-
-.bundle-includes {
-  margin-top: 17px;
-  padding: 15px;
-  border-radius: 10px;
-  background: #f1f5eb;
-  color: #52644e;
-  font-size: 11px;
-  min-height: 183px;
+  padding: 4px;
   box-sizing: border-box;
 }
 
-.bundle-includes strong {
-  font-size: 11px;
+/* PAKET DENGAN 3 GAMBAR */
+
+.bundling-section .bundle-image--three > img {
+  width: 33.333%;
 }
 
-.bundle-includes ul {
-  padding-left: 17px;
-  margin-top: 8px;
-  line-height: 2;
+/* PAKET DENGAN 2 GAMBAR */
+
+.bundling-section .bundle-image--two > img {
+  width: 50%;
 }
 
-.bundle-purchase {
+/* BADGE */
+
+.bundling-section .bundle-badge {
+  position: absolute;
+  z-index: 5;
+  top: 13px;
+  left: 13px;
+
+  background: #567f3f;
+  color: white;
+
+  border-radius: 20px;
+  padding: 7px 12px;
+
+  font-size: 10px;
+  font-weight: 600;
+}
+
+/* ISI CARD */
+
+.bundling-section .bundle-content {
+  width: 100%;
+  flex: 1;
+
   display: flex;
+  flex-direction: column;
+
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+/* KATEGORI PAKET */
+
+.bundling-section .bundle-category {
+  display: block;
+  margin-bottom: 8px;
+
+  color: #829477;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+/* JUDUL PAKET */
+
+.bundling-section .bundle-content h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.4;
+
+  color: var(--dark-green);
+  margin: 5px 0 10px;
+}
+
+/* DESKRIPSI */
+
+.bundling-section .bundle-content > p {
+  color: #81877d;
+  font-size: 12px;
+  line-height: 1.8;
+
+  min-height: 65px;
+  margin-bottom: 18px;
+}
+
+/* KOTAK ISI PAKET */
+
+.bundling-section .bundle-includes {
+  width: 100%;
+  min-height: 165px;
+
+  padding: 17px 18px;
+  margin: 0 0 20px;
+
+  box-sizing: border-box;
+  border-radius: 13px;
+
+  background: #f1f5eb;
+  color: #52644e;
+
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+/* JUDUL ISI PAKET */
+
+.bundling-section .bundle-includes strong {
+  display: block;
+  margin-bottom: 9px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* DAFTAR ISI PAKET */
+
+.bundling-section .bundle-includes ul {
+  padding-left: 18px;
+  margin: 0;
+}
+
+.bundling-section .bundle-includes li {
+  margin-bottom: 5px;
+}
+
+/* BAGIAN HARGA DAN TOMBOL */
+
+.bundling-section .bundle-purchase {
+  width: 100%;
+  display: flex;
+
   justify-content: space-between;
   align-items: center;
+
   gap: 10px;
   margin-top: auto;
-  min-height: 75px;
-  padding-top: 15px;
+  padding-top: 12px;
 }
 
-.bundle-purchase > div span {
+/* LABEL HARGA */
+
+.bundling-section .bundle-purchase > div > span {
   display: block;
-  font-size: 10px;
+  margin-bottom: 5px;
+
+  font-size: 11px;
   color: #92988e;
-  margin-bottom: 4px;
 }
 
-.bundle-purchase h4 {
+/* NOMINAL HARGA */
+
+.bundling-section .bundle-purchase h4 {
   font-family: "Poppins", sans-serif;
-  font-size: 23px;
+  font-size: 21px;
   font-weight: 700;
+
   color: var(--dark-green);
+  white-space: nowrap;
 }
 
-.add-cart-btn {
+/* TOMBOL TAMBAH */
+
+.bundling-section .add-cart-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 7px;
+
+  flex-shrink: 0;
+
   background: var(--green);
+  color: #ffffff;
+
+  padding: 13px 17px;
+  min-height: 46px;
+
   border-radius: 30px;
-  padding: 14px 22px;
-  min-height: 48px;
+
   font-family: "Poppins", sans-serif;
-  font-size: 13px;
+  font-size: 12px;
+  font-weight: 600;
+
   white-space: nowrap;
   transition: all 0.3s ease;
 }
 
-.add-cart-btn:hover {
+.bundling-section .add-cart-btn:hover {
   background: #244d2d;
   transform: translateY(-2px);
   box-shadow: 0 5px 12px rgba(40, 65, 43, 0.15);
 }
 
-.add-cart-btn i,
-.add-cart-btn svg,
-.add-cart-btn img {
-  width: 17px;
-  height: 17px;
-  font-size: 17px;
-}
+/* ==========================================
+   RESPONSIVE TABLET
+========================================== */
 
+@media (max-width: 1100px) {
 
-/* =========================================
-   ALUR PEMBELIAN
-========================================= */
-
-.purchase-flow {
-  background: #e8efdf;
-  border-radius: 16px;
-  padding: 25px 20px;
-  height: fit-content;
-}
-
-.flow-title {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-  margin-bottom: 25px;
-}
-
-.flow-title > span {
-  font-size: 30px;
-  color: var(--green);
-}
-
-.flow-title h3 {
-  font-family: "Playfair Display", serif;
-  font-size: 21px;
-  color: var(--dark-green);
-}
-
-.flow-title p {
-  font-size: 10px;
-  color: #7c8877;
-  margin-top: 4px;
-}
-
-.flow-step {
-  display: flex;
-  align-items: flex-start;
-  gap: 11px;
-  background: rgba(255,255,255,.75);
-  border-radius: 12px;
-  padding: 15px 10px;
-  margin-bottom: 12px;
-}
-
-.step-number {
-  display: flex;
-  flex-shrink: 0;
-  justify-content: center;
-  align-items: center;
-  width: 28px;
-  height: 28px;
-  background: #557b40;
-  color: white;
-  border-radius: 50%;
-  font-size: 10px;
-  font-weight: 600;
-}
-
-.step-icon {
-  width: 30px;
-  height: 30px;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #edf3e6;
-  color: var(--green);
-  border-radius: 50%;
-  font-size: 15px;
-}
-
-.flow-step h4 {
-  color: var(--dark-green);
-  font-family: "Playfair Display", serif;
-  font-size: 13px;
-  margin-bottom: 4px;
-}
-
-.flow-step p {
-  color: #81887d;
-  font-size: 10px;
-  line-height: 1.6;
-}
-
-
-/* =========================================
-   MODAL DETAIL
-========================================= */
-
-.product-modal {
-  position: fixed;
-  inset: 0;
-  z-index: 2000;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  background: rgba(22, 39, 26, .55);
-  backdrop-filter: blur(4px);
-}
-
-.product-modal.show {
-  display: flex;
-}
-
-.modal-content {
-  position: relative;
-  width: 100%;
-  max-width: 420px;
-  padding: 40px;
-  background: white;
-  border-radius: 18px;
-  box-shadow: 0 20px 60px rgba(0,0,0,.15);
-}
-
-.modal-content h2 {
-  font-family: "Playfair Display", serif;
-  color: var(--dark-green);
-  font-size: 28px;
-  margin-bottom: 15px;
-}
-
-.modal-content p {
-  color: #777f73;
-  font-size: 13px;
-  line-height: 1.9;
-}
-
-.modal-close {
-  position: absolute;
-  top: 12px;
-  right: 15px;
-  background: transparent;
-  color: #61705e;
-  font-size: 27px;
-  padding: 3px 10px;
-}
-
-.modal-close:hover {
-  background: transparent;
-  transform: none;
-}
-
-.modal-ok {
-  margin-top: 25px;
-  background: var(--green);
-  font-family: "Poppins", sans-serif;
-  font-size: 12px;
-  padding: 11px 25px;
-}
-
-
-/* =========================================
-   CART DRAWER
-========================================= */
-
-.product-cart-trigger {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  padding: 9px 13px;
-  background: #edf3e7;
-  color: var(--dark-green);
-  border-radius: 25px;
-  font-size: 16px;
-}
-
-.product-cart-trigger:hover {
-  background: #dce9d4;
-  transform: none;
-}
-
-.cart-count {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 19px;
-  height: 19px;
-  padding: 0 5px;
-  border-radius: 50%;
-  background: var(--green);
-  color: white;
-  font-size: 10px;
-}
-
-.cart-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 1998;
-  background: rgba(24, 37, 25, .4);
-  opacity: 0;
-  visibility: hidden;
-  transition: .3s;
-}
-
-.cart-overlay.show {
-  opacity: 1;
-  visibility: visible;
-}
-
-.cart-drawer {
-  position: fixed;
-  top: 0;
-  right: 0;
-  z-index: 1999;
-  width: 420px;
-  max-width: 100%;
-  height: 100vh;
-  padding: 28px;
-  background: #fff;
-  display: flex;
-  flex-direction: column;
-  transform: translateX(100%);
-  transition: .35s ease;
-  box-shadow: -10px 0 40px rgba(0,0,0,.1);
-}
-
-.cart-drawer.show {
-  transform: translateX(0);
-}
-
-.cart-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #edf0e9;
-}
-
-.cart-header h2 {
-  font-family: "Playfair Display", serif;
-  color: var(--dark-green);
-  font-size: 23px;
-}
-
-.close-cart {
-  background: transparent;
-  color: #63715f;
-  font-size: 28px;
-  padding: 4px 10px;
-}
-
-.close-cart:hover {
-  background: transparent;
-  transform: none;
-}
-
-.cart-items {
-  flex: 1;
-  overflow-y: auto;
-  padding: 20px 0;
-}
-
-.empty-cart {
-  padding: 65px 10px;
-  text-align: center;
-}
-
-.empty-cart span {
-  font-size: 42px;
-}
-
-.empty-cart h3 {
-  font-family: "Playfair Display", serif;
-  color: var(--dark-green);
-  margin: 15px 0 7px;
-}
-
-.empty-cart p {
-  color: #8b9288;
-  font-size: 12px;
-}
-
-.cart-item {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 15px 0;
-  border-bottom: 1px solid #edf0e9;
-}
-
-.cart-item h4 {
-  color: var(--dark-green);
-  font-size: 13px;
-}
-
-.cart-item .item-price {
-  font-size: 11px;
-  color: #81887d;
-  margin-top: 5px;
-}
-
-.quantity-control {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 12px;
-}
-
-.quantity-control button {
-  width: 25px;
-  height: 25px;
-  padding: 0;
-  background: #edf3e7;
-  color: var(--green);
-  border-radius: 50%;
-  font-size: 14px;
-}
-
-.quantity-control button:hover {
-  background: #dce9d4;
-  color: var(--green);
-  transform: none;
-}
-
-.quantity-control span {
-  font-size: 12px;
-  font-weight: 600;
-}
-
-.remove-item {
-  align-self: flex-start;
-  background: transparent;
-  color: #b36a5e;
-  padding: 3px;
-  font-size: 11px;
-}
-
-.remove-item:hover {
-  background: transparent;
-  color: #8c3025;
-  transform: none;
-}
-
-.cart-summary {
-  border-top: 1px solid #e9ede5;
-  padding-top: 20px;
-}
-
-.cart-total {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.cart-total span {
-  color: #777f73;
-  font-size: 13px;
-}
-
-.cart-total strong {
-  color: var(--dark-green);
-  font-family: "Playfair Display", serif;
-  font-size: 23px;
-}
-
-.cart-note {
-  color: #969c91;
-  font-size: 10px;
-  line-height: 1.7;
-  margin: 12px 0 18px;
-}
-
-.checkout-btn {
-  width: 100%;
-  border-radius: 30px;
-  background: var(--green);
-  padding: 14px;
-  font-family: "Poppins", sans-serif;
-  font-size: 12px;
-}
-
-.checkout-btn:disabled {
-  background: #c5cec0;
-  cursor: not-allowed;
-  transform: none;
-}
-
-
-/* =========================================
-   RESPONSIVE
-========================================= */
-
-@media (max-width: 1000px) {
-
-  .product-grid {
+  .bundling-products {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .bundling-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .purchase-flow {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-  }
-
-  .flow-title {
-    grid-column: 1 / -1;
+    gap: 20px;
   }
 
 }
+
+/* ==========================================
+   RESPONSIVE MOBILE
+========================================== */
 
 @media (max-width: 700px) {
 
-  .product-hero {
-    padding: 120px 7% 40px;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .product-hero-content {
-    width: 100%;
-  }
-
-  .product-hero-image {
-    width: 100%;
-    height: 230px;
-    margin-top: 15px;
-  }
-
-  .product-section-heading,
-  .bundling-heading {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .catalog-search {
-    width: 100%;
-  }
-
-  .product-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .bundling-products {
-    grid-template-columns: 1fr;
-  }
-
-  .purchase-flow {
-    display: block;
-  }
-
-  .product-catalog,
   .bundling-section {
     padding: 50px 6%;
   }
 
-  .product-section-heading h2,
-  .bundling-heading h2 {
-    font-size: 29px;
+  .bundling-products {
+    grid-template-columns: 1fr;
+    gap: 22px;
   }
 
-  .catalog-image {
-    height: 250px;
+  .bundling-section .bundle-image {
+    height: 240px;
   }
 
-  .bundle-image {
-    height: 220px;
-  }
-
-  .product-cart-trigger {
-    padding: 7px 9px;
-  }
-
-}
-
-@media (max-width: 480px) {
-
-  .product-hero h1 {
-    font-size: 35px;
-  }
-
-  .product-filter {
-    gap: 7px;
-  }
-
-  .product-filter .filter-btn {
-    padding: 8px 12px;
-    font-size: 10px;
-  }
-
-  .bundle-purchase {
-    flex-wrap: wrap;
-  }
-
-  .modal-content {
-    padding: 30px 25px;
-  }
-
-  .cart-drawer {
+  .bundling-section .bundle-content {
     padding: 22px;
   }
 
+  .bundling-section .bundle-content h3 {
+    font-size: 20px;
+  }
+
+  .bundling-section .bundle-includes {
+    min-height: auto;
+  }
+
+  .bundling-section .bundle-content > p {
+    min-height: auto;
+  }
+
 }
+
+/* ==========================================
+   RESPONSIVE MOBILE KECIL
+========================================== */
+
+@media (max-width: 380px) {
+
+  .bundling-section .bundle-purchase {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 13px;
+  }
+
+  .bundling-section .add-cart-btn {
+    width: 100%;
+  }
+
+}
+
 
 .menu li a.active {
   color: #3d8b3d;
