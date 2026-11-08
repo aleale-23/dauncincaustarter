@@ -395,6 +395,9 @@ body {
   border: 1px solid #e7e9df;
   border-radius: 15px;
   box-shadow: 0 6px 20px rgba(40, 65, 43, .06);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .bundle-image {
@@ -442,6 +445,9 @@ body {
 
 .bundle-content {
   padding: 22px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .bundle-content h3 {
@@ -466,6 +472,8 @@ body {
   background: #f1f5eb;
   color: #52644e;
   font-size: 11px;
+  min-height: 183px;
+  box-sizing: border-box;
 }
 
 .bundle-includes strong {
@@ -483,7 +491,9 @@ body {
   justify-content: space-between;
   align-items: center;
   gap: 10px;
-  margin-top: 20px;
+  margin-top: auto;
+  min-height: 75px;
+  padding-top: 15px;
 }
 
 .bundle-purchase > div span {
