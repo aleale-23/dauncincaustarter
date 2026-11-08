@@ -511,17 +511,32 @@ body {
 }
 
 .add-cart-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   background: var(--green);
-  border-radius: 25px;
-  padding: 11px 15px;
+  border-radius: 30px;
+  padding: 14px 22px;
+  min-height: 48px;
   font-family: "Poppins", sans-serif;
-  font-size: 10px;
+  font-size: 13px;
   white-space: nowrap;
+  transition: all 0.3s ease;
 }
 
 .add-cart-btn:hover {
   background: #244d2d;
   transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(40, 65, 43, 0.15);
+}
+
+.add-cart-btn i,
+.add-cart-btn svg,
+.add-cart-btn img {
+  width: 17px;
+  height: 17px;
+  font-size: 17px;
 }
 
 
