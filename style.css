@@ -2464,3 +2464,122 @@ header .header-instagram img {
     padding: 18px 7% !important;
   }
 }
+
+/* =====================================
+   HEADER GLOBAL - DAUN CINCAU ID
+===================================== */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  z-index: 9999;
+  background-color: #e8f0e7;
+  transition: transform 0.3s ease;
+  box-sizing: border-box;
+}
+
+header.header-hidden {
+  transform: translateY(-100%);
+}
+
+header .navbar {
+  width: 90%;
+  height: 80px;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* LOGO */
+
+header .logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+header .logo img {
+  display: block;
+  width: 120px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* NAVIGASI */
+
+header .menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+header .menu li a {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #294633;
+  text-decoration: none;
+  position: relative;
+  white-space: nowrap;
+  transition: 0.3s ease;
+}
+
+header .menu li a:hover,
+header .menu li a.active {
+  color: #39894c;
+}
+
+header .menu li a.active {
+  font-weight: 600;
+}
+
+header .menu li a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -9px;
+  width: 100%;
+  height: 2px;
+  background: #39894c;
+}
+
+/* INSTAGRAM */
+
+header .header-instagram {
+  width: 24px;
+  flex-shrink: 0;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1150px) {
+  header .navbar {
+    width: 94%;
+  }
+
+  header .menu {
+    gap: 18px;
+  }
+}
+
+@media (max-width: 900px) {
+  header .menu {
+    display: none;
+  }
+}
