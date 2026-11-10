@@ -88,20 +88,6 @@ body {
   color: #667366;
 }
 
-.product-hero-button {
-  display: inline-flex;
-  gap: 20px;
-  align-items: center;
-  padding: 12px 24px;
-  border: 1px solid var(--green);
-  border-radius: 30px;
-  color: var(--green);
-  font-size: 13px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: .3s;
-}
-
 .product-hero-button:hover {
   background: var(--green);
   color: white;
