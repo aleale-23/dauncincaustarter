@@ -632,26 +632,86 @@
 
 
   <!-- MODAL DETAIL PRODUK -->
-  <div class="product-modal" id="productModal">
+<div class="product-modal" id="productModal" aria-hidden="true">
 
-    <div class="modal-content">
+  <div class="modal-content" role="dialog" aria-modal="true"
+       aria-labelledby="modalProductName">
 
-      <button class="modal-close" id="closeModal">×</button>
+    <!-- Tombol silang -->
+    <button class="modal-close" id="closeModal" type="button"
+            aria-label="Tutup">&times;</button>
 
-      <span class="section-eyebrow">DAUN CINCAU ID</span>
+    <!-- Gambar produk -->
+    <div class="modal-product-image">
+      <img
+        id="modalProductImage"
+        src="picture/Cincau420ml.png"
+        alt="Produk Daun Cincau ID"
+      >
+      <span class="modal-image-decoration"></span>
+    </div>
+
+    <!-- Informasi produk -->
+    <div class="modal-product-info">
+
+      <span class="modal-brand">DAUN CINCAU ID</span>
 
       <h2 id="modalProductName">Nama Produk</h2>
 
-      <p id="modalProductDescription"></p>
+      <span class="modal-product-badge" id="modalProductBadge">
+        Produk Daun Cincau
+      </span>
 
-      <button class="modal-ok" id="modalOk">
-        Mengerti
-      </button>
+      <p class="modal-description" id="modalProductDescription"></p>
+
+      <!-- Komposisi dan keunggulan -->
+      <div class="modal-detail-box">
+
+        <div class="modal-detail-row">
+          <span class="modal-detail-icon">✿</span>
+
+          <div>
+            <h3>Komposisi</h3>
+            <p id="modalProductComposition"></p>
+          </div>
+        </div>
+
+        <div class="modal-detail-row">
+          <span class="modal-detail-icon">☆</span>
+
+          <div>
+            <h3>Keunggulan</h3>
+            <ul id="modalProductAdvantages"></ul>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Tombol -->
+      <div class="modal-actions">
+
+        <button class="modal-close-secondary" id="modalOk" type="button">
+          Tutup
+        </button>
+
+        <a
+          class="modal-order-button"
+          id="modalOrderButton"
+          href="https://wa.me/6281336544622"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span>☏</span>
+          Pesan Sekarang
+        </a>
+
+      </div>
 
     </div>
 
   </div>
 
+</div>
 
   <!-- KERANJANG BELANJA -->
   <div class="cart-overlay" id="cartOverlay"></div>
