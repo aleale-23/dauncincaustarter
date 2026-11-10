@@ -371,38 +371,35 @@ body {
   margin-bottom: 35px;
 }
 
-.bundling-leaf {
-  font-size: 45px;
-  color: #a4b88e;
-}
-
-.bundling-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 2.5fr) minmax(250px, .9fr);
-  gap: 25px;
-  align-items: stretch;
-}
-
 .bundling-products {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  align-items: stretch;
 }
 
 .bundle-card {
   overflow: hidden;
   background: white;
   border: 1px solid #e7e9df;
-  border-radius: 15px;
+  border-radius: 16px;
   box-shadow: 0 6px 20px rgba(40, 65, 43, .06);
-  height: 100%;
+
   display: flex;
   flex-direction: column;
   min-width: 0;
+  height: 100%;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.bundle-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(40, 65, 43, .1);
 }
 
 .bundle-image {
   height: 230px;
+  flex-shrink: 0;
   background: #edf1e9;
   position: relative;
   display: flex;
@@ -490,6 +487,12 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
+  padding: 22px 24px 24px;
+  box-sizing: border-box;
+}
+
+.bundle-category {
+  margin-bottom: 4px;
 }
 
 .bundle-content h3 {
@@ -497,20 +500,21 @@ body {
   font-size: 21px;
   font-weight: 600;
   color: var(--dark-green);
-  margin: 6px 0;
+  margin: 8px 0 10px;
 }
 
 .bundle-content > p {
   color: #81877d;
   font-size: 11px;
   line-height: 1.8;
-  min-height: 55px;
+  min-height: 65px;
+  margin: 0;
 }
 
 .bundle-includes {
-  margin-top: 17px;
-  padding: 15px;
-  border-radius: 10px;
+  margin-top: 18px;
+  padding: 18px;
+  border-radius: 12px;
   background: #f1f5eb;
   color: #52644e;
   font-size: 11px;
@@ -696,7 +700,7 @@ body {
 }
 
 .modal-content h2 {
-  font-family: "Playfair Display", serif;
+  font-family: "Poppins", sans-serif;
   color: var(--dark-green);
   font-size: 28px;
   margin-bottom: 15px;
@@ -769,7 +773,7 @@ body {
 .cart-overlay {
   position: fixed;
   inset: 0;
-  z-index: 1998;
+  z-index: 9998;
   background: rgba(24, 37, 25, .4);
   opacity: 0;
   visibility: hidden;
@@ -785,7 +789,7 @@ body {
   position: fixed;
   top: 0;
   right: 0;
-  z-index: 1999;
+  z-index: 9999;
   width: 420px;
   max-width: 100%;
   height: 100vh;
@@ -811,7 +815,7 @@ body {
 }
 
 .cart-header h2 {
-  font-family: "Playfair Display", serif;
+  font-family: "Poppins", sans-serif;
   color: var(--dark-green);
   font-size: 23px;
 }
@@ -844,7 +848,7 @@ body {
 }
 
 .empty-cart h3 {
-  font-family: "Playfair Display", serif;
+  font-family: "Poppins", sans-serif;
   color: var(--dark-green);
   margin: 15px 0 7px;
 }
@@ -933,7 +937,7 @@ body {
 
 .cart-total strong {
   color: var(--dark-green);
-  font-family: "Playfair Display", serif;
+  font-family: "Poppins", sans-serif;
   font-size: 23px;
 }
 
@@ -961,140 +965,39 @@ body {
 
 
 /* =========================================
-   RESPONSIVE
+   RESPONSIVE PAKET BUNDLING
 ========================================= */
 
 @media (max-width: 1000px) {
-
-  .product-grid {
+  .bundling-products {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
   }
-
-  .bundling-layout {
-    display: grid;
-    grid-template-columns: 1fr;
-    width: 100%;
-  }
-
-  .purchase-flow {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-  }
-
-  .flow-title {
-    grid-column: 1 / -1;
-  }
-
-  
-
 }
 
-@media (max-width: 700px) {
-
-  .product-hero {
-    padding: 120px 7% 40px;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .product-hero-content {
-    width: 100%;
-  }
-
-  .product-hero-image {
-    width: 100%;
-    height: 230px;
-    margin-top: 15px;
-  }
-
-  .product-section-heading,
-  .bundling-heading {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .catalog-search {
-    width: 100%;
-  }
-
-  .product-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .bundling-products {
-    grid-template-columns: 1fr;
-  }
-
-  .purchase-flow {
-    display: block;
-  }
-
-  .product-catalog,
+@media (max-width: 650px) {
   .bundling-section {
     padding: 50px 6%;
   }
 
-  .product-section-heading h2,
-  .bundling-heading h2 {
-    font-size: 29px;
-  }
-
-  .catalog-image {
-    height: 250px;
+  .bundling-products {
+    grid-template-columns: 1fr;
+    gap: 22px;
   }
 
   .bundle-image {
     height: 220px;
   }
 
-  .product-cart-trigger {
-    padding: 7px 9px;
+  .bundle-content {
+    padding: 20px;
   }
 
-}
-
-@media (max-width: 480px) {
-
-  .product-hero h1 {
-    font-size: 35px;
-  }
-
-  .product-filter {
-    gap: 7px;
-  }
-
-  .product-filter .filter-btn {
-    padding: 8px 12px;
-    font-size: 10px;
+  .bundle-includes {
+    min-height: auto;
   }
 
   .bundle-purchase {
     flex-wrap: wrap;
   }
-
-  .modal-content {
-    padding: 30px 25px;
-  }
-
-  .cart-drawer {
-    padding: 22px;
-  }
-
-}
-
-.menu li a.active {
-  color: #3d8b3d;
-  font-weight: 600;
-  position: relative;
-}
-
-.menu li a.active::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -7px;
-  width: 100%;
-  height: 2px;
-  background: #3d8b3d;
 }
