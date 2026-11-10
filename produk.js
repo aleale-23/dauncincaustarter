@@ -628,20 +628,126 @@ document.addEventListener("keydown", event => {
   }
 
 
-  /* =====================================
-     CHECKOUT SEMENTARA
-  ===================================== */
+/* =====================================
+   CUSTOM CHECKOUT NOTIFICATION
+===================================== */
 
-  checkoutBtn.addEventListener("click", () => {
+function showCheckoutNotification() {
+
+    // Hindari popup muncul berulang
+    if (document.querySelector(".checkout-notification-overlay")) {
+        return;
+    }
+
+    const overlay = document.createElement("div");
+
+    overlay.className = "checkout-notification-overlay";
+
+    overlay.innerHTML = `
+        <div class="checkout-notification-modal">
+
+            <button class="notification-close" aria-label="Tutup">
+                &times;
+            </button>
+
+            <div class="notification-icon">
+                <svg viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="1.7"
+                     stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 7h12l1 13H5L6 7Z"/>
+                    <path d="M9 9V6a3 3 0 0 1 6 0v3"/>
+                    <path d="m9 14 2 2 4-4"/>
+                </svg>
+            </div>
+
+            <h2>Keranjang Berhasil!</h2>
+
+            <p class="notification-description">
+                Paket pilihanmu sudah masuk ke keranjang.
+                Yuk, lanjutkan ke tahap checkout untuk
+                menyelesaikan pesananmu.
+            </p>
+
+            <div class="notification-info">
+                <span class="notification-info-icon">✓</span>
+                <div>
+                    <strong>Pesanan siap dilanjutkan</strong>
+                    <small>Periksa kembali paket sebelum membayar.</small>
+                </div>
+            </div>
+
+            <button class="notification-checkout-btn">
+                Lanjutkan Checkout
+                <span>→</span>
+            </button>
+
+            <button class="notification-back-btn">
+                Kembali melihat produk
+            </button>
+
+        </div>
+    `;
+
+    document.body.appendChild(overlay);
+
+    // Tampilkan popup
+    requestAnimationFrame(() => {
+        overlay.classList.add("show");
+    });
+
+    // Tombol checkout
+    overlay.querySelector(".notification-checkout-btn")
+        .addEventListener("click", () => {
+
+            localStorage.setItem(
+                "dauncincau_cart",
+                JSON.stringify(cart)
+            );
+
+            window.location.href = "checkout.html";
+
+        });
+
+    // Tombol tutup
+    function closeNotification() {
+        overlay.classList.remove("show");
+
+        setTimeout(() => {
+            overlay.remove();
+        }, 250);
+    }
+
+    overlay.querySelector(".notification-close")
+        .addEventListener("click", closeNotification);
+
+    overlay.querySelector(".notification-back-btn")
+        .addEventListener("click", closeNotification);
+
+    // Klik area luar popup
+    overlay.addEventListener("click", (event) => {
+        if (event.target === overlay) {
+            closeNotification();
+        }
+    });
+
+}
+
+
+  
+
+/* =====================================
+   CHECKOUT DAN PEMBAYARAN QRIS
+===================================== */
+
+checkoutBtn.addEventListener("click", () => {
 
     if (cart.length === 0) return;
 
-    alert(
-      "Keranjang berhasil disiapkan! " +
-      "Tahap checkout dan pembayaran akan dikembangkan selanjutnya."
-    );
+    // Tampilkan custom popup terlebih dahulu
+    showCheckoutNotification();
 
-  });
+});
+
 
 
   /* =====================================
@@ -678,6 +784,8 @@ document.addEventListener("keydown", event => {
   ===================================== */
 
   renderCart();
+
+
 
 });
 

@@ -1,0 +1,285 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Checkout - Daun Cincau ID</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="checkout.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="checkout-page">
+
+<header class="checkout-header">
+    <a href="produk.html" class="checkout-brand">
+        <img src="picture/logodauncincauid.png" alt="Logo Daun Cincau">
+        <span>Daun Cincau ID</span>
+    </a>
+
+    <a href="produk.html" class="back-to-shop">
+        ← Kembali ke Produk
+    </a>
+</header>
+
+<main class="checkout-main">
+
+    <div class="checkout-heading">
+        <span class="checkout-eyebrow">PEMESANAN PAKET</span>
+        <h1 id="pageTitle">Checkout Pesanan</h1>
+        <p id="pageSubtitle">
+            Lengkapi informasi berikut untuk melanjutkan pemesanan.
+        </p>
+    </div>
+
+    <!-- FORM CHECKOUT -->
+    <section id="checkoutFormSection" class="checkout-layout">
+
+        <form id="customerForm" class="checkout-card customer-form">
+
+            <div class="card-heading">
+                <span class="step-number">1</span>
+                <div>
+                    <h2>Informasi Pelanggan</h2>
+                    <p>Masukkan data pelanggan dengan benar.</p>
+                </div>
+            </div>
+
+            <label for="customerName">
+                Nama Lengkap <span>*</span>
+            </label>
+
+            <input
+                type="text"
+                id="customerName"
+                placeholder="Masukkan nama lengkap"
+                required
+            >
+
+            <label for="customerPhone">
+                Nomor WhatsApp <span>*</span>
+            </label>
+
+            <input
+                type="tel"
+                id="customerPhone"
+                placeholder="Contoh: 081234567890"
+                required
+            >
+
+            <small class="field-hint">
+                Gunakan nomor WhatsApp yang aktif.
+            </small>
+
+            <label for="customerAddress">
+                Alamat Pengiriman / Pengambilan <span>*</span>
+            </label>
+
+            <textarea
+                id="customerAddress"
+                rows="3"
+                placeholder="Masukkan alamat lengkap atau tulis Ambil di outlet"
+                required
+            ></textarea>
+
+            <label for="customerNote">
+                Catatan Pesanan <small>(Opsional)</small>
+            </label>
+
+            <textarea
+                id="customerNote"
+                rows="2"
+                placeholder="Catatan tambahan untuk pesanan"
+            ></textarea>
+
+            <div class="payment-method-preview">
+                <div class="payment-method-icon">▦</div>
+
+                <div>
+                    <strong>Metode Pembayaran</strong>
+                    <span>QRIS Statis</span>
+                </div>
+
+                <span class="selected-label">Dipilih</span>
+            </div>
+
+            <p class="form-error" id="formError"></p>
+
+            <button type="submit" class="primary-checkout-btn">
+                Buat Pesanan & Lanjut Bayar →
+            </button>
+
+            <p class="secure-note">
+                Pesanan akan menunggu pembayaran sebelum diverifikasi owner.
+            </p>
+
+        </form>
+
+        <!-- RINGKASAN PESANAN -->
+        <aside class="checkout-card order-summary-card">
+
+            <div class="card-heading">
+                <span class="summary-icon">🛒</span>
+
+                <div>
+                    <h2>Ringkasan Pesanan</h2>
+                    <p>Periksa kembali paket pilihanmu.</p>
+                </div>
+            </div>
+
+            <div id="checkoutItems" class="checkout-items"></div>
+
+            <div class="summary-total-row">
+                <span>Subtotal</span>
+                <strong id="checkoutSubtotal">Rp0</strong>
+            </div>
+
+            <div class="summary-total-row grand-total">
+                <span>Total Pembayaran</span>
+                <strong id="checkoutTotal">Rp0</strong>
+            </div>
+
+            <p class="summary-disclaimer">
+                Biaya pengiriman (jika ada) akan dikonfirmasi owner.
+            </p>
+
+        </aside>
+
+    </section>
+
+
+    <!-- HALAMAN PEMBAYARAN -->
+    <section id="paymentSection" class="payment-layout" hidden>
+
+        <div class="checkout-card payment-instruction-card">
+
+            <div class="payment-status-label">
+                <span class="status-dot"></span>
+                Menunggu Pembayaran
+            </div>
+
+            <h2>Selesaikan Pembayaran</h2>
+
+            <p>
+                Silakan scan QRIS berikut menggunakan aplikasi
+                mobile banking atau e-wallet.
+            </p>
+
+            <!-- GAMBAR QRIS -->
+            <div class="qris-frame">
+
+                <div class="qris-merchant">
+                    DAUN CINCAU ID
+                </div>
+
+                <img
+                    src="picture/qris-dauncincau.jpeg"
+                    id="qrisImage"
+                    alt="QRIS Daun Cincau ID"
+                >
+
+                <span class="qris-caption">
+                    QRIS STATIS
+                </span>
+
+            </div>
+
+            <div class="payment-amount-box">
+                <span>Total yang harus dibayar</span>
+                <strong id="paymentTotal">Rp0</strong>
+                <small>Masukkan nominal sesuai total pesanan.</small>
+            </div>
+
+            <ol class="payment-steps">
+                <li>Buka aplikasi mobile banking atau e-wallet.</li>
+                <li>Pilih menu Scan QRIS dan pindai kode di atas.</li>
+                <li>Masukkan nominal sesuai total pembayaran.</li>
+                <li>Periksa nama merchant dan nominal transaksi.</li>
+                <li>Selesaikan pembayaran.</li>
+                <li>Informasikan pembayaran kepada owner.</li>
+            </ol>
+
+            <button
+                type="button"
+                id="notifyOwnerBtn"
+                class="primary-checkout-btn"
+            >
+                Saya Sudah Membayar – Hubungi Owner ↗
+            </button>
+
+            <p class="secure-note">
+                Pembayaran belum otomatis dinyatakan lunas.
+                Owner akan memeriksa transaksi terlebih dahulu.
+            </p>
+
+        </div>
+
+
+        <!-- INFORMASI PESANAN -->
+        <aside class="checkout-card payment-order-card">
+
+            <div class="card-heading">
+                <span class="step-number">2</span>
+
+                <div>
+                    <h2>Informasi Pesanan</h2>
+                    <p>Simpan nomor pesanan berikut.</p>
+                </div>
+            </div>
+
+            <div class="order-number-box">
+                <span>Nomor Pesanan</span>
+                <strong id="paymentOrderNumber">-</strong>
+            </div>
+
+            <div
+                id="paymentCustomerDetails"
+                class="payment-customer-details"
+            ></div>
+
+            <div
+                id="paymentItems"
+                class="checkout-items"
+            ></div>
+
+            <div class="summary-total-row grand-total">
+                <span>Total Pembayaran</span>
+                <strong id="paymentSummaryTotal">Rp0</strong>
+            </div>
+
+            <div class="pending-info">
+                <strong>Status: PENDING</strong>
+
+                <span>
+                    Pesanan akan diproses setelah pembayaran
+                    diperiksa dan dikonfirmasi owner.
+                </span>
+            </div>
+
+            <button
+                type="button"
+                id="backToProductsBtn"
+                class="secondary-checkout-btn"
+            >
+                Kembali ke Produk
+            </button>
+
+        </aside>
+
+    </section>
+
+</main>
+
+<footer class="checkout-footer">
+    © <span id="currentYear"></span>
+    Daun Cincau ID · Good Leaf Good Life
+</footer>
+
+<script src="checkout.js"></script>
+
+</body>
+</html>
