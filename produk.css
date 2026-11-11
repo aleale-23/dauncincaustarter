@@ -1286,3 +1286,262 @@ body {
     flex-wrap: wrap;
   }
 }
+
+
+/* =====================================
+   CUSTOM CHECKOUT NOTIFICATION
+===================================== */
+
+.checkout-notification-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(20, 35, 24, 0.55);
+    backdrop-filter: blur(5px);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity .25s ease,
+                visibility .25s ease;
+}
+
+.checkout-notification-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.checkout-notification-modal {
+    position: relative;
+
+    width: 100%;
+    max-width: 420px;
+
+    padding: 38px 32px 30px;
+
+    background: #ffffff;
+    border-radius: 22px;
+
+    text-align: center;
+
+    box-shadow: 0 20px 70px rgba(0, 0, 0, .16);
+
+    transform: translateY(20px) scale(.97);
+    transition: transform .3s ease;
+}
+
+.checkout-notification-overlay.show
+.checkout-notification-modal {
+    transform: translateY(0) scale(1);
+}
+
+/* CLOSE BUTTON */
+
+.notification-close {
+    position: absolute;
+    top: 15px;
+    right: 18px;
+
+    width: 32px;
+    height: 32px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #f2f5f0;
+    color: #536854;
+
+    font-size: 23px;
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.notification-close:hover {
+    background: #e3ede0;
+    color: #245b38;
+}
+
+/* ICON */
+
+.notification-icon {
+    width: 76px;
+    height: 76px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 19px;
+
+    border-radius: 50%;
+
+    background: #e9f3e7;
+    color: #28633b;
+}
+
+.notification-icon svg {
+    width: 37px;
+    height: 37px;
+}
+
+/* TITLE */
+
+.checkout-notification-modal h2 {
+    margin: 0 0 10px;
+
+    color: #244a30;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 23px;
+    font-weight: 700;
+}
+
+/* DESCRIPTION */
+
+.notification-description {
+    max-width: 320px;
+
+    margin: 0 auto 22px;
+
+    color: #778477;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+/* INFO */
+
+.notification-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 14px;
+
+    margin-bottom: 23px;
+
+    border-radius: 12px;
+    background: #f3f7f0;
+
+    text-align: left;
+}
+
+.notification-info-icon {
+    width: 31px;
+    height: 31px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: #dcebd9;
+
+    color: #28633b;
+    font-weight: 700;
+}
+
+.notification-info div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.notification-info strong {
+    color: #34553a;
+    font-size: 11px;
+}
+
+.notification-info small {
+    color: #89958a;
+    font-size: 9px;
+}
+
+/* CHECKOUT BUTTON */
+
+.notification-checkout-btn {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    padding: 15px;
+
+    border: none;
+    border-radius: 50px;
+
+    background: #28633b;
+    color: white;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: .25s;
+}
+
+.notification-checkout-btn:hover {
+    background: #19482b;
+    transform: translateY(-2px);
+}
+
+.notification-checkout-btn span {
+    font-size: 17px;
+}
+
+/* BACK BUTTON */
+
+.notification-back-btn {
+    margin-top: 15px;
+
+    padding: 7px 12px;
+
+    border: none;
+    background: transparent;
+
+    color: #788879;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+
+    cursor: pointer;
+    transition: .2s;
+}
+
+.notification-back-btn:hover {
+    color: #28633b;
+}
+
+/* MOBILE */
+
+@media (max-width: 480px) {
+
+    .checkout-notification-modal {
+        max-width: 350px;
+        padding: 34px 22px 25px;
+        border-radius: 19px;
+    }
+
+    .checkout-notification-modal h2 {
+        font-size: 20px;
+    }
+
+    .notification-description {
+        font-size: 11px;
+    }
+
+}
