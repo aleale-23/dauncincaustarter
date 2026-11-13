@@ -26,8 +26,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $error = "Nama atau email tidak valid.";
     } elseif (!password_verify($current, $hash)) {
         $error = "Password saat ini tidak sesuai.";
-    } elseif ($new !== "" && strlen($new) < 12) {
-        $error = "Password baru minimal 12 karakter.";
+    } elseif ($new !== "" && strlen($new) < 8) {
+        $error = "Password baru minimal 8 karakter.";
     } else {
         try {
             if ($new !== "") {
@@ -61,7 +61,7 @@ require __DIR__ . "/includes/header.php";
 <hr>
 <p class="muted">Masukkan password saat ini untuk menyimpan perubahan. Isi password baru hanya jika ingin menggantinya.</p>
 <label>Password Saat Ini</label><input type="password" name="current_password" required autocomplete="current-password">
-<label>Password Baru (opsional)</label><input type="password" name="new_password" minlength="12" autocomplete="new-password">
+<label>Password Baru (opsional)</label><input type="password" name="new_password" minlength="8" autocomplete="new-password">
 <button class="btn primary" type="submit">Simpan Perubahan</button>
 </form>
 </section>
