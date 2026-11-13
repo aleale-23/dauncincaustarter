@@ -141,6 +141,10 @@
         ).textContent = order.orderNumber;
 
         document.getElementById(
+            "paymentTrackingToken"
+        ).textContent = order.trackingToken || "-";
+
+        document.getElementById(
             "paymentTotal"
         ).textContent = rupiah(order.total);
 
@@ -312,6 +316,8 @@
 
                 orderNumber: result.data.order_code,
 
+                trackingToken: result.data.tracking_token,
+
                 customer: {
                     name: name,
                     phone: phone,
@@ -419,6 +425,37 @@
 
     });
 
+
+    // SALIN TOKEN PELACAKAN
+    document.getElementById(
+        "copyTrackingToken"
+    )?.addEventListener("click", async () => {
+
+        if (!activeOrder?.trackingToken) return;
+
+        try {
+
+            await navigator.clipboard.writeText(
+                activeOrder.trackingToken
+            );
+
+            const button = document.getElementById(
+                "copyTrackingToken"
+            );
+
+            button.textContent = "Berhasil Disalin!";
+
+            setTimeout(() => {
+                button.textContent = "Salin Kode";
+            }, 2000);
+
+        } catch (error) {
+
+            alert("Gagal menyalin kode. Silakan salin secara manual.");
+
+        }
+
+    });
 
     // TAHUN FOOTER
     document.getElementById(

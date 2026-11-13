@@ -597,3 +597,81 @@
     }
 
 }
+
+
+/* =====================================
+   TRACKING TOKEN CHECKOUT
+===================================== */
+
+.tracking-token-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+
+    margin-top: 14px;
+    padding: 14px;
+
+    border: 1px dashed #9fbea0;
+    border-radius: 10px;
+
+    background: #f8fbf6;
+}
+
+.tracking-token-box div {
+    display: grid;
+    gap: 6px;
+    min-width: 0;
+}
+
+.tracking-token-box span {
+    color: #7a897c;
+    font-size: 10px;
+}
+
+.tracking-token-box strong {
+    color: #28633b;
+    font-size: 11px;
+    overflow-wrap: anywhere;
+}
+
+.tracking-token-box button {
+    flex-shrink: 0;
+    padding: 9px 12px;
+
+    border: 1px solid #cbdaca;
+    border-radius: 8px;
+
+    background: #fff;
+    color: #28633b;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.tracking-token-note {
+    margin: 8px 0;
+    color: #829083;
+    font-size: 10px;
+    line-height: 1.6;
+}
+
+.open-tracking-page {
+    display: block;
+    margin-top: 14px;
+    padding: 12px;
+
+    border-radius: 9px;
+    background: #edf5eb;
+
+    color: #28633b;
+    text-align: center;
+    text-decoration: none;
+
+    font-size: 11px;
+    font-weight: 600;
+}
+

@@ -231,10 +231,44 @@
                 </div>
             </div>
 
+            
             <div class="order-number-box">
                 <span>Nomor Pesanan</span>
                 <strong id="paymentOrderNumber">-</strong>
             </div>
+
+            <!-- KODE PELACAKAN -->
+            <div class="tracking-token-box">
+
+                <div>
+                    <span>Kode Pelacakan Pesanan</span>
+
+                    <strong id="paymentTrackingToken">
+                        -
+                    </strong>
+                </div>
+
+                <button
+                    type="button"
+                    id="copyTrackingToken"
+                >
+                    Salin Kode
+                </button>
+
+            </div>
+
+            <p class="tracking-token-note">
+                Simpan kode pelacakan ini. Kamu akan membutuhkannya
+                untuk mengecek status pesanan.
+            </p>
+
+            <a
+                href="cek-pesanan.html"
+                class="open-tracking-page"
+            >
+                Lihat Status Pesanan →
+            </a>
+
 
             <div
                 id="paymentCustomerDetails"
