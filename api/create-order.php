@@ -1,12 +1,11 @@
 
 <?php
 
-header("Content-Type: application/json");
+header("Content-Type: application/json; charset=UTF-8");
 
-require_once "../config/database.php";
+require_once __DIR__ . "/../config/database.php";
 
 function response($success, $message, $data = [], $code = 200) {
-
     http_response_code($code);
 
     echo json_encode([
@@ -29,8 +28,9 @@ if (!is_array($input)) {
 }
 
 
-// KATALOG HARGA DI SERVER
-// Harga tidak boleh hanya dipercaya dari browser.
+// =====================================
+// KATALOG PRODUK DAN HARGA SERVER
+// =====================================
 
 $catalog = [
     "family-combo" => [
@@ -63,22 +63,33 @@ $note = trim($input["customer"]["note"] ?? "");
 
 $items = $input["items"] ?? [];
 
+
+// =====================================
+// VALIDASI PELANGGAN
+// =====================================
+
 if (
     $name === "" ||
     strlen($name) > 100 ||
     $address === "" ||
     strlen($address) > 2000 ||
-    !preg_match('/^\+?[0-9]{9,15}$/', $phone)
+    !preg_match('/^\+?[0-9]{9,15}$/', $phone) ||
+    strlen($note) > 1000
 ) {
     response(false, "Data pelanggan tidak valid.", [], 422);
 }
 
-// Samakan format nomor WhatsApp.
+// Normalisasi nomor WhatsApp
 if (substr($phone, 0, 1) === "0") {
     $phone = "62" . substr($phone, 1);
 } elseif (substr($phone, 0, 1) === "+") {
     $phone = substr($phone, 1);
 }
+
+
+// =====================================
+// VALIDASI ITEM PESANAN
+// =====================================
 
 if (
     !is_array($items) ||
@@ -94,6 +105,7 @@ $validatedItems = [];
 foreach ($items as $item) {
 
     $productId = $item["id"] ?? "";
+
     $quantity = filter_var(
         $item["quantity"] ?? null,
         FILTER_VALIDATE_INT
@@ -121,23 +133,33 @@ foreach ($items as $item) {
         "quantity" => $quantity,
         "subtotal" => $subtotal
     ];
-
 }
+$orderCode =
+    "DC" .
+    date("Ymd") .
+    strtoupper(bin2hex(random_bytes(3)));
+
+$trackingToken = bin2hex(random_bytes(32));
+
+$trackingTokenHash = hash(
+    "sha256",
+    $trackingToken
+);
+
+
+// =====================================
+// SIMPAN KE DATABASE
+// =====================================
 
 try {
 
     $pdo->beginTransaction();
 
-    // Nomor pesanan unik.
-    $orderCode =
-        "DC" .
-        date("Ymd") .
-        strtoupper(bin2hex(random_bytes(3)));
-
-    // SIMPAN PESANAN
+    // 1. SIMPAN PESANAN
     $stmt = $pdo->prepare("
         INSERT INTO orders (
             order_code,
+            tracking_token_hash,
             customer_name,
             customer_phone,
             customer_address,
@@ -147,7 +169,7 @@ try {
             payment_status,
             order_status
         ) VALUES (
-            ?, ?, ?, ?, ?, ?,
+            ?, ?, ?, ?, ?, ?, ?,
             'QRIS_STATIC',
             'PENDING',
             'WAITING_PAYMENT'
@@ -156,6 +178,7 @@ try {
 
     $stmt->execute([
         $orderCode,
+        $trackingTokenHash,
         $name,
         $phone,
         $address,
@@ -166,7 +189,7 @@ try {
     $orderId = $pdo->lastInsertId();
 
 
-    // SIMPAN RINCIAN PAKET
+    // 2. SIMPAN ITEM PESANAN
     $itemStmt = $pdo->prepare("
         INSERT INTO order_items (
             order_id,
@@ -192,7 +215,7 @@ try {
     }
 
 
-    // SIMPAN PEMBAYARAN
+    // 3. SIMPAN PEMBAYARAN
     $paymentStmt = $pdo->prepare("
         INSERT INTO payments (
             order_id,
@@ -207,15 +230,27 @@ try {
         $total
     ]);
 
+
     $pdo->commit();
 
+
+    // TOKEN ASLI HANYA DIKIRIM SEKALI KE PELANGGAN
     response(true, "Pesanan berhasil dibuat.", [
+
         "order_code" => $orderCode,
+
+        "tracking_token" => $trackingToken,
+
         "total" => $total,
+
         "payment_status" => "PENDING",
+
         "order_status" => "WAITING_PAYMENT",
+
         "items" => $validatedItems
+
     ], 201);
+
 
 } catch (Throwable $e) {
 
