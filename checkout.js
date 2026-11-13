@@ -7,7 +7,7 @@
     const ACTIVE_ORDER_KEY = "dauncincau_active_order";
 
     // Nomor WhatsApp Owner Daun Cincau ID
-    const OWNER_WHATSAPP = "6281336544622";
+    const OWNER_WHATSAPP = "6282221197563";
 
     const checkoutFormSection =
         document.getElementById("checkoutFormSection");
@@ -388,6 +388,8 @@
             "",
 
             `Nomor Pesanan: ${activeOrder.orderNumber}`,
+            
+            `Kode Pelacakan: ${activeOrder.trackingToken}`,
 
             `Nama: ${activeOrder.customer.name}`,
 
