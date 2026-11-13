@@ -1,4 +1,5 @@
 <?php
+
 require_once __DIR__ . "/includes/csrf.php";
 require_once __DIR__ . "/../config/database.php";
 
@@ -7,73 +8,269 @@ if (!empty($_SESSION["admin_id"])) {
     exit;
 }
 
-$ownerExists = (int)$pdo->query("SELECT COUNT(*) FROM admins")->fetchColumn() > 0;
+// Periksa apakah akun Owner sudah dibuat
+$ownerExists = (int) $pdo->query(
+    "SELECT COUNT(*) FROM admins"
+)->fetchColumn() > 0;
+
 if ($ownerExists) {
     header("Location: login.php");
     exit;
 }
 
 $error = "";
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
     verifyCsrfToken($_POST["csrf_token"] ?? "");
 
     $name = trim($_POST["owner_name"] ?? "");
     $email = strtolower(trim($_POST["email"] ?? ""));
     $password = $_POST["password"] ?? "";
-    $confirm = $_POST["confirm_password"] ?? "";
+    $confirmPassword = $_POST["confirm_password"] ?? "";
 
+    // VALIDASI NAMA
     if ($name === "" || mb_strlen($name) > 100) {
+
         $error = "Nama owner wajib diisi dan maksimal 100 karakter.";
-    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL) || strlen($email) > 150) {
+
+    // VALIDASI EMAIL
+    } elseif (
+        !filter_var($email, FILTER_VALIDATE_EMAIL) ||
+        strlen($email) > 150
+    ) {
+
         $error = "Format email tidak valid.";
-    } elseif (strlen($password) < 12) {
-        $error = "Password minimal 12 karakter.";
-    } elseif ($password !== $confirm) {
+
+    // VALIDASI PASSWORD
+    } elseif (strlen($password) < 8) {
+
+        $error = "Password minimal 8 karakter.";
+
+    // VALIDASI KONFIRMASI PASSWORD
+    } elseif ($password !== $confirmPassword) {
+
         $error = "Konfirmasi password tidak sama.";
+
     } else {
+
         try {
-            $hash = password_hash($password, PASSWORD_DEFAULT);
-            $stmt = $pdo->prepare(
-                "INSERT INTO admins (account_slot, owner_name, email, password) VALUES (1, ?, ?, ?)"
+
+            $hash = password_hash(
+                $password,
+                PASSWORD_DEFAULT
             );
-            $stmt->execute([$name, $email, $hash]);
+
+            $stmt = $pdo->prepare("
+                INSERT INTO admins (
+                    account_slot,
+                    owner_name,
+                    email,
+                    password
+                ) VALUES (1, ?, ?, ?)
+            ");
+
+            $stmt->execute([
+                $name,
+                $email,
+                $hash
+            ]);
+
             header("Location: login.php?registered=1");
             exit;
+
         } catch (PDOException $e) {
+
             error_log($e->getMessage());
+
             $error = "Akun owner gagal dibuat. Pastikan belum ada akun owner.";
+
         }
+
     }
 }
+
 ?>
+
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Registrasi Owner | Daun Cincau ID</title>
-<link rel="stylesheet" href="assets/css/admin.css">
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Registrasi Owner | Daun Cincau ID</title>
+
+    <link rel="stylesheet" href="assets/css/admin.css">
+
 </head>
+
 <body class="auth-page">
-<section class="auth-card">
-    <a class="auth-brand" href="../index.html">🌿 DAUN CINCAU ID</a>
-    <span class="eyebrow">OWNER REGISTRATION</span>
-    <h1>Buat Akun Owner</h1>
-    <p class="muted">Registrasi hanya tersedia untuk pembuatan akun pertama. Setelah akun dibuat, pendaftaran akan ditutup otomatis.</p>
-    <?php if ($error): ?><div class="alert error"><?= htmlspecialchars($error, ENT_QUOTES, "UTF-8") ?></div><?php endif; ?>
-    <form method="post" autocomplete="on">
-        <input type="hidden" name="csrf_token" value="<?= htmlspecialchars(csrfToken(), ENT_QUOTES, "UTF-8") ?>">
-        <label>Nama Owner</label>
-        <input name="owner_name" maxlength="100" required value="<?= htmlspecialchars($_POST["owner_name"] ?? "", ENT_QUOTES, "UTF-8") ?>">
-        <label>Email</label>
-        <input type="email" name="email" maxlength="150" required autocomplete="email" value="<?= htmlspecialchars($_POST["email"] ?? "", ENT_QUOTES, "UTF-8") ?>">
-        <label>Password</label>
-        <input type="password" name="password" minlength="12" required autocomplete="new-password">
-        <small>Gunakan minimal 12 karakter dan jangan gunakan password yang sama dengan akun lain.</small>
-        <label>Konfirmasi Password</label>
-        <input type="password" name="confirm_password" minlength="12" required autocomplete="new-password">
-        <button class="btn primary full" type="submit">Buat Akun Owner</button>
-    </form>
-</section>
+
+    <section class="auth-card">
+
+        <a class="auth-brand" href="../index.html">
+            🌿 DAUN CINCAU ID
+        </a>
+
+        <span class="eyebrow">
+            OWNER REGISTRATION
+        </span>
+
+        <h1>Buat Akun Owner</h1>
+
+        <p class="muted">
+            Buat akun untuk mulai mengelola website
+            Daun Cincau ID.
+        </p>
+
+
+        <?php if ($error): ?>
+
+            <div class="alert error">
+                <?= htmlspecialchars($error, ENT_QUOTES, "UTF-8") ?>
+            </div>
+
+        <?php endif; ?>
+
+
+        <form method="POST" autocomplete="on">
+
+            <input
+                type="hidden"
+                name="csrf_token"
+                value="<?= htmlspecialchars(csrfToken(), ENT_QUOTES, "UTF-8") ?>"
+            >
+
+
+            <!-- NAMA OWNER -->
+
+            <label for="owner_name">
+                Nama Owner
+            </label>
+
+            <input
+                type="text"
+                id="owner_name"
+                name="owner_name"
+                maxlength="100"
+                placeholder="Masukkan nama owner"
+                required
+                value="<?= htmlspecialchars($_POST["owner_name"] ?? "", ENT_QUOTES, "UTF-8") ?>"
+            >
+
+
+            <!-- EMAIL -->
+
+            <label for="email">
+                Email
+            </label>
+
+            <input
+                type="email"
+                id="email"
+                name="email"
+                maxlength="150"
+                placeholder="Masukkan email"
+                autocomplete="email"
+                required
+                value="<?= htmlspecialchars($_POST["email"] ?? "", ENT_QUOTES, "UTF-8") ?>"
+            >
+
+
+            <!-- PASSWORD -->
+
+            <label for="password">
+                Password
+            </label>
+
+            <div class="password-wrapper">
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    minlength="8"
+                    placeholder="Minimal 8 karakter"
+                    autocomplete="new-password"
+                    required
+                >
+
+                <button
+                    type="button"
+                    class="toggle-password"
+                    data-target="password"
+                    aria-label="Tampilkan password"
+                    aria-pressed="false"
+                >
+
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/>
+                        <circle cx="12" cy="12" r="3"/>
+                    </svg>
+
+                </button>
+
+            </div>
+
+            <small>
+                Password harus terdiri dari minimal 8 karakter.
+            </small>
+
+
+            <!-- KONFIRMASI PASSWORD -->
+
+            <label for="confirm_password">
+                Konfirmasi Password
+            </label>
+
+            <div class="password-wrapper">
+
+                <input
+                    type="password"
+                    id="confirm_password"
+                    name="confirm_password"
+                    minlength="8"
+                    placeholder="Masukkan ulang password"
+                    autocomplete="new-password"
+                    required
+                >
+
+                <button
+                    type="button"
+                    class="toggle-password"
+                    data-target="confirm_password"
+                    aria-label="Tampilkan konfirmasi password"
+                    aria-pressed="false"
+                >
+
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/>
+                        <circle cx="12" cy="12" r="3"/>
+                    </svg>
+
+                </button>
+
+            </div>
+
+
+            <!-- BUTTON -->
+
+            <button
+                type="submit"
+                class="btn primary full"
+            >
+                Buat Akun Owner
+            </button>
+
+        </form>
+
+    </section>
+
+    <script src="assets/js/admin.js"></script>
+
 </body>
+
 </html>
