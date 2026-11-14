@@ -865,3 +865,217 @@ tr:last-child td {
 
 }
 
+
+/* =====================================
+   DETAIL PESANAN - DAUN CINCAU ID
+===================================== */
+
+.order-detail-summary {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 15px;
+    margin-bottom: 24px;
+}
+
+.detail-summary-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px;
+    border: 1px solid #e5ebe4;
+    border-radius: 13px;
+    background: #ffffff;
+    box-shadow: 0 5px 20px rgba(38, 59, 45, .03);
+}
+
+.detail-summary-card > span {
+    color: #849186;
+    font-size: 11px;
+}
+
+.detail-summary-card > strong {
+    color: #245536;
+    font-size: 17px;
+    overflow-wrap: anywhere;
+}
+
+.detail-summary-card .badge {
+    font-size: 10px;
+}
+
+.detail-order-status {
+    font-size: 13px !important;
+}
+
+/* =====================================
+   VERIFIKASI PEMBAYARAN
+===================================== */
+
+.verification-panel {
+    border: 1px solid #d6e6d3;
+}
+
+.verification-heading {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.verification-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    background: #e7f3e5;
+    color: #28633b;
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.verification-heading h2 {
+    margin: 0 0 5px;
+    color: #245536;
+    font-size: 17px;
+}
+
+.verification-notice {
+    padding: 18px;
+    margin-bottom: 22px;
+    background: #fff8e7;
+    border: 1px solid #f2e4ba;
+    border-radius: 11px;
+}
+
+.verification-notice strong {
+    color: #8a6519;
+    font-size: 12px;
+}
+
+.verification-notice p {
+    margin: 8px 0 0;
+    color: #947331;
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+.verification-panel form {
+    display: grid;
+    gap: 12px;
+}
+
+.verification-panel label {
+    color: #405644;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.verification-panel textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #dce6db;
+    border-radius: 9px;
+    background: #fff;
+    color: #304535;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    resize: vertical;
+    outline: none;
+}
+
+.verification-panel textarea:focus {
+    border-color: #6a9a70;
+    box-shadow: 0 0 0 3px rgba(91, 145, 99, .12);
+}
+
+.verify-btn {
+    width: fit-content;
+    min-height: 43px;
+    padding: 12px 22px;
+}
+
+/* =====================================
+   UPDATE STATUS PESANAN
+===================================== */
+
+.order-process-panel {
+    border: 1px solid #dce8da;
+}
+
+.current-order-status {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 17px;
+    margin: 20px 0;
+    background: #f0f7ee;
+    border-radius: 10px;
+}
+
+.current-order-status span {
+    color: #768676;
+    font-size: 11px;
+}
+
+.current-order-status strong {
+    color: #28633b;
+    font-size: 13px;
+}
+
+.status-update-btn {
+    min-height: 43px;
+    padding: 12px 22px;
+}
+
+.order-completed-info {
+    margin-top: 20px;
+    padding: 16px;
+    border-radius: 10px;
+    background: #e7f4e7;
+    color: #28733d;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media (max-width: 1100px) {
+
+    .order-detail-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+@media (max-width: 650px) {
+
+    .order-detail-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .detail-summary-card {
+        padding: 17px;
+    }
+
+    .verification-heading {
+        align-items: flex-start;
+    }
+
+    .verify-btn,
+    .status-update-btn {
+        width: 100%;
+    }
+
+    .current-order-status {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+}
+
