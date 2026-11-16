@@ -1,0 +1,514 @@
+
+/* =====================================
+   CEK PESANAN - DAUN CINCAU ID
+===================================== */
+
+.tracking-page {
+    min-height: 100vh;
+    background: #f2f7f0;
+    color: #263d2c;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* HEADER */
+
+.tracking-header {
+    min-height: 76px;
+    padding: 12px clamp(20px, 6vw, 88px);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #fff;
+    border-bottom: 1px solid #e1e9df;
+}
+
+.tracking-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: #244a30;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.tracking-brand img {
+    width: 46px;
+    height: 46px;
+    object-fit: contain;
+}
+
+.tracking-back {
+    color: #28633b;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* MAIN */
+
+.tracking-main {
+    width: min(760px, calc(100% - 36px));
+    margin: 55px auto 70px;
+}
+
+.tracking-intro {
+    margin-bottom: 28px;
+    text-align: center;
+}
+
+.tracking-eyebrow {
+    color: #71906f;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.tracking-intro h1 {
+    margin: 10px 0;
+
+    color: #244a30;
+
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(29px, 5vw, 40px);
+}
+
+.tracking-intro p {
+    max-width: 500px;
+    margin: auto;
+
+    color: #7a897c;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+/* CARD */
+
+.tracking-card {
+    padding: clamp(22px, 4vw, 34px);
+
+    background: #fff;
+    border: 1px solid #e1e9df;
+    border-radius: 19px;
+
+    box-shadow: 0 10px 35px rgba(37, 76, 44, .06);
+}
+
+.tracking-card-heading {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 25px;
+}
+
+.tracking-icon {
+    width: 46px;
+    height: 46px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 12px;
+    background: #e9f3e7;
+    color: #28633b;
+}
+
+.tracking-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.tracking-card-heading h2 {
+    margin: 0 0 4px;
+    font-size: 17px;
+    color: #294b32;
+}
+
+.tracking-card-heading p {
+    margin: 0;
+    color: #829083;
+    font-size: 11px;
+}
+
+/* FORM */
+
+#trackingForm label {
+    display: block;
+    margin: 17px 0 7px;
+
+    color: #405644;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+#trackingForm input {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 13px 14px;
+
+    border: 1px solid #dce6db;
+    border-radius: 9px;
+
+    background: #fff;
+    color: #304535;
+
+    font: inherit;
+    font-size: 12px;
+    outline: none;
+}
+
+#trackingForm input:focus {
+    border-color: #6a9a70;
+    box-shadow: 0 0 0 3px rgba(91, 145, 99, .12);
+}
+
+.tracking-hint {
+    display: block;
+    margin-top: 8px;
+
+    color: #89958a;
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+.tracking-error {
+    min-height: 16px;
+    margin: 12px 0 0;
+
+    color: #b63d45;
+    font-size: 11px;
+}
+
+.tracking-submit {
+    width: 100%;
+    margin-top: 15px;
+    padding: 14px;
+
+    border: none;
+    border-radius: 40px;
+
+    background: #28633b;
+    color: #fff;
+
+    font: inherit;
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: .2s;
+}
+
+.tracking-submit:hover {
+    background: #19482b;
+}
+
+.tracking-submit:disabled {
+    opacity: .6;
+    cursor: not-allowed;
+}
+
+/* RESULT */
+
+.tracking-result {
+    margin-top: 25px;
+}
+
+.tracking-result[hidden] {
+    display: none !important;
+}
+
+.result-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.result-heading h2 {
+    margin: 8px 0 0;
+    font-size: 19px;
+    color: #244a30;
+}
+
+.tracking-badge {
+    padding: 7px 12px;
+    border-radius: 30px;
+
+    background: #fff3d8;
+    color: #936c19;
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.tracking-badge.paid {
+    background: #e5f4e5;
+    color: #28733d;
+}
+
+.tracking-badge.failed,
+.tracking-badge.expired,
+.tracking-badge.refunded {
+    background: #ffe8e8;
+    color: #a33b3b;
+}
+
+/* TOTAL */
+
+.result-total {
+    display: grid;
+    gap: 5px;
+
+    margin: 23px 0;
+    padding: 19px;
+
+    border-radius: 12px;
+    background: #eff6ed;
+}
+
+.result-total span {
+    color: #778879;
+    font-size: 11px;
+}
+
+.result-total strong {
+    color: #28633b;
+    font-size: 27px;
+}
+
+/* CUSTOMER */
+
+.result-customer {
+    display: grid;
+    gap: 14px;
+
+    padding: 0 0 22px;
+    border-bottom: 1px solid #edf1eb;
+}
+
+.result-customer div {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.result-customer span {
+    color: #849184;
+    font-size: 11px;
+}
+
+.result-customer strong {
+    max-width: 65%;
+    color: #354b39;
+    font-size: 11px;
+    text-align: right;
+    overflow-wrap: anywhere;
+}
+
+/* STATUS */
+
+.result-status-box {
+    margin: 22px 0;
+    padding: 18px;
+
+    border-radius: 12px;
+    background: #fff6e5;
+    color: #8a681f;
+}
+
+.result-status-box.paid {
+    background: #eaf5e9;
+    color: #28633b;
+}
+
+.result-status-box.failed {
+    background: #fff0f0;
+    color: #a33b3b;
+}
+
+.result-status-box h3 {
+    margin: 0 0 6px;
+    font-size: 14px;
+}
+
+.result-status-box p {
+    margin: 0;
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+/* ITEMS */
+
+.result-section-title {
+    margin: 25px 0 14px;
+    color: #294b32;
+    font-size: 14px;
+}
+
+.result-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+
+    padding: 12px 0;
+    border-bottom: 1px solid #edf1eb;
+
+    font-size: 11px;
+}
+
+.result-item strong {
+    color: #294b32;
+    white-space: nowrap;
+}
+
+/* TIMELINE */
+
+.result-timeline {
+    display: grid;
+    gap: 0;
+}
+
+.timeline-item {
+    position: relative;
+    display: flex;
+    gap: 13px;
+    min-height: 62px;
+}
+
+.timeline-marker {
+    position: relative;
+    width: 18px;
+    flex-shrink: 0;
+}
+
+.timeline-marker::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 4px;
+
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+    background: #d5ded3;
+}
+
+.timeline-item.done .timeline-marker::before {
+    background: #39814a;
+}
+
+.timeline-marker::after {
+    content: "";
+    position: absolute;
+    top: 16px;
+    left: 8px;
+
+    width: 2px;
+    height: 45px;
+
+    background: #e1e9df;
+}
+
+.timeline-item:last-child .timeline-marker::after {
+    display: none;
+}
+
+.timeline-content {
+    padding-bottom: 18px;
+}
+
+.timeline-content strong {
+    color: #405644;
+    font-size: 11px;
+}
+
+.timeline-content p {
+    margin: 4px 0 0;
+    color: #879287;
+    font-size: 10px;
+    line-height: 1.6;
+}
+
+/* REFRESH */
+
+.tracking-refresh {
+    width: 100%;
+    margin-top: 20px;
+    padding: 13px;
+
+    border: 1px solid #cbdaca;
+    border-radius: 10px;
+
+    background: #fff;
+    color: #28633b;
+
+    font: inherit;
+    font-size: 11px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+/* FOOTER */
+
+.tracking-footer-note {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.tracking-footer-note p {
+    color: #829083;
+    font-size: 11px;
+}
+
+.tracking-footer-note a {
+    color: #28633b;
+    font-size: 11px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.tracking-footer {
+    padding: 22px;
+    background: #fff;
+    border-top: 1px solid #e1e9df;
+
+    color: #829083;
+    font-size: 10px;
+    text-align: center;
+}
+
+/* MOBILE */
+
+@media (max-width: 500px) {
+
+    .tracking-header {
+        padding: 10px 16px;
+    }
+
+    .tracking-brand img {
+        width: 39px;
+        height: 39px;
+    }
+
+    .tracking-brand {
+        font-size: 12px;
+    }
+
+    .tracking-back {
+        font-size: 10px;
+    }
+
+    .tracking-main {
+        margin-top: 35px;
+    }
+
+    .result-customer div {
+        align-items: flex-start;
+    }
+
+}

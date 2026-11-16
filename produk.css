@@ -5,7 +5,7 @@
 
 h1,
 h2,
-h3,
+h3,   
 h4,
 h5,
 h6 {
@@ -86,20 +86,6 @@ body {
   line-height: 1.8;
   margin-bottom: 35px;
   color: #667366;
-}
-
-.product-hero-button {
-  display: inline-flex;
-  gap: 20px;
-  align-items: center;
-  padding: 12px 24px;
-  border: 1px solid var(--green);
-  border-radius: 30px;
-  color: var(--green);
-  font-size: 13px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: .3s;
 }
 
 .product-hero-button:hover {
@@ -371,47 +357,90 @@ body {
   margin-bottom: 35px;
 }
 
-.bundling-leaf {
-  font-size: 45px;
-  color: #a4b88e;
-}
-
-.bundling-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 2.5fr) minmax(250px, .9fr);
-  gap: 25px;
-  align-items: stretch;
-}
-
 .bundling-products {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  align-items: stretch;
 }
 
 .bundle-card {
   overflow: hidden;
   background: white;
   border: 1px solid #e7e9df;
-  border-radius: 15px;
+  border-radius: 16px;
   box-shadow: 0 6px 20px rgba(40, 65, 43, .06);
+
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  height: 100%;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.bundle-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(40, 65, 43, .1);
 }
 
 .bundle-image {
   height: 230px;
+  flex-shrink: 0;
   background: #edf1e9;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 8px;
   overflow: hidden;
 }
 
 .bundle-image > img {
-  width: 100%;
+  flex: 1 1 0;
+  width: 0;
+  min-width: 0;
+  max-width: 100%;
   height: 100%;
+
   object-fit: contain;
-  padding: 10px;
+  object-position: center;
+
+  padding: 12px;
+  box-sizing: border-box;
+
+  animation: gambarPaketGerak 4s ease-in-out infinite;
+}
+
+.bundle-image > img:nth-of-type(2) {
+  animation-delay: -1s;
+}
+
+.bundle-image > img:nth-of-type(3) {
+  animation-delay: -2s;
+}
+
+@keyframes gambarPaketGerak {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Efek ketika diarahkan kursor */
+@media (hover: hover) {
+  .bundle-image > img:hover {
+    transform: translateY(-8px) scale(1.06);
+    animation-play-state: paused;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bundle-image > img {
+    animation: none;
+  }
 }
 
 .bundle-badge {
@@ -441,30 +470,42 @@ body {
 }
 
 .bundle-content {
-  padding: 22px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 22px 24px 24px;
+  box-sizing: border-box;
+}
+
+.bundle-category {
+  margin-bottom: 4px;
 }
 
 .bundle-content h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 21px;
+  font-weight: 600;
   color: var(--dark-green);
-  font-family: "Playfair Display", serif;
-  font-size: 25px;
-  margin: 6px 0;
+  margin: 8px 0 10px;
 }
 
 .bundle-content > p {
   color: #81877d;
   font-size: 11px;
   line-height: 1.8;
-  min-height: 55px;
+  min-height: 65px;
+  margin: 0;
 }
 
 .bundle-includes {
-  margin-top: 17px;
-  padding: 15px;
-  border-radius: 10px;
+  margin-top: 18px;
+  padding: 18px;
+  border-radius: 12px;
   background: #f1f5eb;
   color: #52644e;
   font-size: 11px;
+  min-height: 183px;
+  box-sizing: border-box;
 }
 
 .bundle-includes strong {
@@ -482,7 +523,9 @@ body {
   justify-content: space-between;
   align-items: center;
   gap: 10px;
-  margin-top: 20px;
+  margin-top: auto;
+  min-height: 75px;
+  padding-top: 15px;
 }
 
 .bundle-purchase > div span {
@@ -493,23 +536,39 @@ body {
 }
 
 .bundle-purchase h4 {
-  font-family: "Playfair Display", serif;
-  color: var(--dark-green);
+  font-family: "Poppins", sans-serif;
   font-size: 23px;
+  font-weight: 700;
+  color: var(--dark-green);
 }
 
 .add-cart-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   background: var(--green);
-  border-radius: 25px;
-  padding: 11px 15px;
+  border-radius: 30px;
+  padding: 14px 22px;
+  min-height: 48px;
   font-family: "Poppins", sans-serif;
-  font-size: 10px;
+  font-size: 13px;
   white-space: nowrap;
+  transition: all 0.3s ease;
 }
 
 .add-cart-btn:hover {
   background: #244d2d;
   transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(40, 65, 43, 0.15);
+}
+
+.add-cart-btn i,
+.add-cart-btn svg,
+.add-cart-btn img {
+  width: 17px;
+  height: 17px;
+  font-size: 17px;
 }
 
 
@@ -518,10 +577,7 @@ body {
 ========================================= */
 
 .purchase-flow {
-  background: #e8efdf;
-  border-radius: 16px;
-  padding: 25px 20px;
-  height: fit-content;
+  display: none;
 }
 
 .flow-title {
@@ -600,7 +656,7 @@ body {
 
 
 /* =========================================
-   MODAL DETAIL
+   MODAL DETAIL PRODUK
 ========================================= */
 
 .product-modal {
@@ -610,9 +666,10 @@ body {
   display: none;
   align-items: center;
   justify-content: center;
-  padding: 20px;
-  background: rgba(22, 39, 26, .55);
-  backdrop-filter: blur(4px);
+  padding: 24px;
+  background: rgba(20, 31, 23, 0.66);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
 }
 
 .product-modal.show {
@@ -621,48 +678,346 @@ body {
 
 .modal-content {
   position: relative;
+  display: grid;
+  grid-template-columns: 0.95fr 1fr;
+  align-items: stretch;
+  gap: 32px;
+
   width: 100%;
-  max-width: 420px;
-  padding: 40px;
-  background: white;
-  border-radius: 18px;
-  box-shadow: 0 20px 60px rgba(0,0,0,.15);
+  max-width: 980px;
+  max-height: 88vh;
+
+  padding: 28px;
+  overflow-y: auto;
+
+  background: #fffefa;
+  border-radius: 24px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.22);
 }
 
-.modal-content h2 {
-  font-family: "Playfair Display", serif;
+/* GAMBAR PRODUK */
+
+.modal-product-image {
+  position: relative;
+  min-height: 430px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+  border-radius: 15px;
+
+  background: linear-gradient(
+    145deg,
+    #f1f4e9,
+    #e6eddf
+  );
+}
+
+.modal-product-image img {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  height: 100%;
+  max-height: 540px;
+
+  padding: 22px;
+  box-sizing: border-box;
+
+  object-fit: contain;
+
+  filter: drop-shadow(
+    0 15px 18px rgba(35, 55, 35, 0.13)
+  );
+}
+
+.modal-image-decoration {
+  position: absolute;
+  width: 72%;
+  aspect-ratio: 1;
+
+  border-radius: 50%;
+  background: rgba(183, 205, 164, 0.35);
+}
+
+/* INFORMASI PRODUK */
+
+.modal-product-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  min-width: 0;
+  padding: 12px 4px 8px 0;
+}
+
+.modal-brand {
+  display: block;
+  margin-bottom: 12px;
+
+  color: #718765;
+  font-family: "Poppins", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 4px;
+}
+
+.modal-product-info h2 {
+  margin: 0 35px 12px 0;
+
   color: var(--dark-green);
-  font-size: 28px;
-  margin-bottom: 15px;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(25px, 3vw, 36px);
+  font-weight: 700;
+  line-height: 1.2;
 }
 
-.modal-content p {
-  color: #777f73;
-  font-size: 13px;
-  line-height: 1.9;
+/* KATEGORI PRODUK */
+
+.modal-product-badge {
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+
+  margin-bottom: 15px;
+  padding: 7px 14px;
+
+  border-radius: 22px;
+  background: #e8f0dc;
+
+  color: #416a3e;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
 }
+
+/* DESKRIPSI */
+
+.modal-description {
+  margin: 0 0 18px;
+
+  color: #485448;
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* KOTAK KOMPOSISI DAN KEUNGGULAN */
+
+.modal-detail-box {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+
+  padding: 19px 20px;
+
+  border-radius: 15px;
+  background: #f0f3e9;
+}
+
+.modal-detail-row {
+  display: grid;
+  grid-template-columns: 27px minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+}
+
+.modal-detail-icon {
+  color: #356b3c;
+  font-size: 25px;
+  line-height: 1;
+}
+
+.modal-detail-row h3 {
+  margin: 0 0 4px;
+
+  color: #294b30;
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.modal-detail-row p,
+.modal-detail-row li {
+  color: #4f5b4d;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.modal-detail-row p {
+  margin: 0;
+}
+
+.modal-detail-row ul {
+  margin: 3px 0 0;
+  padding-left: 19px;
+}
+
+/* TOMBOL MODAL */
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+
+  margin-top: 20px;
+}
+
+.modal-close,
+.modal-close-secondary,
+.modal-order-button {
+  min-height: 47px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 13px;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+
+  text-decoration: none;
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+/* Tombol silang */
 
 .modal-close {
   position: absolute;
+  z-index: 3;
   top: 12px;
-  right: 15px;
-  background: transparent;
-  color: #61705e;
+  right: 13px;
+
+  width: 38px;
+  min-height: 38px;
+  padding: 0;
+
+  border: none;
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.9);
+  color: #263b2b;
+
   font-size: 27px;
-  padding: 3px 10px;
+  line-height: 1;
 }
 
 .modal-close:hover {
-  background: transparent;
-  transform: none;
+  background: #e8f0e3;
+  transform: rotate(90deg);
 }
 
-.modal-ok {
-  margin-top: 25px;
-  background: var(--green);
-  font-family: "Poppins", sans-serif;
-  font-size: 12px;
-  padding: 11px 25px;
+/* Tombol tutup */
+
+.modal-close-secondary {
+  padding: 0 25px;
+
+  border: 1.5px solid #356b3c;
+  background: transparent;
+  color: #356b3c;
+}
+
+.modal-close-secondary:hover {
+  background: #edf3e8;
+}
+
+/* Tombol pesan */
+
+.modal-order-button {
+  gap: 9px;
+  padding: 0 23px;
+
+  background: #286b35;
+  color: white;
+}
+
+.modal-order-button:hover {
+  background: #1f542a;
+  transform: translateY(-2px);
+
+  box-shadow: 0 7px 16px rgba(40, 90, 48, 0.18);
+}
+
+.modal-order-button span {
+  font-size: 17px;
+}
+
+/* =========================================
+   RESPONSIVE MODAL
+========================================= */
+
+@media (max-width: 760px) {
+
+  .product-modal {
+    padding: 14px;
+  }
+
+  .modal-content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+
+    max-width: 520px;
+    max-height: 92vh;
+
+    padding: 18px;
+    border-radius: 19px;
+  }
+
+  .modal-product-image {
+    min-height: 230px;
+    height: 250px;
+  }
+
+  .modal-product-image img {
+    max-height: 250px;
+    padding: 12px;
+  }
+
+  .modal-product-info {
+    padding: 0 3px 4px;
+  }
+
+  .modal-brand {
+    font-size: 10px;
+    margin-bottom: 8px;
+  }
+
+  .modal-product-info h2 {
+    font-size: 26px;
+  }
+
+  .modal-description {
+    font-size: 12px;
+  }
+
+  .modal-detail-box {
+    padding: 15px;
+    gap: 13px;
+  }
+
+}
+
+@media (max-width: 420px) {
+
+  .modal-actions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .modal-close-secondary,
+  .modal-order-button {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
 }
 
 
@@ -703,7 +1058,7 @@ body {
 .cart-overlay {
   position: fixed;
   inset: 0;
-  z-index: 1998;
+  z-index: 9998;
   background: rgba(24, 37, 25, .4);
   opacity: 0;
   visibility: hidden;
@@ -719,7 +1074,7 @@ body {
   position: fixed;
   top: 0;
   right: 0;
-  z-index: 1999;
+  z-index: 9999;
   width: 420px;
   max-width: 100%;
   height: 100vh;
@@ -745,7 +1100,7 @@ body {
 }
 
 .cart-header h2 {
-  font-family: "Playfair Display", serif;
+  font-family: "Poppins", sans-serif;
   color: var(--dark-green);
   font-size: 23px;
 }
@@ -778,7 +1133,7 @@ body {
 }
 
 .empty-cart h3 {
-  font-family: "Playfair Display", serif;
+  font-family: "Poppins", sans-serif;
   color: var(--dark-green);
   margin: 15px 0 7px;
 }
@@ -867,7 +1222,7 @@ body {
 
 .cart-total strong {
   color: var(--dark-green);
-  font-family: "Playfair Display", serif;
+  font-family: "Poppins", sans-serif;
   font-size: 23px;
 }
 
@@ -895,136 +1250,298 @@ body {
 
 
 /* =========================================
-   RESPONSIVE
+   RESPONSIVE PAKET BUNDLING
 ========================================= */
 
 @media (max-width: 1000px) {
-
-  .product-grid {
+  .bundling-products {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
   }
-
-  .bundling-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .purchase-flow {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-  }
-
-  .flow-title {
-    grid-column: 1 / -1;
-  }
-
 }
 
-@media (max-width: 700px) {
-
-  .product-hero {
-    padding: 120px 7% 40px;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .product-hero-content {
-    width: 100%;
-  }
-
-  .product-hero-image {
-    width: 100%;
-    height: 230px;
-    margin-top: 15px;
-  }
-
-  .product-section-heading,
-  .bundling-heading {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .catalog-search {
-    width: 100%;
-  }
-
-  .product-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .bundling-products {
-    grid-template-columns: 1fr;
-  }
-
-  .purchase-flow {
-    display: block;
-  }
-
-  .product-catalog,
+@media (max-width: 650px) {
   .bundling-section {
     padding: 50px 6%;
   }
 
-  .product-section-heading h2,
-  .bundling-heading h2 {
-    font-size: 29px;
-  }
-
-  .catalog-image {
-    height: 250px;
+  .bundling-products {
+    grid-template-columns: 1fr;
+    gap: 22px;
   }
 
   .bundle-image {
     height: 220px;
   }
 
-  .product-cart-trigger {
-    padding: 7px 9px;
+  .bundle-content {
+    padding: 20px;
   }
 
-}
-
-@media (max-width: 480px) {
-
-  .product-hero h1 {
-    font-size: 35px;
-  }
-
-  .product-filter {
-    gap: 7px;
-  }
-
-  .product-filter .filter-btn {
-    padding: 8px 12px;
-    font-size: 10px;
+  .bundle-includes {
+    min-height: auto;
   }
 
   .bundle-purchase {
     flex-wrap: wrap;
   }
-
-  .modal-content {
-    padding: 30px 25px;
-  }
-
-  .cart-drawer {
-    padding: 22px;
-  }
-
 }
 
-.menu li a.active {
-  color: #3d8b3d;
-  font-weight: 600;
-  position: relative;
+
+/* =====================================
+   CUSTOM CHECKOUT NOTIFICATION
+===================================== */
+
+.checkout-notification-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(20, 35, 24, 0.55);
+    backdrop-filter: blur(5px);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity .25s ease,
+                visibility .25s ease;
 }
 
-.menu li a.active::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -7px;
-  width: 100%;
-  height: 2px;
-  background: #3d8b3d;
+.checkout-notification-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.checkout-notification-modal {
+    position: relative;
+
+    width: 100%;
+    max-width: 420px;
+
+    padding: 38px 32px 30px;
+
+    background: #ffffff;
+    border-radius: 22px;
+
+    text-align: center;
+
+    box-shadow: 0 20px 70px rgba(0, 0, 0, .16);
+
+    transform: translateY(20px) scale(.97);
+    transition: transform .3s ease;
+}
+
+.checkout-notification-overlay.show
+.checkout-notification-modal {
+    transform: translateY(0) scale(1);
+}
+
+/* CLOSE BUTTON */
+
+.notification-close {
+    position: absolute;
+    top: 15px;
+    right: 18px;
+
+    width: 32px;
+    height: 32px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #f2f5f0;
+    color: #536854;
+
+    font-size: 23px;
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.notification-close:hover {
+    background: #e3ede0;
+    color: #245b38;
+}
+
+/* ICON */
+
+.notification-icon {
+    width: 76px;
+    height: 76px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 19px;
+
+    border-radius: 50%;
+
+    background: #e9f3e7;
+    color: #28633b;
+}
+
+.notification-icon svg {
+    width: 37px;
+    height: 37px;
+}
+
+/* TITLE */
+
+.checkout-notification-modal h2 {
+    margin: 0 0 10px;
+
+    color: #244a30;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 23px;
+    font-weight: 700;
+}
+
+/* DESCRIPTION */
+
+.notification-description {
+    max-width: 320px;
+
+    margin: 0 auto 22px;
+
+    color: #778477;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+/* INFO */
+
+.notification-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 14px;
+
+    margin-bottom: 23px;
+
+    border-radius: 12px;
+    background: #f3f7f0;
+
+    text-align: left;
+}
+
+.notification-info-icon {
+    width: 31px;
+    height: 31px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: #dcebd9;
+
+    color: #28633b;
+    font-weight: 700;
+}
+
+.notification-info div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.notification-info strong {
+    color: #34553a;
+    font-size: 11px;
+}
+
+.notification-info small {
+    color: #89958a;
+    font-size: 9px;
+}
+
+/* CHECKOUT BUTTON */
+
+.notification-checkout-btn {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    padding: 15px;
+
+    border: none;
+    border-radius: 50px;
+
+    background: #28633b;
+    color: white;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: .25s;
+}
+
+.notification-checkout-btn:hover {
+    background: #19482b;
+    transform: translateY(-2px);
+}
+
+.notification-checkout-btn span {
+    font-size: 17px;
+}
+
+/* BACK BUTTON */
+
+.notification-back-btn {
+    margin-top: 15px;
+
+    padding: 7px 12px;
+
+    border: none;
+    background: transparent;
+
+    color: #788879;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+
+    cursor: pointer;
+    transition: .2s;
+}
+
+.notification-back-btn:hover {
+    color: #28633b;
+}
+
+/* MOBILE */
+
+@media (max-width: 480px) {
+
+    .checkout-notification-modal {
+        max-width: 350px;
+        padding: 34px 22px 25px;
+        border-radius: 19px;
+    }
+
+    .checkout-notification-modal h2 {
+        font-size: 20px;
+    }
+
+    .notification-description {
+        font-size: 11px;
+    }
+
 }
