@@ -1,0 +1,260 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cek Pesanan - Daun Cincau ID</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cek-pesanan.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="tracking-page">
+
+<header class="tracking-header">
+
+    <a href="index.html" class="tracking-brand">
+        <img src="picture/logodauncincauid.png" alt="Daun Cincau ID">
+        <span>Daun Cincau ID</span>
+    </a>
+
+    <a href="produk.html" class="tracking-back">
+        ← Kembali ke Produk
+    </a>
+
+</header>
+
+
+<main class="tracking-main">
+
+    <section class="tracking-intro">
+
+        <span class="tracking-eyebrow">
+            ORDER TRACKING
+        </span>
+
+        <h1>Cek Status Pesanan</h1>
+
+        <p>
+            Masukkan informasi pesanan untuk melihat
+            status pembayaran dan perkembangan pesananmu.
+        </p>
+
+    </section>
+
+
+    <!-- FORM PENCARIAN -->
+    <section class="tracking-card">
+
+        <div class="tracking-card-heading">
+
+            <div class="tracking-icon">
+                <svg viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="1.7"
+                     stroke-linecap="round" stroke-linejoin="round">
+
+                    <circle cx="10.5" cy="10.5" r="6.5"/>
+                    <path d="m16 16 5 5"/>
+
+                </svg>
+            </div>
+
+            <div>
+                <h2>Temukan Pesananmu</h2>
+                <p>Lengkapi informasi berikut.</p>
+            </div>
+
+        </div>
+
+
+        <form id="trackingForm">
+
+            <label for="trackingOrderCode">
+                Nomor Pesanan
+            </label>
+
+            <input
+                type="text"
+                id="trackingOrderCode"
+                placeholder="Contoh: DC20261113ABC123"
+                required
+            >
+
+            <label for="trackingPhone">
+                Nomor WhatsApp
+            </label>
+
+            <input
+                type="tel"
+                id="trackingPhone"
+                placeholder="Nomor WhatsApp saat checkout"
+                required
+            >
+
+            <label for="trackingToken">
+                Kode Pelacakan
+            </label>
+
+            <input
+                type="text"
+                id="trackingToken"
+                placeholder="Masukkan kode pelacakan 64 karakter"
+                minlength="64"
+                maxlength="64"
+                required
+            >
+
+            <small class="tracking-hint">
+                Kode pelacakan diberikan saat pesanan berhasil dibuat.
+                Jangan bagikan kode ini kepada orang lain.
+            </small>
+
+            <p id="trackingError" class="tracking-error"></p>
+
+            <button
+                type="submit"
+                id="trackingSubmit"
+                class="tracking-submit"
+            >
+                Cari Pesanan →
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- HASIL PENCARIAN -->
+    <section
+        id="trackingResult"
+        class="tracking-result"
+        hidden
+    >
+
+        <div class="tracking-card result-card">
+
+            <div class="result-heading">
+
+                <div>
+                    <span class="tracking-eyebrow">
+                        DETAIL PESANAN
+                    </span>
+
+                    <h2 id="resultOrderCode">-</h2>
+                </div>
+
+                <span
+                    id="resultPaymentBadge"
+                    class="tracking-badge"
+                >
+                    PENDING
+                </span>
+
+            </div>
+
+
+            <div class="result-total">
+
+                <span>Total Pembayaran</span>
+
+                <strong id="resultTotal">
+                    Rp0
+                </strong>
+
+            </div>
+
+
+            <div class="result-customer">
+
+                <div>
+                    <span>Nama Pelanggan</span>
+                    <strong id="resultCustomer">-</strong>
+                </div>
+
+                <div>
+                    <span>Tanggal Pesanan</span>
+                    <strong id="resultDate">-</strong>
+                </div>
+
+                <div>
+                    <span>Metode Pembayaran</span>
+                    <strong>QRIS Statis</strong>
+                </div>
+
+            </div>
+
+
+            <div id="resultStatusBox" class="result-status-box">
+
+                <h3 id="resultStatusTitle">
+                    Menunggu Pembayaran
+                </h3>
+
+                <p id="resultStatusDescription">
+                    Pesanan sedang menunggu pembayaran.
+                </p>
+
+            </div>
+
+
+            <h3 class="result-section-title">
+                Rincian Paket
+            </h3>
+
+            <div id="resultItems"></div>
+
+
+            <h3 class="result-section-title">
+                Perkembangan Pesanan
+            </h3>
+
+            <div id="resultTimeline" class="result-timeline"></div>
+
+
+            <button
+                type="button"
+                id="refreshTracking"
+                class="tracking-refresh"
+            >
+                <span>↻</span> Perbarui Status Pesanan
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <div class="tracking-footer-note">
+        <p>
+            Jika mengalami kendala, silakan hubungi
+            Daun Cincau ID melalui WhatsApp.
+        </p>
+
+        <a
+            href="https://wa.me/6281336544622"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Hubungi Owner ↗
+        </a>
+    </div>
+
+</main>
+
+
+<footer class="tracking-footer">
+
+    © <span id="trackingYear"></span>
+    Daun Cincau ID · Good Leaf Good Life
+
+</footer>
+
+
+<script src="cek-pesanan.js"></script>
+
+</body>
+</html>

@@ -1,5 +1,6 @@
 /* =========================
    TENTANG KAMI
+   DAUN CINCAU ID
 ========================= */
 
 :root {
@@ -15,69 +16,152 @@ html {
   scroll-behavior: smooth;
 }
 
+/* =========================
+   LABEL SECTION
+========================= */
+
 .about-label {
+  color: #39894c;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
+/* =========================
+   HERO TENTANG KAMI
+========================= */
+
+.about-hero {
+  position: relative;
+  width: 100%;
+  min-height: 620px;
+  padding: 100px 9% 70px;
+  box-sizing: border-box;
+
+  background: #eaf2e8;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 65px;
+
+  overflow: hidden;
+}
+
+/* OVERLAY - TIDAK MENGAMBIL RUANG GRID */
+
+.about-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* TEKS KIRI */
+
+.about-hero-content {
+  position: relative;
+  z-index: 1;
+  grid-column: 1;
+  grid-row: 1;
+  width: 100%;
+}
+
+.about-hero-content .about-label {
   color: #39894c;
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 3px;
 }
 
-/* HERO */
-
-.about-hero {
-  min-height: 620px;
-  padding: 70px 9%;
-  background: var(--sage);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 50px;
-}
-
 .about-hero-content h1 {
-  color: var(--green);
+  color: #254b35;
   font-family: "Poppins", sans-serif;
-  font-size: clamp(48px, 6vw, 78px);
-  line-height: 1.15;
+  font-size: clamp(38px, 4.5vw, 62px);
+  font-weight: 700;
+  line-height: 1.2;
   margin: 20px 0;
 }
 
 .about-hero-content p {
-  color: var(--text);
-  font-size: 17px;
+  color: #53675a;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
   line-height: 1.9;
-  max-width: 490px;
+  max-width: 450px;
 }
 
-.about-button {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 14px 25px;
-  background: #39894c;
-  color: white;
-  border-radius: 30px;
-  text-decoration: none;
-  font-size: 14px;
-}
+/* FOTO KANAN */
 
 .about-hero-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative;
+  z-index: 1;
+  grid-column: 2;
+  grid-row: 1;
+  width: 100%;
 }
 
 .about-hero-image img {
+  display: block;
   width: 100%;
-  max-width: 430px;
-  max-height: 480px;
-  object-fit: contain;
+  height: 460px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(37, 75, 53, 0.15);
 }
 
-/* CERITA KAMI */
+/* TABLET */
+
+@media (max-width: 900px) {
+  .about-hero {
+    grid-template-columns: 1fr;
+    padding: 100px 7% 60px;
+    gap: 35px;
+  }
+
+  .about-hero-content {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .about-hero-image {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .about-hero-image img {
+    height: 420px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .about-hero {
+    padding: 90px 6% 50px;
+    gap: 25px;
+  }
+
+  .about-hero-content h1 {
+    font-size: 38px;
+  }
+
+  .about-hero-image img {
+    height: 330px;
+  }
+}
+
+/* =========================
+   CERITA KAMI
+========================= */
 
 .about-story {
   background: var(--cream);
   padding: 100px 9%;
+  box-sizing: border-box;
+
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
   align-items: center;
@@ -85,6 +169,7 @@ html {
 }
 
 .story-image img {
+  display: block;
   width: 100%;
   max-height: 530px;
   object-fit: cover;
@@ -93,23 +178,28 @@ html {
 
 .story-content h2 {
   color: var(--green);
+  font-family: "Poppins", sans-serif;
   font-size: clamp(30px, 4vw, 43px);
   margin: 15px 0 25px;
 }
 
 .story-content p {
   color: var(--text);
+  font-family: "Poppins", sans-serif;
   font-size: 14px;
   line-height: 2;
   margin-bottom: 15px;
   text-align: justify;
 }
 
-/* PERJALANAN */
+/* =========================
+   PERJALANAN KAMI
+========================= */
 
 .about-journey {
   background: var(--sage);
   padding: 90px 9%;
+  box-sizing: border-box;
 }
 
 .section-heading {
@@ -121,6 +211,7 @@ html {
 .section-heading h2,
 .commitment-heading h2 {
   color: var(--green);
+  font-family: "Poppins", sans-serif;
   font-size: clamp(30px, 4vw, 44px);
   margin: 15px 0;
 }
@@ -128,6 +219,7 @@ html {
 .section-heading p,
 .commitment-heading p {
   color: var(--text);
+  font-family: "Poppins", sans-serif;
   font-size: 14px;
   line-height: 1.8;
 }
@@ -159,21 +251,26 @@ html {
 
 .journey-card h3 {
   color: var(--green);
+  font-family: "Poppins", sans-serif;
   font-size: 16px;
   margin: 20px 0 12px;
 }
 
 .journey-card p {
   color: var(--text);
+  font-family: "Poppins", sans-serif;
   font-size: 12px;
   line-height: 1.9;
 }
 
-/* KOMITMEN */
+/* =========================
+   KOMITMEN KAMI
+========================= */
 
 .about-commitment {
   background: var(--cream);
   padding: 90px 9%;
+  box-sizing: border-box;
 }
 
 .commitment-heading {
@@ -193,11 +290,12 @@ html {
   background: white;
   padding: 35px 22px;
   border-radius: 20px;
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
 
 .commitment-card:hover {
   transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(37, 75, 53, 0.08);
 }
 
 .commitment-icon {
@@ -207,20 +305,26 @@ html {
 
 .commitment-card h3 {
   color: var(--green);
+  font-family: "Poppins", sans-serif;
   font-size: 16px;
 }
 
 .commitment-card p {
   color: var(--text);
+  font-family: "Poppins", sans-serif;
   font-size: 12px;
   line-height: 1.9;
 }
 
-/* VISI MISI */
+/* =========================
+   VISI DAN MISI
+========================= */
 
 .about-vision {
   background: var(--sage);
   padding: 100px 9%;
+  box-sizing: border-box;
+
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
   align-items: center;
@@ -229,6 +333,7 @@ html {
 
 .vision-content h2 {
   color: var(--green);
+  font-family: "Poppins", sans-serif;
   font-size: clamp(30px, 4vw, 43px);
   line-height: 1.3;
   margin: 20px 0 35px;
@@ -240,6 +345,7 @@ html {
 
 .vision-box h3 {
   color: #39894c;
+  font-family: "Poppins", sans-serif;
   font-size: 19px;
   margin-bottom: 10px;
 }
@@ -247,6 +353,7 @@ html {
 .vision-box p,
 .vision-box li {
   color: var(--text);
+  font-family: "Poppins", sans-serif;
   font-size: 13px;
   line-height: 1.9;
 }
@@ -260,21 +367,26 @@ html {
 }
 
 .vision-image img {
+  display: block;
   width: 100%;
   max-height: 480px;
   object-fit: contain;
 }
 
-/* CLOSING */
+/* =========================
+   CLOSING
+========================= */
 
 .about-closing {
   text-align: center;
   padding: 85px 20px;
   background: var(--cream);
+  box-sizing: border-box;
 }
 
 .about-closing span {
   color: #39894c;
+  font-family: "Poppins", sans-serif;
   letter-spacing: 4px;
   font-size: 11px;
   font-weight: 600;
@@ -282,12 +394,14 @@ html {
 
 .about-closing h2 {
   color: var(--green);
+  font-family: "Poppins", sans-serif;
   font-size: clamp(32px, 5vw, 55px);
   margin: 15px 0;
 }
 
 .about-closing p {
   color: var(--text);
+  font-family: "Poppins", sans-serif;
   font-size: 14px;
 }
 
@@ -299,10 +413,19 @@ html {
   color: white;
   border-radius: 30px;
   text-decoration: none;
+  font-family: "Poppins", sans-serif;
   font-size: 13px;
+  transition: 0.3s ease;
 }
 
-/* RESPONSIVE */
+.about-closing a:hover {
+  background: #254b35;
+  transform: translateY(-3px);
+}
+
+/* =========================
+   RESPONSIVE TABLET
+========================= */
 
 @media (max-width: 900px) {
   .about-hero,
@@ -322,9 +445,14 @@ html {
   }
 
   .about-hero-content p {
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
+
+/* =========================
+   RESPONSIVE MOBILE
+========================= */
 
 @media (max-width: 600px) {
   .about-hero,
@@ -340,112 +468,249 @@ html {
     grid-template-columns: 1fr;
   }
 
+  .about-hero {
+    min-height: auto;
+  }
+
   .about-hero-content h1 {
     font-size: 45px;
+  }
+
+  .about-hero-content p {
+    font-size: 15px;
   }
 
   .story-image img {
     max-height: 350px;
   }
+
+  .story-content p {
+    font-size: 13px;
+  }
+
+  .about-closing {
+    padding: 65px 6%;
+  }
 }
 
-/* HEADER TENTANG KAMI - SAMA DENGAN BERANDA */
+/* =========================
+   FOOTER FIX
+========================= */
 
-header {
-  width: 100%;
-  z-index: 1000;
-}
-
-/* Ukuran navbar mengikuti Beranda */
-.navbar {
-  width: 100%;
+.site-footer {
+  background: #ffffff !important;
+  padding: 55px 4% 35px !important;
+  display: grid;
+  grid-template-columns: 1.4fr 1.3fr 1fr 1fr;
+  gap: 45px;
   box-sizing: border-box;
 }
 
 /* Logo */
-.navbar .logo img {
-  width: 150px;
+.footer-logo {
+  width: 180px;
   height: auto;
-  object-fit: contain;
 }
 
-/* Menu */
-.navbar .menu {
+/* Deskripsi */
+.footer-description {
+  color: #647568 !important;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* Judul kolom */
+.footer-column h3 {
+  color: #254b35 !important;
+  font-size: 16px;
+  margin-bottom: 25px;
+}
+
+/* Isi kolom */
+.footer-column p {
+  color: #647568 !important;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* Link footer */
+.footer-column a {
+  display: block;
+  color: #53675a !important;
+  font-size: 13px;
+  margin-bottom: 8px;
+  text-decoration: none;
+}
+
+.footer-column a:hover {
+  color: #39894c !important;
+}
+
+/* Copyright */
+.footer-bottom {
+  background: #ffffff !important;
+  border-top: 1px solid #e8eee7;
+  padding: 20px 4% !important;
   display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
-/* Instagram */
-.header-instagram img {
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
+.footer-bottom p,
+.footer-bottom a {
+  color: #647568 !important;
+  font-size: 12px;
 }
 
-/* HEADER SAMA DENGAN BERANDA */
+/* Responsive */
+@media (max-width: 768px) {
+  .site-footer {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
 
-header {
-  position: fixed !important;
-  top: 0;
-  left: 0;
+@media (max-width: 500px) {
+  .site-footer {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}
+
+/* =========================
+   FOOTER - SAMA DENGAN BERANDA
+========================= */
+
+.site-footer {
   width: 100%;
-  z-index: 9999;
-  background: #e8f0e7 !important;
-  transition: transform 0.3s ease-in-out;
+  background: #ffffff !important;
+  box-sizing: border-box;
+  padding: 55px 5% 65px !important;
+
+  display: grid !important;
+  grid-template-columns: 1.2fr 1.2fr 0.9fr 0.9fr !important;
+  column-gap: 65px !important;
+  align-items: start !important;
 }
 
-header.header-hidden {
-  transform: translateY(-110%) !important;
+/* LOGO DAN DESKRIPSI */
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-.navbar {
-  width: 90% !important;
-  margin: auto !important;
-  padding: 15px 0 !important;
+.footer-logo {
+  width: 185px !important;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 25px;
+}
+
+.footer-description {
+  color: #718579 !important;
+  font-size: 13px !important;
+  line-height: 1.8 !important;
+  max-width: 380px;
+  margin: 0;
+}
+
+/* KOLOM FOOTER */
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-column h3 {
+  color: #254b35 !important;
+  font-size: 17px !important;
+  font-weight: 600;
+  margin: 5px 0 28px;
+}
+
+.footer-column p {
+  color: #85869b !important;
+  font-size: 13px !important;
+  line-height: 1.8 !important;
+  margin: 0 0 8px;
+}
+
+.footer-column p strong {
+  color: #85869b;
+  font-weight: 600;
+}
+
+.footer-column a {
+  color: #45445f !important;
+  font-size: 13px !important;
+  text-decoration: none;
+  margin-bottom: 8px;
+  transition: 0.3s;
+}
+
+.footer-column a:hover {
+  color: #39894c !important;
+}
+
+/* COPYRIGHT */
+.footer-bottom {
+  width: 100%;
+  background: #ffffff !important;
+  box-sizing: border-box;
+  padding: 15px 5% 25px !important;
+
   display: flex !important;
   justify-content: space-between !important;
   align-items: center !important;
+
+  border-top: none !important;
 }
 
-.logo img {
-  width: 110px !important;
-  height: auto !important;
-  object-fit: contain;
+.footer-bottom p {
+  color: #254b35 !important;
+  font-size: 12px !important;
+  margin: 0;
 }
 
-.menu {
-  list-style: none !important;
-  display: flex !important;
-  align-items: center !important;
-  gap: 30px !important;
-  margin: 0 !important;
-  padding: 0 !important;
+.footer-socials {
+  display: flex;
+  gap: 25px;
 }
 
-.menu li {
-  font-size: 14px !important;
+.footer-socials a {
+  color: #254b35 !important;
+  font-size: 12px !important;
+  text-decoration: none;
 }
 
-.menu a {
-  color: #243e2b !important;
-  text-decoration: none !important;
-  font-family: "Poppins", sans-serif !important;
-  transition: color 0.3s ease;
+.footer-socials a:hover {
+  color: #39894c !important;
 }
 
-.menu a:hover {
-  color: #438e42 !important;
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .site-footer {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 40px !important;
+  }
 }
 
-.header-instagram {
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-  margin-left: 10px;
-}
+@media (max-width: 550px) {
+  .site-footer {
+    grid-template-columns: 1fr !important;
+    padding: 40px 7% !important;
+    gap: 30px !important;
+  }
 
-.header-instagram img {
-  width: 24px !important;
-  height: 24px !important;
-  object-fit: contain;
+  .footer-bottom {
+    flex-direction: column !important;
+    gap: 15px;
+    text-align: center;
+  }
 }
