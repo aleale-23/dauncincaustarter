@@ -1,0 +1,625 @@
+/* =====================================
+   EDUKASI CINCAU - DAUN CINCAU ID
+===================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  color: #53675a;
+}
+
+.edukasi-label {
+  display: inline-block;
+  color: #39894c;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+}
+
+.edukasi-hero,
+.edukasi-intro,
+.edukasi-tanaman,
+.edukasi-manfaat,
+.edukasi-sajian,
+.edukasi-tips,
+.edukasi-closing {
+  box-sizing: border-box;
+}
+
+/* =====================================
+   HERO
+===================================== */
+
+.edukasi-hero {
+  min-height: 650px;
+  padding: 100px 9% 70px;
+  background: #eaf2e8;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 60px;
+}
+
+.edukasi-hero-content h1 {
+  font-size: clamp(40px, 5vw, 65px);
+  color: #254b35;
+  line-height: 1.2;
+  margin: 10px 0 25px;
+  font-weight: 700;
+}
+
+.edukasi-hero-content p {
+  font-size: 15px;
+  line-height: 1.9;
+  max-width: 520px;
+}
+
+.edukasi-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 13px 25px;
+  background: #39894c;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 13px;
+  transition: 0.3s;
+}
+
+.edukasi-button:hover {
+  background: #254b35;
+  transform: translateY(-3px);
+}
+
+.edukasi-hero-image {
+  display: flex;
+  justify-content: center;
+}
+
+.edukasi-hero-image img {
+  width: 100%;
+  max-width: 480px;
+  height: 430px;
+  object-fit: cover;
+  border-radius: 25px;
+}
+
+/* =====================================
+   APA ITU CINCAU
+===================================== */
+
+.edukasi-intro {
+  padding: 100px 9%;
+  background: #f7f5ed;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+  gap: 75px;
+}
+
+.edukasi-intro-image img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 22px;
+}
+
+.edukasi-intro-content h2 {
+  font-size: clamp(30px, 4vw, 43px);
+  color: #254b35;
+  line-height: 1.3;
+  margin: 10px 0 25px;
+}
+
+.edukasi-intro-content p {
+  font-size: 14px;
+  line-height: 2;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+/* =====================================
+   JUDUL SECTION
+===================================== */
+
+.edukasi-section-heading {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 50px;
+}
+
+.edukasi-section-heading h2 {
+  color: #254b35;
+  font-size: clamp(29px, 4vw, 42px);
+  line-height: 1.3;
+  margin: 10px 0 15px;
+}
+
+.edukasi-section-heading p {
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* =====================================
+   TANAMAN CINCAU
+===================================== */
+
+.edukasi-tanaman {
+  padding: 90px 9%;
+  background: #eaf2e8;
+}
+
+.tanaman-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.tanaman-card {
+  background: white;
+  padding: 35px 28px;
+  border-radius: 20px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.tanaman-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 12px 25px rgba(37, 75, 53, 0.1);
+}
+
+.tanaman-icon {
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+
+.tanaman-card h3 {
+  color: #254b35;
+  font-size: 17px;
+  margin-bottom: 12px;
+}
+
+.tanaman-card p {
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+/* =====================================
+   MANFAAT CINCAU
+===================================== */
+
+.edukasi-manfaat {
+  padding: 90px 9%;
+  background: #f7f5ed;
+}
+
+.manfaat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.manfaat-card {
+  background: white;
+  padding: 30px;
+  border-radius: 18px;
+  border: 1px solid #e6ebdf;
+  transition: 0.3s;
+}
+
+.manfaat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(37, 75, 53, 0.08);
+}
+
+.manfaat-card span {
+  color: #39894c;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.manfaat-card h3 {
+  color: #254b35;
+  font-size: 18px;
+  margin: 12px 0;
+}
+
+.manfaat-card p {
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+/* =====================================
+   RAGAM SAJIAN
+===================================== */
+
+.edukasi-sajian {
+  padding: 100px 9%;
+  background: #eaf2e8;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 65px;
+}
+
+.edukasi-sajian-content h2 {
+  font-size: clamp(30px, 4vw, 43px);
+  color: #254b35;
+  line-height: 1.3;
+  margin: 10px 0 20px;
+}
+
+.edukasi-sajian-content > p {
+  font-size: 14px;
+  line-height: 1.9;
+  margin-bottom: 30px;
+}
+
+.sajian-item {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 25px;
+  align-items: flex-start;
+}
+
+.sajian-item > span {
+  font-size: 22px;
+  font-weight: 700;
+  color: #39894c;
+}
+
+.sajian-item h3 {
+  color: #254b35;
+  font-size: 16px;
+  margin: 0 0 8px;
+}
+
+.sajian-item p {
+  font-size: 13px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.edukasi-sajian-image img {
+  width: 100%;
+  max-height: 480px;
+  object-fit: contain;
+  border-radius: 20px;
+}
+
+/* =====================================
+   TIPS PENYIMPANAN
+===================================== */
+
+.edukasi-tips {
+  padding: 85px 9%;
+  background: #f7f5ed;
+}
+
+.tips-content {
+  max-width: 850px;
+  margin: auto;
+  padding: 45px;
+  background: white;
+  border-radius: 22px;
+}
+
+.tips-content h2 {
+  color: #254b35;
+  font-size: clamp(28px, 4vw, 40px);
+  margin: 10px 0 15px;
+}
+
+.tips-content > p {
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.tips-list {
+  margin-top: 25px;
+}
+
+.tips-list p {
+  font-size: 14px;
+  margin-bottom: 15px;
+  line-height: 1.7;
+}
+
+/* =====================================
+   PENUTUP
+===================================== */
+
+.edukasi-closing {
+  padding: 80px 20px;
+  background: #eaf2e8;
+  text-align: center;
+}
+
+.edukasi-closing span {
+  color: #39894c;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
+.edukasi-closing h2 {
+  color: #254b35;
+  font-size: clamp(30px, 5vw, 48px);
+  margin: 15px 0;
+}
+
+.edukasi-closing p {
+  font-size: 14px;
+}
+
+.edukasi-closing a {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 13px 25px;
+  background: #39894c;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media (max-width: 900px) {
+  .edukasi-hero,
+  .edukasi-intro,
+  .edukasi-sajian {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .tanaman-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .edukasi-hero {
+    text-align: center;
+  }
+
+  .edukasi-hero-content p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .edukasi-hero,
+  .edukasi-intro,
+  .edukasi-tanaman,
+  .edukasi-manfaat,
+  .edukasi-sajian,
+  .edukasi-tips {
+    padding: 60px 6%;
+  }
+
+  .tanaman-grid,
+  .manfaat-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .edukasi-hero-image img {
+    height: 300px;
+  }
+
+  .edukasi-intro-image img {
+    height: 320px;
+  }
+
+  .tips-content {
+    padding: 25px;
+  }
+}
+
+/* =====================================
+   SECTION TAHUKAH KAMU
+===================================== */
+
+.edukasi-fakta {
+  padding: 90px 9%;
+  background: #eaf2e8;
+}
+
+.fakta-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.fakta-highlight {
+  position: relative;
+  overflow: hidden;
+  min-height: 350px;
+  padding: 38px;
+  border-radius: 24px;
+  background: #254b35;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.fakta-angka {
+  font-size: 52px;
+  font-weight: 700;
+  opacity: 0.35;
+}
+
+.fakta-kategori {
+  margin-top: 20px;
+  color: #c6e2bd;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.fakta-highlight h3 {
+  max-width: 360px;
+  margin: 12px 0;
+  font-size: 27px;
+}
+
+.fakta-highlight p {
+  max-width: 390px;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.fakta-dekorasi {
+  position: absolute;
+  right: 18px;
+  bottom: 8px;
+  font-size: 110px;
+  opacity: 0.15;
+}
+
+.fakta-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.fakta-item {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 22px;
+  border-radius: 18px;
+  background: white;
+  transition: 0.3s ease;
+}
+
+.fakta-item:hover {
+  transform: translateX(5px);
+  box-shadow: 0 10px 24px rgba(37, 75, 53, 0.08);
+}
+
+.fakta-icon {
+  width: 54px;
+  height: 54px;
+  min-width: 54px;
+  display: grid;
+  place-items: center;
+  border-radius: 15px;
+  background: #eaf2e8;
+  font-size: 26px;
+}
+
+.fakta-item h3 {
+  margin: 0 0 7px;
+  color: #254b35;
+  font-size: 15px;
+}
+
+.fakta-item p {
+  margin: 0;
+  color: #53675a;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+/* =====================================
+   SECTION MITOS ATAU FAKTA
+===================================== */
+
+.edukasi-mitos {
+  padding: 90px 9%;
+  background: #f7f5ed;
+}
+
+.mitos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.mitos-card {
+  padding: 30px;
+  border: 1px solid #e7eadd;
+  border-radius: 20px;
+  background: white;
+  transition: 0.3s ease;
+}
+
+.mitos-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(37, 75, 53, 0.08);
+}
+
+.mitos-status {
+  display: inline-block;
+  padding: 7px 14px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.mitos-status.fakta {
+  color: #28683d;
+  background: #e5f2e5;
+}
+
+.mitos-status.mitos {
+  color: #8b6331;
+  background: #f5ead9;
+}
+
+.mitos-card h3 {
+  margin: 20px 0 12px;
+  color: #254b35;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.mitos-card p {
+  margin: 0;
+  color: #53675a;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media (max-width: 900px) {
+  .fakta-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .mitos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .edukasi-fakta,
+  .edukasi-mitos {
+    padding: 60px 6%;
+  }
+
+  .mitos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fakta-highlight {
+    min-height: 300px;
+    padding: 28px;
+  }
+
+  .fakta-item {
+    padding: 18px;
+  }
+}

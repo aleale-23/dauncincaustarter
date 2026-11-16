@@ -1,0 +1,353 @@
+/* =====================================
+   PROSES PRODUKSI - DAUN CINCAU ID
+===================================== */
+
+:root {
+  --sage: #eaf2e8;
+  --cream: #f7f5ed;
+  --green: #254b35;
+  --green-light: #39894c;
+  --text: #53675a;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  color: var(--text);
+}
+
+/* =====================================
+   LABEL SECTION
+===================================== */
+
+.produksi-label {
+  display: inline-block;
+  color: var(--green-light);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  margin-bottom: 12px;
+}
+
+/* =====================================
+   HERO
+===================================== */
+
+.produksi-hero {
+  min-height: 420px;
+  padding: 140px 9% 85px;
+  background: linear-gradient(180deg, #eaf2e8 0%, #f7f5ed 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.produksi-hero-content {
+  max-width: 780px;
+  margin: auto;
+}
+
+.produksi-hero h1 {
+  color: var(--green);
+  font-size: clamp(38px, 5vw, 62px);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 12px 0 20px;
+}
+
+.produksi-hero p {
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.9;
+  max-width: 650px;
+  margin: auto;
+}
+
+/* =====================================
+   JUDUL SECTION
+===================================== */
+
+.produksi-steps .section-heading,
+.produksi-quality .section-heading {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 50px;
+}
+
+.produksi-steps .section-heading h2,
+.produksi-quality .section-heading h2 {
+  color: var(--green);
+  font-size: clamp(30px, 4vw, 43px);
+  font-weight: 600;
+  margin: 12px 0;
+}
+
+.produksi-steps .section-heading p,
+.produksi-quality .section-heading p {
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+/* =====================================
+   ALUR PRODUKSI
+===================================== */
+
+.produksi-steps {
+  padding: 90px 9%;
+  background: var(--cream);
+  box-sizing: border-box;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.step-card {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 20px;
+  border: 1px solid #e7ecdf;
+  transition: 0.3s ease;
+  box-sizing: border-box;
+}
+
+.step-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(37, 75, 53, 0.09);
+}
+
+.step-icon {
+  width: 62px;
+  height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--sage);
+  border-radius: 18px;
+  font-size: 29px;
+  margin-bottom: 20px;
+}
+
+.step-number {
+  display: inline-block;
+  color: var(--green-light);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.step-card h3 {
+  color: var(--green);
+  font-size: 17px;
+  font-weight: 600;
+  margin: 8px 0 12px;
+}
+
+.step-card p {
+  color: var(--text);
+  font-size: 13px;
+  line-height: 1.9;
+  margin: 0;
+}
+
+/* =====================================
+   BAHAN BAKU & PERALATAN
+===================================== */
+
+.produksi-info {
+  padding: 90px 9%;
+  background: var(--sage);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  box-sizing: border-box;
+}
+
+.produksi-info-box {
+  background: #ffffff;
+  padding: 38px;
+  border-radius: 22px;
+  transition: 0.3s ease;
+}
+
+.produksi-info-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(37, 75, 53, 0.08);
+}
+
+.produksi-info-box h2 {
+  color: var(--green);
+  font-size: 27px;
+  font-weight: 600;
+  margin: 12px 0 20px;
+}
+
+.produksi-info-box ul {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.produksi-info-box li {
+  color: var(--text);
+  font-size: 14px;
+  line-height: 2.2;
+  padding-left: 5px;
+}
+
+/* =====================================
+   KOMITMEN KUALITAS
+===================================== */
+
+.produksi-quality {
+  padding: 90px 9%;
+  background: var(--cream);
+  box-sizing: border-box;
+}
+
+.quality-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.quality-card {
+  background: #ffffff;
+  padding: 35px 25px;
+  border-radius: 20px;
+  text-align: center;
+  border: 1px solid #e7ecdf;
+  transition: 0.3s ease;
+}
+
+.quality-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(37, 75, 53, 0.08);
+}
+
+.quality-icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--sage);
+  border-radius: 50%;
+  font-size: 30px;
+}
+
+.quality-card h3 {
+  color: var(--green);
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.quality-card p {
+  color: var(--text);
+  font-size: 13px;
+  line-height: 1.9;
+  margin: 0;
+}
+
+/* =====================================
+   PENUTUP
+===================================== */
+
+.produksi-closing {
+  padding: 85px 9%;
+  background: var(--sage);
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.produksi-closing h2 {
+  color: var(--green);
+  max-width: 800px;
+  margin: 15px auto;
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.35;
+  font-weight: 600;
+}
+
+.produksi-closing p {
+  color: var(--text);
+  max-width: 650px;
+  margin: auto;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+/* =====================================
+   RESPONSIVE TABLET
+===================================== */
+
+@media (max-width: 900px) {
+  .steps-grid,
+  .quality-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .produksi-info {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =====================================
+   RESPONSIVE MOBILE
+===================================== */
+
+@media (max-width: 600px) {
+  .produksi-hero,
+  .produksi-steps,
+  .produksi-info,
+  .produksi-quality,
+  .produksi-closing {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+
+  .produksi-hero {
+    min-height: 400px;
+    padding-top: 120px;
+    padding-bottom: 65px;
+  }
+
+  .produksi-hero h1 {
+    font-size: 38px;
+  }
+
+  .steps-grid,
+  .quality-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .produksi-info-box {
+    padding: 28px;
+  }
+
+  .produksi-info-box h2 {
+    font-size: 23px;
+  }
+
+  .step-card {
+    padding: 25px;
+  }
+
+  .produksi-steps,
+  .produksi-info,
+  .produksi-quality {
+    padding-top: 65px;
+    padding-bottom: 65px;
+  }
+}
