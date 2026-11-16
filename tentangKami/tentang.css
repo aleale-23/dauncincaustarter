@@ -1,0 +1,716 @@
+/* =========================
+   TENTANG KAMI
+   DAUN CINCAU ID
+========================= */
+
+:root {
+  --sage: #eaf2e8;
+  --sage-dark: #dceadd;
+  --cream: #f7f5ed;
+  --green: #254b35;
+  --green-light: #39894c;
+  --text: #53675a;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* =========================
+   LABEL SECTION
+========================= */
+
+.about-label {
+  color: #39894c;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
+/* =========================
+   HERO TENTANG KAMI
+========================= */
+
+.about-hero {
+  position: relative;
+  width: 100%;
+  min-height: 620px;
+  padding: 100px 9% 70px;
+  box-sizing: border-box;
+
+  background: #eaf2e8;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 65px;
+
+  overflow: hidden;
+}
+
+/* OVERLAY - TIDAK MENGAMBIL RUANG GRID */
+
+.about-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* TEKS KIRI */
+
+.about-hero-content {
+  position: relative;
+  z-index: 1;
+  grid-column: 1;
+  grid-row: 1;
+  width: 100%;
+}
+
+.about-hero-content .about-label {
+  color: #39894c;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
+.about-hero-content h1 {
+  color: #254b35;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(38px, 4.5vw, 62px);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 20px 0;
+}
+
+.about-hero-content p {
+  color: #53675a;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 1.9;
+  max-width: 450px;
+}
+
+/* FOTO KANAN */
+
+.about-hero-image {
+  position: relative;
+  z-index: 1;
+  grid-column: 2;
+  grid-row: 1;
+  width: 100%;
+}
+
+.about-hero-image img {
+  display: block;
+  width: 100%;
+  height: 460px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(37, 75, 53, 0.15);
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .about-hero {
+    grid-template-columns: 1fr;
+    padding: 100px 7% 60px;
+    gap: 35px;
+  }
+
+  .about-hero-content {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .about-hero-image {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .about-hero-image img {
+    height: 420px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .about-hero {
+    padding: 90px 6% 50px;
+    gap: 25px;
+  }
+
+  .about-hero-content h1 {
+    font-size: 38px;
+  }
+
+  .about-hero-image img {
+    height: 330px;
+  }
+}
+
+/* =========================
+   CERITA KAMI
+========================= */
+
+.about-story {
+  background: var(--cream);
+  padding: 100px 9%;
+  box-sizing: border-box;
+
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+  gap: 75px;
+}
+
+.story-image img {
+  display: block;
+  width: 100%;
+  max-height: 530px;
+  object-fit: cover;
+  border-radius: 25px;
+}
+
+.story-content h2 {
+  color: var(--green);
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(30px, 4vw, 43px);
+  margin: 15px 0 25px;
+}
+
+.story-content p {
+  color: var(--text);
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  line-height: 2;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+/* =========================
+   PERJALANAN KAMI
+========================= */
+
+.about-journey {
+  background: var(--sage);
+  padding: 90px 9%;
+  box-sizing: border-box;
+}
+
+.section-heading {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 55px;
+}
+
+.section-heading h2,
+.commitment-heading h2 {
+  color: var(--green);
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(30px, 4vw, 44px);
+  margin: 15px 0;
+}
+
+.section-heading p,
+.commitment-heading p {
+  color: var(--text);
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.journey-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.journey-card {
+  background: white;
+  padding: 30px 23px;
+  border-radius: 18px;
+  border: 1px solid #e1e9df;
+  transition: 0.3s ease;
+}
+
+.journey-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 12px 30px rgba(37, 75, 53, 0.1);
+}
+
+.journey-card span {
+  color: #39894c;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.journey-card h3 {
+  color: var(--green);
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  margin: 20px 0 12px;
+}
+
+.journey-card p {
+  color: var(--text);
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+/* =========================
+   KOMITMEN KAMI
+========================= */
+
+.about-commitment {
+  background: var(--cream);
+  padding: 90px 9%;
+  box-sizing: border-box;
+}
+
+.commitment-heading {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 45px;
+}
+
+.commitment-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.commitment-card {
+  text-align: center;
+  background: white;
+  padding: 35px 22px;
+  border-radius: 20px;
+  transition: 0.3s ease;
+}
+
+.commitment-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(37, 75, 53, 0.08);
+}
+
+.commitment-icon {
+  font-size: 38px;
+  margin-bottom: 15px;
+}
+
+.commitment-card h3 {
+  color: var(--green);
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+}
+
+.commitment-card p {
+  color: var(--text);
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+/* =========================
+   VISI DAN MISI
+========================= */
+
+.about-vision {
+  background: var(--sage);
+  padding: 100px 9%;
+  box-sizing: border-box;
+
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  gap: 60px;
+}
+
+.vision-content h2 {
+  color: var(--green);
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(30px, 4vw, 43px);
+  line-height: 1.3;
+  margin: 20px 0 35px;
+}
+
+.vision-box {
+  margin-bottom: 25px;
+}
+
+.vision-box h3 {
+  color: #39894c;
+  font-family: "Poppins", sans-serif;
+  font-size: 19px;
+  margin-bottom: 10px;
+}
+
+.vision-box p,
+.vision-box li {
+  color: var(--text);
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.vision-box ul {
+  padding-left: 20px;
+}
+
+.vision-box li {
+  margin-bottom: 7px;
+}
+
+.vision-image img {
+  display: block;
+  width: 100%;
+  max-height: 480px;
+  object-fit: contain;
+}
+
+/* =========================
+   CLOSING
+========================= */
+
+.about-closing {
+  text-align: center;
+  padding: 85px 20px;
+  background: var(--cream);
+  box-sizing: border-box;
+}
+
+.about-closing span {
+  color: #39894c;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 4px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.about-closing h2 {
+  color: var(--green);
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(32px, 5vw, 55px);
+  margin: 15px 0;
+}
+
+.about-closing p {
+  color: var(--text);
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+}
+
+.about-closing a {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 13px 25px;
+  background: #39894c;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  transition: 0.3s ease;
+}
+
+.about-closing a:hover {
+  background: #254b35;
+  transform: translateY(-3px);
+}
+
+/* =========================
+   RESPONSIVE TABLET
+========================= */
+
+@media (max-width: 900px) {
+  .about-hero,
+  .about-story,
+  .about-vision {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .journey-grid,
+  .commitment-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-hero {
+    text-align: center;
+  }
+
+  .about-hero-content p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* =========================
+   RESPONSIVE MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  .about-hero,
+  .about-story,
+  .about-journey,
+  .about-commitment,
+  .about-vision {
+    padding: 55px 6%;
+  }
+
+  .journey-grid,
+  .commitment-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-hero {
+    min-height: auto;
+  }
+
+  .about-hero-content h1 {
+    font-size: 45px;
+  }
+
+  .about-hero-content p {
+    font-size: 15px;
+  }
+
+  .story-image img {
+    max-height: 350px;
+  }
+
+  .story-content p {
+    font-size: 13px;
+  }
+
+  .about-closing {
+    padding: 65px 6%;
+  }
+}
+
+/* =========================
+   FOOTER FIX
+========================= */
+
+.site-footer {
+  background: #ffffff !important;
+  padding: 55px 4% 35px !important;
+  display: grid;
+  grid-template-columns: 1.4fr 1.3fr 1fr 1fr;
+  gap: 45px;
+  box-sizing: border-box;
+}
+
+/* Logo */
+.footer-logo {
+  width: 180px;
+  height: auto;
+}
+
+/* Deskripsi */
+.footer-description {
+  color: #647568 !important;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* Judul kolom */
+.footer-column h3 {
+  color: #254b35 !important;
+  font-size: 16px;
+  margin-bottom: 25px;
+}
+
+/* Isi kolom */
+.footer-column p {
+  color: #647568 !important;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* Link footer */
+.footer-column a {
+  display: block;
+  color: #53675a !important;
+  font-size: 13px;
+  margin-bottom: 8px;
+  text-decoration: none;
+}
+
+.footer-column a:hover {
+  color: #39894c !important;
+}
+
+/* Copyright */
+.footer-bottom {
+  background: #ffffff !important;
+  border-top: 1px solid #e8eee7;
+  padding: 20px 4% !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-bottom p,
+.footer-bottom a {
+  color: #647568 !important;
+  font-size: 12px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .site-footer {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
+
+@media (max-width: 500px) {
+  .site-footer {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}
+
+/* =========================
+   FOOTER - SAMA DENGAN BERANDA
+========================= */
+
+.site-footer {
+  width: 100%;
+  background: #ffffff !important;
+  box-sizing: border-box;
+  padding: 55px 5% 65px !important;
+
+  display: grid !important;
+  grid-template-columns: 1.2fr 1.2fr 0.9fr 0.9fr !important;
+  column-gap: 65px !important;
+  align-items: start !important;
+}
+
+/* LOGO DAN DESKRIPSI */
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-logo {
+  width: 185px !important;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 25px;
+}
+
+.footer-description {
+  color: #718579 !important;
+  font-size: 13px !important;
+  line-height: 1.8 !important;
+  max-width: 380px;
+  margin: 0;
+}
+
+/* KOLOM FOOTER */
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-column h3 {
+  color: #254b35 !important;
+  font-size: 17px !important;
+  font-weight: 600;
+  margin: 5px 0 28px;
+}
+
+.footer-column p {
+  color: #85869b !important;
+  font-size: 13px !important;
+  line-height: 1.8 !important;
+  margin: 0 0 8px;
+}
+
+.footer-column p strong {
+  color: #85869b;
+  font-weight: 600;
+}
+
+.footer-column a {
+  color: #45445f !important;
+  font-size: 13px !important;
+  text-decoration: none;
+  margin-bottom: 8px;
+  transition: 0.3s;
+}
+
+.footer-column a:hover {
+  color: #39894c !important;
+}
+
+/* COPYRIGHT */
+.footer-bottom {
+  width: 100%;
+  background: #ffffff !important;
+  box-sizing: border-box;
+  padding: 15px 5% 25px !important;
+
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+
+  border-top: none !important;
+}
+
+.footer-bottom p {
+  color: #254b35 !important;
+  font-size: 12px !important;
+  margin: 0;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 25px;
+}
+
+.footer-socials a {
+  color: #254b35 !important;
+  font-size: 12px !important;
+  text-decoration: none;
+}
+
+.footer-socials a:hover {
+  color: #39894c !important;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .site-footer {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 40px !important;
+  }
+}
+
+@media (max-width: 550px) {
+  .site-footer {
+    grid-template-columns: 1fr !important;
+    padding: 40px 7% !important;
+    gap: 30px !important;
+  }
+
+  .footer-bottom {
+    flex-direction: column !important;
+    gap: 15px;
+    text-align: center;
+  }
+}

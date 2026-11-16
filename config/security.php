@@ -1,0 +1,7 @@
+
+<?php
+
+define(
+    "RATE_LIMIT_SECRET",
+    "6fc9888f3b1bffc00b80e2841b79433bc8719ea2af73864780b553ed3378478c"
+);

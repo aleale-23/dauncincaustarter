@@ -2004,3 +2004,463 @@ header {
 .footer-bottom {
   background-color: #ffffff !important;
 }
+
+/* =====================================
+   HEADER & NAVBAR - SERAGAM SEMUA HALAMAN
+===================================== */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  background: #e8f0e7 !important;
+  transition: transform 0.3s ease-in-out;
+}
+
+header.header-hidden {
+  transform: translateY(-110%);
+}
+
+header .navbar {
+  width: 90%;
+  margin: auto;
+  padding: 15px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+/* LOGO */
+
+header .logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+header .logo a {
+  display: flex;
+  align-items: center;
+}
+
+header .logo img {
+  display: block;
+  width: 110px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* MENU NAVIGASI */
+
+header .menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  gap: 28px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+header .menu li {
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+header .menu li a {
+  display: inline-block;
+  color: #243e2b;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+header .menu li a:hover,
+header .menu li a.active {
+  color: #39894c;
+}
+
+header .menu li a.active {
+  font-weight: 600;
+}
+
+header .menu li a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -7px;
+  width: 100%;
+  height: 2px;
+  background: #39894c;
+}
+
+/* IKON INSTAGRAM DAN KERANJANG */
+
+header .navbar-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+header .header-instagram {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+header .header-instagram img {
+  display: block;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+header .header-instagram:hover img {
+  transform: scale(1.1);
+}
+
+/* KERANJANG PRODUK */
+
+header .product-cart-trigger {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 13px;
+  background: #edf3e7;
+  color: #294b38;
+  border-radius: 25px;
+  font-size: 16px;
+}
+
+header .product-cart-trigger:hover {
+  background: #dce9d4;
+  transform: none;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1150px) {
+  header .navbar {
+    width: 94%;
+  }
+
+  header .menu {
+    gap: 15px;
+  }
+
+  header .menu li a {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 900px) {
+  header .menu {
+    display: none !important;
+  }
+
+  header .navbar {
+    width: 92%;
+  }
+}
+
+@media (max-width: 480px) {
+  header .logo img {
+    width: 95px;
+  }
+
+  header .navbar {
+    padding: 12px 0;
+  }
+}
+
+/* =====================================
+   GLOBAL HEADER & FOOTER
+   DAUN CINCAU ID
+===================================== */
+
+/* HEADER */
+
+header {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  z-index: 9999 !important;
+  background: #e8f0e7 !important;
+  transition: transform 0.3s ease-in-out;
+  box-sizing: border-box;
+}
+
+header.header-hidden {
+  transform: translateY(-110%) !important;
+}
+
+header .navbar {
+  width: 90% !important;
+  max-width: none !important;
+  margin: 0 auto !important;
+  padding: 15px 0 !important;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  gap: 20px !important;
+  box-sizing: border-box;
+}
+
+/* LOGO */
+
+header .logo {
+  display: flex !important;
+  align-items: center !important;
+  flex-shrink: 0 !important;
+}
+
+header .logo img {
+  display: block !important;
+  width: 110px !important;
+  height: auto !important;
+  max-width: none !important;
+  object-fit: contain !important;
+}
+
+/* MENU */
+
+header .menu {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: 1 !important;
+  gap: 28px !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+header .menu li {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: "Poppins", sans-serif !important;
+  font-size: 14px !important;
+  white-space: nowrap;
+}
+
+header .menu li a {
+  display: inline-block !important;
+  color: #243e2b !important;
+  font-family: "Poppins", sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  text-decoration: none !important;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+header .menu li a:hover,
+header .menu li a.active {
+  color: #39894c !important;
+}
+
+header .menu li a.active {
+  font-weight: 600 !important;
+}
+
+header .menu li a.active::after {
+  content: "";
+  position: absolute;
+  bottom: -7px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #39894c;
+}
+
+/* INSTAGRAM */
+
+header .header-instagram {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-left: 10px !important;
+  flex-shrink: 0 !important;
+}
+
+header .header-instagram img {
+  display: block !important;
+  width: 24px !important;
+  height: 24px !important;
+  object-fit: contain !important;
+}
+
+/* =====================================
+   FOOTER
+===================================== */
+
+.site-footer {
+  width: 100% !important;
+  display: grid !important;
+  grid-template-columns: 1.2fr 1.2fr 0.9fr 0.9fr !important;
+  gap: 40px !important;
+  align-items: start !important;
+  padding: 55px 5% 45px !important;
+  background: #ffffff !important;
+  color: #53675a !important;
+  font-family: "Poppins", sans-serif !important;
+  box-sizing: border-box !important;
+}
+
+/* BRAND */
+
+.footer-brand {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+}
+
+.footer-logo {
+  width: 150px !important;
+  height: auto !important;
+  max-width: 100% !important;
+  object-fit: contain !important;
+  margin-bottom: 20px !important;
+}
+
+.footer-description {
+  max-width: 300px !important;
+  color: #718579 !important;
+  font-family: "Poppins", sans-serif !important;
+  font-size: 13px !important;
+  line-height: 1.9 !important;
+  margin: 0 !important;
+}
+
+/* FOOTER COLUMN */
+
+.footer-column {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+}
+
+.footer-column h3 {
+  color: #254b35 !important;
+  font-family: "Poppins", sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  margin: 5px 0 22px !important;
+}
+
+.footer-column p {
+  color: #718579 !important;
+  font-family: "Poppins", sans-serif !important;
+  font-size: 12px !important;
+  line-height: 1.9 !important;
+  margin: 0 0 8px !important;
+}
+
+.footer-column a {
+  display: block !important;
+  color: #53675a !important;
+  font-family: "Poppins", sans-serif !important;
+  font-size: 12px !important;
+  text-decoration: none !important;
+  margin-bottom: 12px !important;
+  transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+  color: #39894c !important;
+}
+
+/* COPYRIGHT */
+
+.footer-bottom {
+  width: 100% !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  gap: 20px !important;
+  padding: 18px 5% !important;
+  background: #eaf2e8 !important;
+  border-top: 1px solid #dceadd !important;
+  box-sizing: border-box !important;
+}
+
+.footer-bottom p {
+  color: #254b35 !important;
+  font-family: "Poppins", sans-serif !important;
+  font-size: 12px !important;
+  margin: 0 !important;
+}
+
+.footer-socials {
+  display: flex !important;
+  gap: 25px !important;
+}
+
+.footer-socials a {
+  color: #254b35 !important;
+  font-family: "Poppins", sans-serif !important;
+  font-size: 12px !important;
+  text-decoration: none !important;
+}
+
+.footer-socials a:hover {
+  color: #39894c !important;
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media (max-width: 1150px) {
+  header .navbar {
+    width: 94% !important;
+  }
+
+  header .menu {
+    gap: 15px !important;
+  }
+
+  header .menu li a {
+    font-size: 12px !important;
+  }
+}
+
+@media (max-width: 900px) {
+  header .menu {
+    display: none !important;
+  }
+
+  .site-footer {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 35px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .site-footer {
+    grid-template-columns: 1fr !important;
+    padding: 40px 7% !important;
+    gap: 30px !important;
+  }
+
+  .footer-bottom {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 15px !important;
+    padding: 18px 7% !important;
+  }
+}

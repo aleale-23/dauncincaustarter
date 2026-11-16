@@ -66,51 +66,300 @@ document.addEventListener("DOMContentLoaded", () => {
   searchInput.addEventListener("input", filterProducts);
 
 
-  /* =====================================
-     MODAL DETAIL PRODUK
-  ===================================== */
+/* =====================================
+   MODAL DETAIL PRODUK
+===================================== */
 
-  const productModal = document.getElementById("productModal");
+const productModal = document.getElementById("productModal");
 
-  const modalName = document.getElementById("modalProductName");
+const modalName = document.getElementById("modalProductName");
+const modalDescription = document.getElementById("modalProductDescription");
+const modalComposition = document.getElementById("modalProductComposition");
+const modalAdvantages = document.getElementById("modalProductAdvantages");
+const modalBadge = document.getElementById("modalProductBadge");
+const modalImage = document.getElementById("modalProductImage");
 
-  const modalDescription = document.getElementById(
-    "modalProductDescription"
-  );
+const modalOrderButton = document.getElementById("modalOrderButton");
 
-  const closeModal = document.getElementById("closeModal");
+const closeModal = document.getElementById("closeModal");
+const modalOk = document.getElementById("modalOk");
 
-  const modalOk = document.getElementById("modalOk");
 
-  document.querySelectorAll(".detail-btn").forEach(button => {
+// DATA DETAIL PRODUK
+const productDetails = {
 
-    button.addEventListener("click", () => {
+  "Cincau Murni": {
+    badge: "Cincau Alami",
 
-      modalName.textContent = button.dataset.name;
+    description:
+      "Cincau hijau alami dengan tekstur lembut dan rasa khas yang menyegarkan. Tersedia dalam beberapa pilihan ukuran.",
 
-      modalDescription.textContent =
-        button.dataset.description;
+    composition:
+      "Daun cincau dan air minum kemasan.",
 
-      productModal.classList.add("show");
+    advantages: [
+      "Dibuat dari daun cincau alami.",
+      "Tersedia ukuran 1 liter, 500 ml, dan 420 ml.",
+      "Dapat dinikmati dengan berbagai pilihan pelengkap."
+    ]
+  },
 
-    });
 
-  });
+  "Cincau Original": {
+    badge: "Minuman Siap Minum",
 
-  function hideModal() {
-    productModal.classList.remove("show");
+    description:
+      "Minuman cincau siap minum dengan perpaduan rasa original yang lembut dan menyegarkan. Praktis dinikmati kapan saja.",
+
+    composition:
+      "Cincau, krimer, dan gula jawa.",
+
+    advantages: [
+      "Memiliki cita rasa original yang khas.",
+      "Praktis karena siap dinikmati.",
+      "Tersedia pilihan topping nangka, roti tawar, dan selasih."
+    ]
+  },
+
+
+  "Cincau Cokelat": {
+    badge: "Minuman Siap Minum",
+
+    description:
+      "Minuman cincau dengan perpaduan rasa cokelat yang nikmat untuk menemani aktivitasmu.",
+
+    composition:
+      "Cincau, krimer, gula jawa, dan cocoa powder.",
+
+    advantages: [
+      "Memiliki perpaduan rasa cokelat dan cincau.",
+      "Praktis karena siap dinikmati.",
+      "Tersedia pilihan topping nangka, roti tawar, dan selasih."
+    ]
+  },
+
+
+  "Cincau Frambozen": {
+    badge: "Minuman Siap Minum",
+
+    description:
+      "Minuman cincau dengan perpaduan rasa frambozen yang memberikan sensasi segar.",
+
+    composition:
+      "Krimer dan sirup frambozen.",
+
+    advantages: [
+      "Memiliki pilihan rasa frambozen.",
+      "Praktis untuk dinikmati.",
+      "Tersedia pilihan topping nangka, roti tawar, dan selasih."
+    ]
+  },
+
+
+  "Krimer": {
+    badge: "Bahan Pelengkap",
+
+    description:
+      "Krimer sebagai pelengkap sajian cincau untuk memberikan sensasi creamy sesuai selera.",
+
+    composition:
+      "Krimer.",
+
+    advantages: [
+      "Dapat dipadukan dengan cincau murni.",
+      "Menambah cita rasa creamy.",
+      "Tersedia dalam kemasan 350 ml."
+    ]
+  },
+
+
+  "Gula Jawa Cair": {
+    badge: "Bahan Pelengkap",
+
+    description:
+      "Gula jawa cair sebagai pelengkap sajian cincau dengan cita rasa manis khas gula jawa.",
+
+    composition:
+      "Gula jawa cair.",
+
+    advantages: [
+      "Memberikan rasa manis khas gula jawa.",
+      "Dapat disesuaikan dengan selera.",
+      "Tersedia dalam kemasan 350 ml."
+    ]
+  },
+
+
+  "Kuah Original": {
+    badge: "Bahan Pelengkap",
+
+    description:
+      "Kuah original untuk melengkapi sajian cincau agar semakin nikmat dan menyegarkan.",
+
+    composition:
+      "Kuah original.",
+
+    advantages: [
+      "Cocok dipadukan dengan cincau murni.",
+      "Praktis sebagai pelengkap sajian.",
+      "Tersedia dalam kemasan 350 ml."
+    ]
+  },
+
+
+  "Kuah Cokelat": {
+    badge: "Bahan Pelengkap",
+
+    description:
+      "Kuah bercita rasa cokelat sebagai pelengkap sajian cincau.",
+
+    composition:
+      "Kuah cokelat.",
+
+    advantages: [
+      "Memberikan variasi rasa cokelat.",
+      "Dapat dipadukan dengan cincau murni.",
+      "Tersedia dalam kemasan 350 ml."
+    ]
+  },
+
+
+  "Kuah Frambozen": {
+    badge: "Bahan Pelengkap",
+
+    description:
+      "Kuah dengan sentuhan rasa frambozen untuk variasi sajian cincau.",
+
+    composition:
+      "Kuah frambozen.",
+
+    advantages: [
+      "Memberikan variasi rasa frambozen.",
+      "Dapat dipadukan dengan cincau murni.",
+      "Tersedia dalam kemasan 350 ml."
+    ]
   }
 
-  closeModal.addEventListener("click", hideModal);
-  modalOk.addEventListener("click", hideModal);
+};
 
-  productModal.addEventListener("click", event => {
 
-    if (event.target === productModal) {
-      hideModal();
-    }
+// FUNGSI MEMBUKA MODAL
+function showModal(button) {
+
+  const productName = button.dataset.name;
+
+  const product = productDetails[productName];
+
+  if (!product) return;
+
+  // Mengambil gambar dari kartu produk
+  const card = button.closest(".catalog-card");
+
+  const cardImage = card.querySelector(".catalog-image img");
+
+  // Mengisi informasi produk
+  modalName.textContent = productName;
+
+  modalBadge.textContent = product.badge;
+
+  modalDescription.textContent = product.description;
+
+  modalComposition.textContent = product.composition;
+
+  // Mengisi daftar keunggulan
+  modalAdvantages.innerHTML = "";
+
+  product.advantages.forEach(item => {
+
+    const li = document.createElement("li");
+
+    li.textContent = item;
+
+    modalAdvantages.appendChild(li);
 
   });
+
+  // Mengganti gambar sesuai produk
+  modalImage.src = cardImage.getAttribute("src");
+
+  modalImage.alt = productName;
+
+  // Mengarahkan tombol pesan ke WhatsApp
+  const message = encodeURIComponent(
+    "Halo Daun Cincau ID, saya ingin bertanya mengenai produk " +
+    productName + "."
+  );
+
+  modalOrderButton.href =
+    "https://wa.me/6281336544622?text=" + message;
+
+  // Menampilkan modal
+  productModal.classList.add("show");
+
+  productModal.setAttribute("aria-hidden", "false");
+
+  document.body.style.overflow = "hidden";
+
+  closeModal.focus();
+
+}
+
+
+// FUNGSI MENUTUP MODAL
+function hideModal() {
+
+  productModal.classList.remove("show");
+
+  productModal.setAttribute("aria-hidden", "true");
+
+  document.body.style.overflow = "";
+
+}
+
+
+// EVENT TOMBOL LIHAT DETAIL
+document.querySelectorAll(".detail-btn").forEach(button => {
+
+  button.addEventListener("click", () => {
+
+    showModal(button);
+
+  });
+
+});
+
+
+// EVENT TOMBOL TUTUP
+closeModal.addEventListener("click", hideModal);
+
+modalOk.addEventListener("click", hideModal);
+
+
+// TUTUP MODAL KETIKA KLIK AREA LUAR
+productModal.addEventListener("click", event => {
+
+  if (event.target === productModal) {
+
+    hideModal();
+
+  }
+
+});
+
+
+// TUTUP MODAL DENGAN TOMBOL ESCAPE
+document.addEventListener("keydown", event => {
+
+  if (
+    event.key === "Escape" &&
+    productModal.classList.contains("show")
+  ) {
+
+    hideModal();
+
+  }
+
+});
 
 
   /* =====================================
@@ -379,20 +628,126 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  /* =====================================
-     CHECKOUT SEMENTARA
-  ===================================== */
+/* =====================================
+   CUSTOM CHECKOUT NOTIFICATION
+===================================== */
 
-  checkoutBtn.addEventListener("click", () => {
+function showCheckoutNotification() {
+
+    // Hindari popup muncul berulang
+    if (document.querySelector(".checkout-notification-overlay")) {
+        return;
+    }
+
+    const overlay = document.createElement("div");
+
+    overlay.className = "checkout-notification-overlay";
+
+    overlay.innerHTML = `
+        <div class="checkout-notification-modal">
+
+            <button class="notification-close" aria-label="Tutup">
+                &times;
+            </button>
+
+            <div class="notification-icon">
+                <svg viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="1.7"
+                     stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 7h12l1 13H5L6 7Z"/>
+                    <path d="M9 9V6a3 3 0 0 1 6 0v3"/>
+                    <path d="m9 14 2 2 4-4"/>
+                </svg>
+            </div>
+
+            <h2>Keranjang Berhasil!</h2>
+
+            <p class="notification-description">
+                Paket pilihanmu sudah masuk ke keranjang.
+                Yuk, lanjutkan ke tahap checkout untuk
+                menyelesaikan pesananmu.
+            </p>
+
+            <div class="notification-info">
+                <span class="notification-info-icon">✓</span>
+                <div>
+                    <strong>Pesanan siap dilanjutkan</strong>
+                    <small>Periksa kembali paket sebelum membayar.</small>
+                </div>
+            </div>
+
+            <button class="notification-checkout-btn">
+                Lanjutkan Checkout
+                <span>→</span>
+            </button>
+
+            <button class="notification-back-btn">
+                Kembali melihat produk
+            </button>
+
+        </div>
+    `;
+
+    document.body.appendChild(overlay);
+
+    // Tampilkan popup
+    requestAnimationFrame(() => {
+        overlay.classList.add("show");
+    });
+
+    // Tombol checkout
+    overlay.querySelector(".notification-checkout-btn")
+        .addEventListener("click", () => {
+
+            localStorage.setItem(
+                "dauncincau_cart",
+                JSON.stringify(cart)
+            );
+
+            window.location.href = "checkout.html";
+
+        });
+
+    // Tombol tutup
+    function closeNotification() {
+        overlay.classList.remove("show");
+
+        setTimeout(() => {
+            overlay.remove();
+        }, 250);
+    }
+
+    overlay.querySelector(".notification-close")
+        .addEventListener("click", closeNotification);
+
+    overlay.querySelector(".notification-back-btn")
+        .addEventListener("click", closeNotification);
+
+    // Klik area luar popup
+    overlay.addEventListener("click", (event) => {
+        if (event.target === overlay) {
+            closeNotification();
+        }
+    });
+
+}
+
+
+  
+
+/* =====================================
+   CHECKOUT DAN PEMBAYARAN QRIS
+===================================== */
+
+checkoutBtn.addEventListener("click", () => {
 
     if (cart.length === 0) return;
 
-    alert(
-      "Keranjang berhasil disiapkan! " +
-      "Tahap checkout dan pembayaran akan dikembangkan selanjutnya."
-    );
+    // Tampilkan custom popup terlebih dahulu
+    showCheckoutNotification();
 
-  });
+});
+
 
 
   /* =====================================
@@ -430,4 +785,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   renderCart();
 
+
+
 });
+
