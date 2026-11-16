@@ -1,0 +1,419 @@
+/* =====================================
+   KONTAK - DAUN CINCAU ID
+===================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  color: #53675a;
+}
+
+.contact-label {
+  display: inline-block;
+  color: #39894c;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+}
+
+.contact-hero,
+.contact-links,
+.contact-info-section,
+.contact-closing {
+  box-sizing: border-box;
+}
+
+/* =====================================
+   HEADER ACTIVE
+===================================== */
+
+.menu a.active {
+  color: #39894c;
+  font-weight: 700;
+  position: relative;
+}
+
+.menu a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 100%;
+  height: 2px;
+  background: #39894c;
+  border-radius: 2px;
+}
+
+/* =====================================
+   HERO
+===================================== */
+
+.contact-hero {
+  min-height: 650px;
+  padding: 100px 9% 70px;
+  background: #eaf2e8;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 60px;
+}
+
+.contact-hero-content h1 {
+  font-size: clamp(40px, 5vw, 65px);
+  color: #254b35;
+  line-height: 1.2;
+  margin: 10px 0 25px;
+  font-weight: 700;
+  max-width: 650px;
+}
+
+.contact-hero-content p {
+  font-size: 15px;
+  line-height: 1.9;
+  max-width: 560px;
+}
+
+.contact-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 13px 25px;
+  background: #39894c;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 13px;
+  transition: 0.3s;
+}
+
+.contact-button:hover {
+  background: #254b35;
+  transform: translateY(-3px);
+}
+
+.contact-hero-image {
+  display: flex;
+  justify-content: center;
+}
+
+.contact-hero-image img {
+  width: 100%;
+  max-width: 520px;
+  height: 430px;
+  object-fit: cover;
+  border-radius: 25px;
+}
+
+/* =====================================
+   JUDUL SECTION
+===================================== */
+
+.section-heading {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 50px;
+}
+
+.section-heading h2 {
+  color: #254b35;
+  font-size: clamp(29px, 4vw, 42px);
+  line-height: 1.3;
+  margin: 10px 0 15px;
+}
+
+.section-heading p {
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* =====================================
+   CONTACT LINKS
+===================================== */
+
+.contact-links {
+  padding: 95px 9%;
+  background: #f7f5ed;
+}
+
+.links-grid {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.link-card {
+  background: white;
+  border-radius: 20px;
+  padding: 24px 24px;
+  text-decoration: none;
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  border: 1px solid #e6ebdf;
+  transition: 0.3s;
+}
+
+.link-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(37, 75, 53, 0.08);
+}
+
+.link-card.highlight {
+  background: #eaf2e8;
+  border: 1px solid #d7e3d4;
+}
+
+.link-icon {
+  width: 52px;
+  height: 52px;
+  min-width: 52px;
+  border-radius: 14px;
+  background: #f0f5ef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+
+.link-text {
+  flex: 1;
+}
+
+.link-text h3 {
+  color: #254b35;
+  font-size: 17px;
+  margin: 0 0 10px;
+}
+
+.link-text p {
+  color: #53675a;
+  font-size: 13px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.link-arrow {
+  color: #39894c;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1;
+  margin-top: 4px;
+}
+
+/* =====================================
+   INFO SECTION
+===================================== */
+
+.contact-info-section {
+  padding: 90px 9%;
+  background: #eaf2e8;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.info-card {
+  background: white;
+  padding: 35px 28px;
+  border-radius: 20px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.info-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 12px 25px rgba(37, 75, 53, 0.1);
+}
+
+.info-icon {
+  font-size: 38px;
+  margin-bottom: 15px;
+}
+
+.info-card h3 {
+  color: #254b35;
+  font-size: 17px;
+  margin-bottom: 12px;
+}
+
+.info-card p {
+  font-size: 13px;
+  line-height: 1.9;
+  margin: 0;
+}
+
+/* =====================================
+   CLOSING
+===================================== */
+
+.contact-closing {
+  text-align: center;
+  padding: 85px 20px;
+  background: #f7f5ed;
+}
+
+.contact-closing span {
+  color: #39894c;
+  letter-spacing: 4px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.contact-closing h2 {
+  color: #254b35;
+  font-size: clamp(32px, 5vw, 55px);
+  margin: 15px 0;
+}
+
+.contact-closing p {
+  color: #53675a;
+  font-size: 14px;
+}
+
+/* =====================================
+   FOOTER
+===================================== */
+
+.site-footer {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr 1fr;
+  gap: 40px;
+  padding: 60px 6% 35px;
+  background: white;
+}
+
+.footer-brand {
+  max-width: 320px;
+}
+
+.footer-logo {
+  width: 160px;
+  height: auto;
+  margin-bottom: 22px;
+}
+
+.footer-description {
+  font-size: 13px;
+  line-height: 1.9;
+  color: #6c7d71;
+}
+
+.footer-column h3 {
+  color: #254b35;
+  font-size: 17px;
+  margin-bottom: 20px;
+}
+
+.footer-column p,
+.footer-column a {
+  font-size: 13px;
+  line-height: 1.9;
+  color: #53675a;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.footer-column a:hover {
+  color: #39894c;
+}
+
+.footer-bottom {
+  background: white;
+  padding: 20px 6% 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #edf1ec;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 12px;
+  color: #6c7d71;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 24px;
+}
+
+.footer-socials a {
+  color: #53675a;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.footer-socials a:hover {
+  color: #39894c;
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media (max-width: 991px) {
+  .contact-hero,
+  .links-grid,
+  .info-grid,
+  .site-footer {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-hero {
+    text-align: center;
+    gap: 35px;
+  }
+
+  .contact-hero-content p {
+    margin: 0 auto;
+  }
+
+  .contact-hero-image img {
+    max-width: 100%;
+    height: 360px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-hero,
+  .contact-links,
+  .contact-info-section,
+  .contact-closing {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+
+  .contact-hero {
+    padding-top: 90px;
+    padding-bottom: 60px;
+  }
+
+  .contact-hero-content h1 {
+    font-size: 42px;
+  }
+
+  .link-card,
+  .info-card {
+    padding: 22px 18px;
+  }
+
+  .contact-hero-image img {
+    height: 280px;
+  }
+}
