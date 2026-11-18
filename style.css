@@ -2583,3 +2583,53 @@ header .header-instagram {
     display: none;
   }
 }
+
+/* BACKGROUND FINAL DAUN CINCAU ID */
+
+/* Background utama */
+html,
+body {
+  background: #ffffff !important;
+}
+
+/* Header putih */
+header {
+  background: #ffffff !important;
+}
+
+/* Semua konten putih */
+.hero,
+.cincau-benefits,
+.product-gallery,
+.site-footer {
+  background: #ffffff !important;
+  background-image: none !important;
+}
+
+/* Footer utama */
+.site-footer {
+  color: #53675a !important;
+}
+
+.site-footer h3 {
+  color: #254b35 !important;
+}
+
+.site-footer p {
+  color: #718579 !important;
+}
+
+.site-footer a {
+  color: #53675a !important;
+}
+
+/* Copyright hijau sage */
+.footer-bottom {
+  background: #78977d !important;
+  border-top: none !important;
+}
+
+.footer-bottom p,
+.footer-bottom a {
+  color: #ffffff !important;
+}

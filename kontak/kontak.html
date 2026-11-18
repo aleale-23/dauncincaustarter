@@ -5,11 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Kontak | Daun Cincau ID</title>
+    <meta
+      name="description"
+      content="Hubungi Daun Cincau ID untuk informasi produk, pemesanan, dan kerja sama."
+    />
 
-    <!-- CSS UTAMA WEBSITE -->
+    <!-- CSS UTAMA -->
     <link rel="stylesheet" href="../style.css" />
 
-    <!-- CSS KHUSUS HALAMAN KONTAK -->
+    <!-- CSS KONTAK -->
     <link rel="stylesheet" href="kontak.css" />
 
     <!-- GOOGLE FONT -->
@@ -20,16 +24,18 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- JAVASCRIPT -->
+    <script src="kontak.js" defer></script>
   </head>
 
   <body>
-    <!-- ==================================
-         HEADER
-    =================================== -->
+    <!-- =====================================
+       HEADER
+  ====================================== -->
 
     <header>
       <nav class="navbar">
-        <!-- LOGO -->
         <div class="logo">
           <a href="../index.html">
             <img
@@ -39,50 +45,33 @@
           </a>
         </div>
 
-        <!-- NAVIGASI -->
         <ul class="menu">
-          <li>
-            <a href="../index.html">Beranda</a>
-          </li>
-
-          <li>
-            <a href="../produk.html">Produk</a>
-          </li>
-
-          <li>
-            <a href="../tentangKami/tentang.html">Tentang Kami</a>
-          </li>
-
-          <li>
-            <a href="../produksiCincau/produksi.html">Proses Produksi</a>
-          </li>
-
-          <li>
-            <a href="../edukasiCincau/edukasi.html">Edukasi</a>
-          </li>
-
-          <li>
-            <a href="kontak.html" class="active">Kontak</a>
-          </li>
+          <li><a href="../index.html">Beranda</a></li>
+          <li><a href="../produk.html">Produk</a></li>
+          <li><a href="../tentangKami/tentang.html">Tentang Kami</a></li>
+          <li><a href="../produksiCincau/produksi.html">Proses Produksi</a></li>
+          <li><a href="../edukasiCincau/edukasi.html">Edukasi</a></li>
+          <li><a href="../cek-pesanan.html">Cek Pesanan</a></li>
+          <li><a href="kontak.html" class="active">Kontak</a></li>
         </ul>
 
-        <!-- INSTAGRAM -->
         <a
           href="https://www.instagram.com/dauncincauid/"
           class="header-instagram"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Instagram Daun Cincau ID"
-        ></a>
+        >
+        </a>
       </nav>
     </header>
 
-    <!-- ==================================
-         HALAMAN KONTAK
-    =================================== -->
+    <!-- =====================================
+       HALAMAN KONTAK
+  ====================================== -->
 
     <main class="contact-page">
-      <!-- JUDUL KONTAK -->
+      <!-- HERO -->
       <section class="contact-hero">
         <span class="contact-label">HUBUNGI KAMI</span>
 
@@ -95,25 +84,28 @@
         </p>
       </section>
 
-      <!-- INFORMASI KONTAK DAN FORM -->
+      <!-- =====================================
+         TEMUKAN KAMI DAN FORMULIR
+    ====================================== -->
+
       <section class="contact-content">
-        <!-- BAGIAN KIRI: INFORMASI KONTAK -->
+        <!-- TEMUKAN KAMI -->
         <div class="contact-info">
           <span class="contact-label">INFORMASI KAMI</span>
 
           <h2>Temukan Kami</h2>
 
           <p class="contact-description">
-            Kami siap menyambut pertanyaan dan pesan dari kamu. Jangan ragu
-            untuk menghubungi Daun Cincau ID.
+            Temukan lokasi, ikuti aktivitas, dan pesan produk Daun Cincau ID
+            melalui berbagai platform resmi kami.
           </p>
 
-          <!-- ALAMAT -->
+          <!-- GOOGLE MAPS -->
           <div class="contact-item">
             <div class="contact-icon">📍</div>
 
-            <div>
-              <h3>Alamat Usaha</h3>
+            <div class="contact-item-content">
+              <h3>Lokasi Usaha</h3>
 
               <p>
                 Jalan Babarsari No. 18,<br />
@@ -122,32 +114,12 @@
               </p>
 
               <a
-                href="https://www.google.com/maps/search/?api=1&query=Jalan+Babarsari+No+18+Caturtunggal+Depok+Sleman+Yogyakarta"
+                href="https://maps.app.goo.gl/uZxXxoSDUTNUveCF9"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="contact-link"
               >
-                Lihat Lokasi →
-              </a>
-            </div>
-          </div>
-
-          <!-- WHATSAPP -->
-          <div class="contact-item">
-            <div class="contact-icon">💬</div>
-
-            <div>
-              <h3>WhatsApp</h3>
-
-              <p>0813-3654-4622</p>
-
-              <a
-                href="https://wa.me/6281336544622"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="contact-link"
-              >
-                Hubungi Kami →
+                Lihat Lokasi di Google Maps →
               </a>
             </div>
           </div>
@@ -156,7 +128,7 @@
           <div class="contact-item">
             <div class="contact-icon">◎</div>
 
-            <div>
+            <div class="contact-item-content">
               <h3>Instagram</h3>
 
               <p>@dauncincauid</p>
@@ -173,40 +145,77 @@
           </div>
 
           <!-- PEMESANAN ONLINE -->
-          <div class="contact-item">
-            <div class="contact-icon">🛒</div>
+          <div class="contact-order">
+            <h3>Pesan Produk Kami</h3>
 
-            <div>
-              <h3>Pemesanan Online</h3>
+            <p class="order-description">
+              Nikmati produk Daun Cincau ID melalui platform pemesanan
+              favoritmu.
+            </p>
 
-              <p>
-                Temukan produk Daun Cincau ID melalui berbagai kanal pemesanan
-                online.
-              </p>
-
+            <div class="order-links">
               <a
-                href="https://linktr.ee/dauncincauid"
+                href="https://gofood.link/a/AVEJNjd"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="contact-link"
+                class="order-link"
               >
-                Lihat Semua Tautan →
+                <span class="order-icon">🛵</span>
+                <span>GoFood</span>
+                <span class="order-arrow">↗</span>
+              </a>
+
+              <a
+                href="https://tr.ee/js6aQq1EP7"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="order-link"
+              >
+                <span class="order-icon">🚴</span>
+                <span>GrabFood</span>
+                <span class="order-arrow">↗</span>
+              </a>
+
+              <a
+                href="https://tr.ee/ivFNwG2IHn"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="order-link"
+              >
+                <span class="order-icon">🍃</span>
+                <span>ShopeeFood</span>
+                <span class="order-arrow">↗</span>
+              </a>
+
+              <a
+                href="https://tr.ee/ut9qO8HeW0"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="order-link"
+              >
+                <span class="order-icon">🛍️</span>
+                <span>Shopee</span>
+                <span class="order-arrow">↗</span>
+              </a>
+
+              <a
+                href="https://tr.ee/5N_3blpKRZ"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="order-link"
+              >
+                <span class="order-icon">🛒</span>
+                <span>Tokopedia</span>
+                <span class="order-arrow">↗</span>
               </a>
             </div>
           </div>
-
-          <!-- OFFICIAL WEBSTORE -->
-          <a
-            href="https://take.app/id/dauncincauid"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="webstore-button"
-          >
-            Kunjungi Official Webstore →
-          </a>
         </div>
 
-        <!-- BAGIAN KANAN: FORMULIR -->
+        <!-- =====================================
+           FORMULIR KIRIM PESAN
+      ====================================== -->
+
         <div class="contact-form-card">
           <span class="contact-label">KIRIM PESAN</span>
 
@@ -217,7 +226,7 @@
             Cincau ID melalui WhatsApp.
           </p>
 
-          <form id="contactForm" onsubmit="kirimPesanWhatsApp(event)">
+          <form id="contactForm">
             <!-- NAMA -->
             <div class="form-group">
               <label for="nama">Nama Lengkap *</label>
@@ -227,6 +236,7 @@
                 id="nama"
                 name="nama"
                 placeholder="Masukkan nama kamu"
+                autocomplete="name"
                 required
               />
             </div>
@@ -246,19 +256,13 @@
 
             <!-- TOPIK -->
             <div class="form-group">
-              <label for="subjek">Topik Pesan</label>
+              <label for="subjek">Topik Pesan *</label>
 
               <select id="subjek" name="subjek" required>
-                <option value="">Pilih topik pesan</option>
-
                 <option value="Pertanyaan Produk">Pertanyaan Produk</option>
-
                 <option value="Pemesanan Produk">Pemesanan Produk</option>
-
                 <option value="Kerja Sama">Kerja Sama</option>
-
                 <option value="Informasi Usaha">Informasi Usaha</option>
-
                 <option value="Lainnya">Lainnya</option>
               </select>
             </div>
@@ -280,13 +284,17 @@
             <button type="submit" class="send-button">Kirim Pesan →</button>
 
             <p class="form-note">
-              Pesan akan diteruskan ke WhatsApp resmi Daun Cincau ID.
+              Setelah menekan tombol, kamu akan diarahkan ke WhatsApp untuk
+              mengirimkan pesan.
             </p>
           </form>
         </div>
       </section>
 
-      <!-- PENUTUP -->
+      <!-- =====================================
+         PENUTUP
+    ====================================== -->
+
       <section class="contact-closing">
         <span>DAUN CINCAU ID</span>
 
@@ -296,9 +304,9 @@
       </section>
     </main>
 
-    <!-- ==================================
-         FOOTER
-    =================================== -->
+    <!-- =====================================
+       FOOTER
+  ====================================== -->
 
     <footer class="site-footer">
       <!-- LOGO DAN DESKRIPSI -->
@@ -339,16 +347,12 @@
         <h3>Menu Utama</h3>
 
         <a href="../index.html">Beranda</a>
-
         <a href="../tentangKami/tentang.html">Tentang Kami</a>
-
         <a href="../produk.html">Produk</a>
-
         <a href="../produksiCincau/produksi.html">Proses Produksi</a>
-
         <a href="../edukasiCincau/edukasi.html">Edukasi</a>
-
-        <a href="kontak.html">Kontak</a>
+        <a href="../cek-pesanan.html">Cek Pesanan</a>
+        <a href="../kontak/kontak.html">Kontak</a>
       </div>
 
       <!-- PEMESANAN ONLINE -->
@@ -356,15 +360,31 @@
         <h3>Pemesanan Online</h3>
 
         <a
-          href="https://take.app/id/dauncincauid"
+          href="https://gofood.link/a/AVEJNjd"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Official Webstore
+          GoFood
         </a>
 
         <a
-          href="https://shopee.co.id/"
+          href="https://tr.ee/js6aQq1EP7"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GrabFood
+        </a>
+
+        <a
+          href="https://tr.ee/ivFNwG2IHn"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          ShopeeFood
+        </a>
+
+        <a
+          href="https://tr.ee/ut9qO8HeW0"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -372,24 +392,19 @@
         </a>
 
         <a
-          href="https://www.tokopedia.com/"
+          href="https://tr.ee/5N_3blpKRZ"
           target="_blank"
           rel="noopener noreferrer"
         >
           Tokopedia
         </a>
-
-        <a
-          href="https://www.instagram.com/dauncincauid/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Instagram
-        </a>
       </div>
     </footer>
 
-    <!-- COPYRIGHT -->
+    <!-- =====================================
+       COPYRIGHT
+  ====================================== -->
+
     <div class="footer-bottom">
       <p>Daun Cincau ID © 2026. All Rights Reserved.</p>
 
@@ -403,7 +418,7 @@
         </a>
 
         <a
-          href="https://wa.me/6281336544622"
+          href="https://wa.me/6289516817752"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -411,48 +426,5 @@
         </a>
       </div>
     </div>
-
-    <!-- ==================================
-         JAVASCRIPT FORM WHATSAPP
-    =================================== -->
-
-    <script>
-      function kirimPesanWhatsApp(event) {
-        event.preventDefault();
-
-        const nama = document.getElementById("nama").value.trim();
-
-        const kontak = document.getElementById("kontak").value.trim();
-
-        const subjek = document.getElementById("subjek").value;
-
-        const pesan = document.getElementById("pesan").value.trim();
-
-        const nomorTujuan = "6289516817752";
-
-        const isiPesan =
-          "Halo Daun Cincau ID!\n\n" +
-          "Saya ingin menghubungi Daun Cincau ID.\n\n" +
-          "Nama: " +
-          nama +
-          "\n" +
-          "Kontak: " +
-          kontak +
-          "\n" +
-          "Topik: " +
-          subjek +
-          "\n\n" +
-          "Pesan:\n" +
-          pesan;
-
-        const url =
-          "https://wa.me/" +
-          nomorTujuan +
-          "?text=" +
-          encodeURIComponent(isiPesan);
-
-        window.open(url, "_blank");
-      }
-    </script>
   </body>
 </html>
