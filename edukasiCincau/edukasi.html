@@ -12,6 +12,8 @@
     <!-- CSS KHUSUS EDUKASI -->
     <link rel="stylesheet" href="edukasi.css" />
 
+    <link rel="stylesheet" href="../navbar.css">
+
     <!-- FONT POPPINS -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -25,15 +27,16 @@
     <!-- HEADER SAMA DENGAN BERANDA -->
     <header>
       <nav class="navbar">
+
+        <!-- LOGO -->
         <div class="logo">
           <a href="../index.html">
-            <img
-              src="../picture/logodauncincauid.png"
-              alt="Logo Daun Cincau ID"
-            />
+            <img src="../picture/logodauncincauid.png"
+                alt="Logo Daun Cincau ID">
           </a>
         </div>
 
+        <!-- MENU NAVIGASI -->
         <ul class="menu">
           <li><a href="../index.html">Beranda</a></li>
           <li><a href="../produk.html">Produk</a></li>
@@ -44,13 +47,21 @@
           <li><a href="../kontak/kontak.html">Kontak</a></li>
         </ul>
 
-        <a
-          href="https://www.instagram.com/dauncincauid/"
-          class="header-instagram"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-        </a>
+        <!-- AKSI KANAN: KERANJANG -->
+        <div class="navbar-actions">
+
+            <button class="product-cart-trigger"
+                    id="openCart"
+                    type="button"
+                    aria-label="Buka keranjang">
+
+                <span class="cart-icon">🛒</span>
+                <span class="cart-count" id="cartCount">0</span>
+
+            </button>
+
+        </div>
+
       </nav>
     </header>
 

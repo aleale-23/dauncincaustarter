@@ -1,0 +1,215 @@
+
+/* ==========================================
+   GLOBAL NAVBAR - DAUN CINCAU ID
+   ========================================== */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    background: #e8f0e7;
+}
+
+header .navbar {
+    width: 90%;
+    max-width: 1440px;
+    min-height: 82px;
+    margin: 0 auto;
+    padding: 10px 0;
+
+    display: grid;
+    grid-template-columns: 120px minmax(0, 1fr) 110px;
+    align-items: center;
+    column-gap: 15px;
+
+    box-sizing: border-box;
+}
+
+/* LOGO */
+header .logo {
+    width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+header .logo a {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    display: block;
+    width: 110px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* MENU */
+header .menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: clamp(12px, 1.7vw, 25px);
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    white-space: nowrap;
+}
+
+header .menu li {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}
+
+header .menu li a {
+    display: inline-block;
+    position: relative;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+
+    color: #243e2b;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+header .menu li a:hover,
+header .menu li a.active {
+    color: #39894c;
+}
+
+header .menu li a.active {
+    font-weight: 600;
+}
+
+header .menu li a.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+
+    width: 100%;
+    height: 2px;
+    background: #39894c;
+}
+
+/* AKSI KANAN */
+header .navbar-actions {
+    width: 110px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+/* INSTAGRAM */
+header .header-instagram {
+    width: 26px;
+    height: 26px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #294b38;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+/* KERANJANG */
+header .product-cart-trigger {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    min-width: 48px;
+    padding: 9px 11px;
+
+    background: #edf3e7;
+    color: #294b38;
+
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+header .product-cart-trigger:hover {
+    background: #dce9d4;
+    transform: none;
+}
+
+header .cart-count {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 19px;
+    height: 19px;
+    padding: 0 4px;
+
+    border-radius: 50%;
+    background: #39894c;
+    color: white;
+
+    font-size: 10px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1150px) {
+    header .navbar {
+        width: 96%;
+        grid-template-columns: 95px minmax(0, 1fr) 100px;
+        column-gap: 8px;
+    }
+
+    header .logo {
+        width: 95px;
+    }
+
+    header .logo img {
+        width: 90px;
+    }
+
+    header .navbar-actions {
+        width: 100px;
+    }
+
+    header .menu {
+        gap: 11px;
+    }
+
+    header .menu li a {
+        font-size: 11px;
+    }
+}
+
+/* Pertahankan navbar agar tidak bertumpuk di layar kecil */
+@media (max-width: 900px) {
+    header .navbar {
+        width: 94%;
+        grid-template-columns: 85px minmax(0, 1fr) 90px;
+    }
+
+    header .menu {
+        gap: 7px;
+    }
+
+    header .menu li a {
+        font-size: 9px;
+    }
+
+    header .logo img {
+        width: 80px;
+    }
+}

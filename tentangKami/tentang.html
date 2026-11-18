@@ -12,6 +12,8 @@
     <!-- CSS KHUSUS TENTANG KAMI -->
     <link rel="stylesheet" href="tentang.css" />
 
+    <link rel="stylesheet" href="../navbar.css">
+
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
@@ -25,15 +27,16 @@
 
     <header>
       <nav class="navbar">
+
+        <!-- LOGO -->
         <div class="logo">
           <a href="../index.html">
-            <img
-              src="../picture/logodauncincauid.png"
-              alt="Logo Daun Cincau ID"
-            />
+            <img src="../picture/logodauncincauid.png"
+                alt="Logo Daun Cincau ID">
           </a>
         </div>
 
+        <!-- MENU NAVIGASI -->
         <ul class="menu">
           <li><a href="../index.html">Beranda</a></li>
           <li><a href="../produk.html">Produk</a></li>
@@ -44,7 +47,21 @@
           <li><a href="../kontak/kontak.html">Kontak</a></li>
         </ul>
 
-        <div class="navbar-spacer"></div>
+        <!-- AKSI KANAN: KERANJANG -->
+          <div class="navbar-actions">
+
+              <button class="product-cart-trigger"
+                      id="openCart"
+                      type="button"
+                      aria-label="Buka keranjang">
+
+                  <span class="cart-icon">🛒</span>
+                  <span class="cart-count" id="cartCount">0</span>
+
+              </button>
+
+          </div>
+
       </nav>
     </header>
 

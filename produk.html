@@ -9,41 +9,57 @@
 
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="produk.css">
+  <link rel="stylesheet" href="navbar.css">
 
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap"
     rel="stylesheet"
   />
+
 </head>
 
 <body>
 
   <!-- NAVBAR -->
   <header>
-    <nav class="navbar">
+  <nav class="navbar">
 
-      <div class="logo">
-        <img src="picture/logodauncincauid.png" alt="Daun Cincau ID">
+    <!-- LOGO -->
+    <div class="logo">
+      <a href="index.html">
+        <img src="picture/logodauncincauid.png"
+             alt="Logo Daun Cincau ID">
+      </a>
+    </div>
+
+    <!-- MENU NAVIGASI -->
+    <ul class="menu">
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="produk.html" class="active">Produk</a></li>
+      <li><a href="tentangKami/tentang.html">Tentang Kami</a></li>
+      <li><a href="produksiCincau/produksi.html">Proses Produksi</a></li>
+      <li><a href="edukasiCincau/edukasi.html">Edukasi</a></li>
+      <li><a href="cek-pesanan.html">Cek Pesanan</a></li>
+      <li><a href="kontak/kontak.html">Kontak</a></li>
+    </ul>
+
+    <!-- AKSI KANAN: KERANJANG -->
+      <div class="navbar-actions">
+
+          <button class="product-cart-trigger"
+                  id="openCart"
+                  type="button"
+                  aria-label="Buka keranjang">
+
+              <span class="cart-icon">🛒</span>
+              <span class="cart-count" id="cartCount">0</span>
+
+          </button>
+
       </div>
 
-      <ul class="menu">
-          <li><a href="index.html">Beranda</a></li>
-          <li><a href="produk.html" class="active">Produk</a></li>
-          <li><a href="tentangKami/tentang.html">Tentang Kami</a></li>
-          <li><a href="produksiCincau/produksi.html">Proses Produksi</a></li>
-          <li><a href="edukasiCincau/edukasi.html">Edukasi</a></li>
-          <li><a href="cek-pesanan.html">Cek Pesanan</a></li>
-          <li><a href="kontak/kontak.html">Kontak</a></li>
-      </ul>
-
-      <button class="product-cart-trigger" id="openCart" aria-label="Buka keranjang">
-        <span class="cart-icon">🛒</span>
-        <span class="cart-count" id="cartCount">0</span>
-      </button>
-
-    </nav>
-  </header>
-
+  </nav>
+</header>
 
   <!-- HERO PRODUK -->
   <section class="product-hero">
