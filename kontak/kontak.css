@@ -25,6 +25,21 @@ body > header .navbar {
   background: #ffffff !important;
 }
 
+   KONTAK DAUN CINCAU ID
+========================================= */
+
+.contact-page {
+  font-family: "Poppins", sans-serif;
+  background: #f7f7ef;
+  color: #294633;
+  padding-top: 80px;
+  overflow: hidden;
+}
+
+/* =========================================
+   MENU AKTIF
+========================================= */
+
 .navbar .menu a.active {
   color: #39894c;
   font-weight: 700;
@@ -49,6 +64,10 @@ body > header .navbar {
   text-align: center;
   padding: 75px 8% 55px;
   background: #ffffff;
+.contact-page .contact-hero {
+  text-align: center;
+  padding: 75px 8% 55px;
+  background: linear-gradient(180deg, #eaf2e8 0%, #f7f7ef 100%);
 }
 
 .contact-label {
@@ -61,6 +80,7 @@ body > header .navbar {
 }
 
 .contact-hero h1 {
+.contact-page .contact-hero h1 {
   color: #254b35;
   font-size: clamp(34px, 5vw, 58px);
   line-height: 1.2;
@@ -69,6 +89,7 @@ body > header .navbar {
 }
 
 .contact-hero p {
+.contact-page .contact-hero p {
   max-width: 700px;
   margin: auto;
   color: #617467;
@@ -78,6 +99,7 @@ body > header .navbar {
 
 /* =========================================
    CONTENT KONTAK
+   KONTAK CONTENT
 ========================================= */
 
 .contact-content {
@@ -89,11 +111,14 @@ body > header .navbar {
   grid-template-columns: 0.95fr 1.2fr;
   gap: 35px;
 
+  grid-template-columns: 0.9fr 1.4fr;
+  gap: 35px;
   align-items: stretch;
 }
 
 /* =========================================
    KARTU TEMUKAN KAMI
+   INFORMASI KONTAK
 ========================================= */
 
 .contact-info {
@@ -349,6 +374,87 @@ body > header .navbar {
 }
 
 .send-button:hover {
+  color: #68796e;
+  font-size: 13px;
+  line-height: 1.9;
+  margin-bottom: 30px;
+}
+
+/* ITEM KONTAK */
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 17px;
+  margin-bottom: 25px;
+}
+
+.contact-icon {
+  width: 52px;
+  height: 52px;
+  min-width: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #dcebd9;
+  color: #39894c;
+  border-radius: 15px;
+
+  font-size: 24px;
+}
+
+.contact-item h3 {
+  color: #254b35;
+  font-size: 15px;
+  font-weight: 700;
+  margin: 2px 0 5px;
+}
+
+.contact-item p {
+  color: #596b5e;
+  font-size: 13px;
+  line-height: 1.8;
+  margin: 0 0 5px;
+}
+
+.contact-link {
+  display: inline-block;
+  color: #39894c;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.contact-link:hover {
+  color: #254b35;
+  text-decoration: underline;
+}
+
+/* WEBSTORE BUTTON */
+
+.webstore-button {
+  display: block;
+  text-align: center;
+
+  padding: 14px 20px;
+  margin-top: 30px;
+
+  background: #39894c;
+  color: white;
+
+  border-radius: 30px;
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  transition: 0.3s ease;
+}
+
+.webstore-button:hover {
   background: #254b35;
   transform: translateY(-3px);
 }
@@ -367,11 +473,123 @@ body > header .navbar {
 /* =========================================
    PENUTUP KONTAK
 ========================================= */
+/* =========================================
+   FORM KONTAK
+========================================= */
 
-.contact-closing {
+.contact-form-card {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 24px;
+  box-sizing: border-box;
+  box-shadow: 0 10px 35px rgba(37, 75, 53, 0.05);
+}
+
+.contact-form-card .contact-description {
+  margin-bottom: 28px;
+}
+
+/* FORM GROUP */
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  color: #294633;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 9px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 14px 16px;
+
+  border: 1px solid #d7dfd7;
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  color: #294633;
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.form-group input,
+.form-group select {
+  height: 49px;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #a2aaa3;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #39894c;
+  box-shadow: 0 0 0 3px rgba(57, 137, 76, 0.1);
+}
+
+/* TOMBOL KIRIM */
+
+.send-button {
+  border: none;
+  outline: none;
+
+  display: inline-block;
+  padding: 14px 30px;
+
+  background: #39894c;
+  color: white;
+
+  border-radius: 30px;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.send-button:hover {
+  background: #254b35;
+  transform: translateY(-3px);
+}
+
+.form-note {
+  color: #89958b;
+  font-size: 11px;
+  margin-top: 15px;
+  line-height: 1.7;
+}
+
+/* =========================================
+   CLOSING
+========================================= */
+
+.contact-page .contact-closing {
   text-align: center;
   padding: 65px 20px 80px;
   background: #ffffff;
+  background: #eaf2e8;
 }
 
 .contact-closing span {
@@ -485,6 +703,9 @@ body.contact-page-loaded .contact-hero p {
 }
 
 /* =========================================
+   RESPONSIVE TABLET
+========================================= */
+
    RESPONSIVE TABLET
 ========================================= */
 
@@ -1201,11 +1422,26 @@ body > header .navbar {
   .contact-hero {
     padding-top: 45px;
   }
+
+  .contact-info,
+  .contact-form-card {
+    padding: 30px;
+  }
 }
+
+/* =========================================
+   RESPONSIVE MOBILE
+========================================= */
 
 @media (max-width: 600px) {
   .contact-hero {
     padding-top: 28px !important;
+  .contact-page .contact-hero {
+    padding: 60px 7% 40px;
+  }
+
+  .contact-page .contact-hero h1 {
+    font-size: 34px;
   }
 }
 
@@ -1303,5 +1539,52 @@ body > header {
 
   .contact-closing {
     padding: 20px 16px;
+  .contact-page .contact-hero p {
+    font-size: 13px;
+  }
+
+  .contact-content {
+    width: 90%;
+    margin-bottom: 65px;
+  }
+
+  .contact-info,
+  .contact-form-card {
+    padding: 24px 20px;
+    border-radius: 18px;
+  }
+
+  .contact-info h2,
+  .contact-form-card h2 {
+    font-size: 24px;
+  }
+
+  .contact-item {
+    gap: 12px;
+  }
+
+  .contact-icon {
+    width: 45px;
+    height: 45px;
+    min-width: 45px;
+    font-size: 20px;
+  }
+
+  .contact-item p {
+    font-size: 12px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 12px;
+  }
+
+  .send-button {
+    width: 100%;
+  }
+
+  .contact-page .contact-closing {
+    padding: 55px 20px;
   }
 }

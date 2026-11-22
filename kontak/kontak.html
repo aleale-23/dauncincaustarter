@@ -36,6 +36,7 @@
        HEADER
   ====================================== -->
 
+    <!-- HEADER SAMA DENGAN HALAMAN LAIN -->
     <header>
       <nav class="navbar">
         <!-- LOGO -->
@@ -89,6 +90,13 @@
 
     <main class="contact-page">
       <!-- HERO -->
+        ></a>
+      </nav>
+    </header>
+
+    <!-- HALAMAN KONTAK -->
+    <main class="contact-page">
+      <!-- JUDUL HALAMAN -->
       <section class="contact-hero">
         <span class="contact-label">HUBUNGI KAMI</span>
 
@@ -123,6 +131,25 @@
 
             <div class="contact-item-content">
               <h3>Lokasi Usaha</h3>
+      <!-- INFORMASI KONTAK DAN FORM -->
+      <section class="contact-content">
+        <!-- INFORMASI KONTAK -->
+        <div class="contact-info">
+          <span class="contact-label">INFORMASI KAMI</span>
+
+          <h2>Temukan Kami</h2>
+
+          <p class="contact-description">
+            Kami siap menyambut pertanyaan dan pesan dari kamu. Jangan ragu
+            untuk menghubungi Daun Cincau ID.
+          </p>
+
+          <!-- ALAMAT -->
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+
+            <div>
+              <h3>Alamat Usaha</h3>
 
               <p>
                 Jalan Babarsari No. 18,<br />
@@ -132,11 +159,33 @@
 
               <a
                 href="https://maps.app.goo.gl/uZxXxoSDUTNUveCF9"
+                href="https://www.google.com/maps/search/?api=1&query=Jalan+Babarsari+No+18+Caturtunggal+Depok+Sleman+Yogyakarta"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="contact-link"
               >
                 Lihat Lokasi di Google Maps →
+                Lihat Lokasi →
+              </a>
+            </div>
+          </div>
+
+          <!-- WHATSAPP -->
+          <div class="contact-item">
+            <div class="contact-icon">💬</div>
+
+            <div>
+              <h3>WhatsApp</h3>
+
+              <p>0813-3654-4622</p>
+
+              <a
+                href="https://wa.me/6281336544622"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-link"
+              >
+                Hubungi Kami →
               </a>
             </div>
           </div>
@@ -146,6 +195,7 @@
             <div class="contact-icon">◎</div>
 
             <div class="contact-item-content">
+            <div>
               <h3>Instagram</h3>
 
               <p>@dauncincauid</p>
@@ -233,6 +283,40 @@
            FORMULIR KIRIM PESAN
       ====================================== -->
 
+          <div class="contact-item">
+            <div class="contact-icon">🛒</div>
+
+            <div>
+              <h3>Pemesanan Online</h3>
+
+              <p>
+                Temukan produk Daun Cincau ID melalui berbagai kanal pemesanan
+                online.
+              </p>
+
+              <a
+                href="https://linktr.ee/dauncincauid"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-link"
+              >
+                Lihat Semua Tautan →
+              </a>
+            </div>
+          </div>
+
+          <!-- WEBSTORE -->
+          <a
+            href="https://take.app/id/dauncincauid"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="webstore-button"
+          >
+            Kunjungi Official Webstore →
+          </a>
+        </div>
+
+        <!-- FORM PESAN -->
         <div class="contact-form-card">
           <span class="contact-label">KIRIM PESAN</span>
 
@@ -245,6 +329,7 @@
 
           <form id="contactForm">
             <!-- NAMA -->
+          <form id="contactForm" onsubmit="kirimPesanWhatsApp(event)">
             <div class="form-group">
               <label for="nama">Nama Lengkap *</label>
 
@@ -254,6 +339,7 @@
                 name="nama"
                 placeholder="Masukkan nama kamu"
                 autocomplete="name"
+                placeholder="Masukkan nama kamu"
                 required
               />
             </div>
@@ -276,6 +362,11 @@
               <label for="subjek">Topik Pesan *</label>
 
               <select id="subjek" name="subjek" required>
+            <div class="form-group">
+              <label for="subjek">Topik Pesan</label>
+
+              <select id="subjek" required>
+                <option value="">Pilih topik pesan</option>
                 <option value="Pertanyaan Produk">Pertanyaan Produk</option>
                 <option value="Pemesanan Produk">Pemesanan Produk</option>
                 <option value="Kerja Sama">Kerja Sama</option>
@@ -303,6 +394,10 @@
             <p class="form-note">
               Setelah menekan tombol, kamu akan diarahkan ke WhatsApp untuk
               mengirimkan pesan.
+            <button type="submit" class="send-button">Kirim Pesan →</button>
+
+            <p class="form-note">
+              Pesan akan diteruskan ke WhatsApp resmi Daun Cincau ID.
             </p>
           </form>
         </div>
@@ -325,6 +420,17 @@
        FOOTER
   ====================================== -->
 
+      <!-- PENUTUP -->
+      <section class="contact-closing">
+        <span>DAUN CINCAU ID</span>
+
+        <h2>Good Leaf, Good Life.</h2>
+
+        <p>Terima kasih telah menjadi bagian dari perjalanan Daun Cincau ID.</p>
+      </section>
+    </main>
+
+    <!-- FOOTER SAMA DENGAN HALAMAN LAIN -->
     <footer class="site-footer">
       <!-- LOGO DAN DESKRIPSI -->
       <div class="footer-brand">
@@ -370,6 +476,7 @@
         <a href="../edukasiCincau/edukasi.html">Edukasi</a>
         <a href="../cek-pesanan.html">Cek Pesanan</a>
         <a href="../kontak/kontak.html">Kontak</a>
+        <a href="kontak.html">Kontak</a>
       </div>
 
       <!-- PEMESANAN ONLINE -->
@@ -422,6 +529,7 @@
        COPYRIGHT
   ====================================== -->
 
+    <!-- COPYRIGHT -->
     <div class="footer-bottom">
       <p>Daun Cincau ID © 2026. All Rights Reserved.</p>
 
@@ -443,5 +551,42 @@
         </a>
       </div>
     </div>
+
+    <!-- JAVASCRIPT FORM WHATSAPP -->
+    <script>
+      function kirimPesanWhatsApp(event) {
+        event.preventDefault();
+
+        const nama = document.getElementById("nama").value.trim();
+        const kontak = document.getElementById("kontak").value.trim();
+        const subjek = document.getElementById("subjek").value;
+        const pesan = document.getElementById("pesan").value.trim();
+
+        const nomorTujuan = "6281336544622";
+
+        const isiPesan =
+          "Halo Daun Cincau ID!\n\n" +
+          "Saya ingin menghubungi Daun Cincau ID.\n\n" +
+          "Nama: " +
+          nama +
+          "\n" +
+          "Kontak: " +
+          kontak +
+          "\n" +
+          "Topik: " +
+          subjek +
+          "\n\n" +
+          "Pesan:\n" +
+          pesan;
+
+        const url =
+          "https://wa.me/" +
+          nomorTujuan +
+          "?text=" +
+          encodeURIComponent(isiPesan);
+
+        window.open(url, "_blank");
+      }
+    </script>
   </body>
 </html>

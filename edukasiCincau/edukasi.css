@@ -623,3 +623,236 @@ body {
     padding: 18px;
   }
 }
+
+@media (prefers-reduced-motion: no-preference) {
+  .edukasi-reveal {
+    animation: edukasiFadeUp 0.8s ease;
+  }
+}
+
+@keyframes edukasiFadeUp {
+  from {
+    opacity: 0;
+    translate: 0 30px;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+/* Header mengikuti layout dari navbar.css */
+body > header {
+  position: sticky !important;
+  top: 0;
+  background: #fff !important;
+}
+
+body > header > .navbar {
+  background: #fff !important;
+}
+
+/* Warna halaman mengikuti Kontak */
+body,
+.edukasi-hero,
+.edukasi-intro,
+.edukasi-fakta,
+.edukasi-mitos,
+.edukasi-tanaman,
+.edukasi-manfaat,
+.edukasi-sajian,
+.edukasi-tips,
+.edukasi-closing {
+  background: #fff;
+}
+
+.fakta-item,
+.mitos-card,
+.tanaman-card,
+.manfaat-card,
+.tips-content {
+  background: #eaf2e8;
+}
+
+.edukasi-hero {
+  min-height: auto;
+  padding-top: 55px;
+}
+
+#mengenal-cincau {
+  scroll-margin-top: 100px;
+}
+
+/* Footer putih, copyright sage */
+body > .site-footer {
+  background: #fff !important;
+}
+
+body > .footer-bottom {
+  background: #eaf2e8 !important;
+  border-top: 1px solid rgba(41, 70, 51, 0.08);
+}
+
+.site-footer :is(h3, p, a),
+.footer-bottom :is(p, a) {
+  color: #294633 !important;
+}
+
+.site-footer a:hover,
+.footer-bottom a:hover {
+  text-decoration: underline;
+}
+
+/* Animasi muncul saat elemen masuk layar */
+@media (prefers-reduced-motion: no-preference) {
+  .edukasi-reveal {
+    animation: edukasiFadeUp 0.8s ease both;
+  }
+}
+
+@keyframes edukasiFadeUp {
+  from {
+    opacity: 0;
+    translate: 0 30px;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  .edukasi-hero {
+    padding-top: 45px;
+  }
+
+  body > .site-footer {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 35px;
+    padding: 45px 5%;
+  }
+
+  .site-footer .footer-brand {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 600px) {
+  .edukasi-hero {
+    padding-top: 28px;
+  }
+
+  body > .site-footer {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 40px 7%;
+  }
+
+  .site-footer .footer-logo {
+    max-width: 140px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Bentuk foto Edukasi seperti referensi kanan */
+.edukasi-hero-image img,
+.edukasi-intro-image img,
+.edukasi-sajian-image img {
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  aspect-ratio: 10 / 9;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 28px;
+  margin-inline: auto;
+}
+
+@media (max-width: 600px) {
+  .edukasi-hero-image img,
+  .edukasi-intro-image img,
+  .edukasi-sajian-image {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    aspect-ratio: 10 / 9;
+    margin-inline: auto;
+    overflow: hidden;
+    border-radius: 28px;
+  }
+
+  .edukasi-sajian-image img {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: auto;
+    border-radius: 0;
+  }
+}
+
+.edukasi-sajian-image {
+  width: 100%;
+  max-width: 600px;
+  aspect-ratio: 9 / 10;
+  margin-inline: auto;
+  overflow: hidden;
+  border-radius: 28px;
+}
+
+.edukasi-sajian-image > img {
+  position: static;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 85%;
+  border-radius: 0;
+}
+
+.edukasi-sajian-image {
+  position: relative;
+  width: 100%;
+  max-width: 535px;
+  aspect-ratio: 9 / 10;
+  margin-inline: auto;
+  overflow: hidden;
+  border-radius: 28px;
+}
+
+.edukasi-sajian-image > img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  object-fit: cover;
+  object-position: center 85%;
+  border-radius: inherit;
+}
+
+body > header {
+  transition: transform 0.3s ease;
+}
+
+body > header.header-hidden {
+  transform: translateY(-100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body > header {
+    transition: none;
+  }
+}
