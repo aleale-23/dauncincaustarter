@@ -1188,3 +1188,42 @@ body > header .navbar {
     padding: 35px 6% 30px !important;
   }
 }
+
+.contact-page {
+  padding-top: 0;
+}
+
+.contact-hero {
+  padding-top: 55px;
+}
+
+@media (max-width: 1024px) {
+  .contact-hero {
+    padding-top: 45px;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-hero {
+    padding-top: 28px !important;
+  }
+}
+
+/* Rapatkan jarak di sekitar bagian tagline */
+.contact-content {
+  margin-bottom: 20px;
+}
+
+.contact-closing {
+  padding: 28px 20px 24px;
+}
+
+@media (max-width: 600px) {
+  .contact-content {
+    margin-bottom: 16px;
+  }
+
+  .contact-closing {
+    padding: 20px 16px;
+  }
+}
