@@ -1588,3 +1588,17 @@ body > header {
     padding: 55px 20px;
   }
 }
+
+body > header {
+  position: sticky !important;
+  top: 0;
+  background: #fff !important;
+}
+
+body > header > .navbar {
+  background: #fff !important;
+}
+
+.contact-page {
+  padding-top: 0 !important;
+}
