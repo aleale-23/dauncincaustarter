@@ -1227,3 +1227,81 @@ body > header .navbar {
     padding: 20px 16px;
   }
 }
+
+/* Samakan posisi navbar Kontak dengan Beranda di desktop */
+@media (min-width: 901px) {
+  body > header > .navbar {
+    width: 90% !important;
+    max-width: none !important;
+    margin-inline: auto !important;
+    padding-inline: 0 !important;
+    justify-content: space-between !important;
+  }
+
+  body > header > .navbar > .menu {
+    flex: 1 1 auto !important;
+    justify-content: center !important;
+    gap: clamp(12px, 1.85vw, 28px) !important;
+  }
+
+  body > header > .navbar > .navbar-actions {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+    margin: 0;
+  }
+}
+
+.contact-page {
+  padding-top: 82px;
+}
+
+@media (max-width: 600px) {
+  .contact-page {
+    padding-top: 82px !important;
+  }
+}
+
+/* Navbar tetap mengikuti tampilan dari navbar.css */
+body > header {
+  position: sticky !important;
+  top: 0;
+}
+
+/* Dekatkan judul pembuka ke navbar */
+.contact-page {
+  padding-top: 0 !important;
+}
+
+.contact-hero {
+  padding-top: 55px;
+}
+
+/* Dekatkan tagline ke kartu kontak dan footer */
+.contact-content {
+  margin-bottom: 20px;
+}
+
+.contact-closing {
+  padding: 28px 20px 24px;
+}
+
+@media (max-width: 1024px) {
+  .contact-hero {
+    padding-top: 45px;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-hero {
+    padding-top: 28px !important;
+  }
+
+  .contact-content {
+    margin-bottom: 16px;
+  }
+
+  .contact-closing {
+    padding: 20px 16px;
+  }
+}
